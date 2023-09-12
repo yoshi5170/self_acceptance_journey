@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: self_acceptance_journey_production
-  username: self_acceptance_journey
-  password: <%= ENV["SELF_ACCEPTANCE_JOURNEY_DATABASE_PASSWORD"] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
