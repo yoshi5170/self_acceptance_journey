@@ -8,4 +8,13 @@ module.exports = {
   plugins: [
     require("daisyui"),
   ],
+  theme: {
+    extend: {
+      colors: {
+        customGreen: '#6B705C',
+        customBrown: '#B98B73',
+        customBeige: '#F0ECE3',
+      }
+    }
+  },
 }
