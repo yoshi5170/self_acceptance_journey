@@ -37,5 +37,7 @@ module SelfAcceptanceJourney
     config.i18n.default_locale = :ja
     # 以下の記述で複数のローケルファイルが読み込まれるようになる(必須)
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+    #タイムゾーンをTokyo（日本）にする
+    config.i18n.default_locale = :ja
   end
 end
