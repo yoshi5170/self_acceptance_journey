@@ -1,0 +1,11 @@
+ja:
+  defaults:
+    login: 'ログイン'
+    logout: 'ログアウト'
+    terms_of_use: '利用規約'
+    privacy_policy: 'プライバシーポリシー'
+    contact: 'お問合せ'
+  static_pages:
+    top:
+      how_to: '使い方'
+      do_test: '診断をする'
