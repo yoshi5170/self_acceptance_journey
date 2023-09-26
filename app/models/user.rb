@@ -1,6 +1,15 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  authenticates_with_sorcery!
+  validates :name, presence: true
+  validates :nickname, presence: true
+  validates :uid, presence: true, uniqueness: true
+
+  def self.from_omniauth(auth)
+    find_or_create_by(provider: auth.provider, uid: auth.uid) do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.nickname = auth.info.nickname
+      user.name = auth.info.name
+    end
+  end
 end

@@ -1,0 +1,11 @@
+<header class="bg-customGreen flex flex-row justify-between items-center h-16">
+  <div class="text-orange-200 mx-4">
+    <%= link_to "AcceptME", "/" %>
+  </div>
+  <div class="flex items-center space-x-1 mx-4">
+    <%= button_to "/auth/twitter2", method: :post, data: { turbo: false } do %>
+        <i class="fa-brands fa-x-twitter"></i>
+    <% end %>
+    <%= button_to t('defaults.login'), "/auth/twitter2", method: :post, data: { turbo: false } %>
+  </div>
+</header>

@@ -5,6 +5,8 @@ ja:
     terms_of_use: '利用規約'
     privacy_policy: 'プライバシーポリシー'
     contact: 'お問合せ'
+    login: "ログイン"
+    sign_out: "ログアウト"
   static_pages:
     top:
       how_to: '使い方'
