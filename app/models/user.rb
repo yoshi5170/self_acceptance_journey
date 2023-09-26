@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  authenticates_with_sorcery!
+  validates :name, presence: true
+  validates :nickname, presence: true
+  validates :uid, presence: true, uniqueness: true
 
   def self.from_omniauth(auth)
     find_or_create_by(provider: auth.provider, uid: auth.uid) do |user|
