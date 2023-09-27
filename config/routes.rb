@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resource :mypage, only: %i[show]
   root 'static_pages#top'
   get 'top', to:'static_pages#top'
   get 'terms', to: 'static_pages#terms'
