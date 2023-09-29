@@ -1,0 +1,2 @@
+class UnlockableFlower < ApplicationRecord
+end
