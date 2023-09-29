@@ -1,2 +1,24 @@
-<h1>Gardens#show</h1>
-<p>Find me in app/views/gardens/show.html.erb</p>
+<div class="h-screen bg-customBeige">
+  <div class="flex flex-col justify-center">
+    <h1 class="text-customGreen text-center my-6">マイガーデン</h1>
+    <div class="bg-customGreen text-white max-w-xl mx-auto my-10"> <!-- max-w-xl で最大幅を設定し、mx-auto で中央に配置 -->
+      <h3 class="text-center">総花数 本 | 週花数 本</h3>
+    </div>
+  </div>
+  <div class="flex items-center justify-center mt-10">
+    <table class="border-collapse bg-customBrown">
+      <% (1..5).each do |row| %>
+        <tr>
+          <% (1..7).each do |column| %>
+            <td class="w-24 h-24 p-2.5 border-2 border-customBrown2 box-border text-center">
+              <%= stamp_index = (row - 1) * 7 + column %>
+              <% if 5 >= stamp_index %>
+                <%= image_tag '333.png', size: '56x56' %>
+              <% end %>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
