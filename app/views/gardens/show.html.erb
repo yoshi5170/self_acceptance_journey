@@ -9,11 +9,14 @@
     <table class="border-collapse bg-customBrown">
       <% (1..5).each do |row| %>
         <tr>
-          <% (1..7).each do |column| %>
-            <td class="w-24 h-24 p-2.5 border-2 border-customBrown2 box-border text-center">
-              <%= stamp_index = (row - 1) * 7 + column %>
-              <% if 5 >= stamp_index %>
-                <%= image_tag '333.png', size: '56x56' %>
+          <% (1..8).each do |column| %>
+            <td class="w-24 h-24 p-2.5 border-2 border-customBrown2 box-border text-center ">
+              <%= stamp_index = (row - 1) * 8 + column %>
+              <% entry = @planted_flowers[stamp_index - 1] %>
+              <% if entry %>
+                <div class="flex justify-center items-center">
+								  <%= image_tag(entry.unlockable_flower.image_flower, size: '50x50', alt: entry.unlockable_flower.name ) if unlockable_flower.image.attached? %>
+                </div>
               <% end %>
             </td>
           <% end %>
