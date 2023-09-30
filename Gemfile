@@ -55,11 +55,17 @@ gem "bootsnap", require: false
 gem "rails-i18n", '~> 7.0.0'
 
 #ログインで使用するgem
-gem 'omniauth-twitter2'
-gem 'omniauth-rails_csrf_protection'
+gem "omniauth-twitter2"
+gem "omniauth-rails_csrf_protection"
 
 #sorceryが提供しているメソッドを使用
-gem 'sorcery', '~> 0.16.5'
+gem "sorcery", "~> 0.16.5"
+
+#openai api
+gem "ruby-openai"
+
+#デバッグ
+gem "pry-byebug"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
