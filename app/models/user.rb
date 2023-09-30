@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
+  has_many :planted_flowers, dependent: :destroy
   validates :name, presence: true
   validates :nickname, presence: true
   validates :uid, presence: true, uniqueness: true
