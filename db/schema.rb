@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_29_061052) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_30_132556) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_29_061052) do
     t.datetime "updated_at", null: false
     t.index ["unlockable_flower_id"], name: "index_planted_flowers_on_unlockable_flower_id"
     t.index ["user_id"], name: "index_planted_flowers_on_user_id"
+  end
+
+  create_table "self_esteem_trainings", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "trained_at", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_self_esteem_trainings_on_user_id"
   end
 
   create_table "unlockable_flowers", force: :cascade do |t|
@@ -43,4 +51,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_29_061052) do
 
   add_foreign_key "planted_flowers", "unlockable_flowers"
   add_foreign_key "planted_flowers", "users"
+  add_foreign_key "self_esteem_trainings", "users"
 end
