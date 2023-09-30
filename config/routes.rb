@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :self_esteem_trainings, only: %i[new create show]
   resource :mypage, only: %i[show]
   resource :garden, only: %i[show]
   root 'static_pages#top'
