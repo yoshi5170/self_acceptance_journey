@@ -5,20 +5,23 @@
       <h3 class="text-center">総花数 本 | 週花数 本</h3>
     </div>
   </div>
-  <div class="flex items-center justify-center mt-10">
+  <div class="flex items-center justify-center mt-8">
+    <%= paginate @planted_flowers %>
+  </div>
+  <div class="flex items-center justify-center mt-2">
     <table class="border-collapse bg-customBrown">
-      <% (1..5).each do |row| %>
+      <% @planted_flowers.each_slice(8) do |row| %>
         <tr>
-          <% (1..8).each do |column| %>
+          <% row.each do |entry| %>
             <td class="w-24 h-24 p-2.5 border-2 border-customBrown2 box-border text-center ">
-              <%= stamp_index = (row - 1) * 8 + column %>
-              <% entry = @planted_flowers[stamp_index - 1] %>
-              <% if entry %>
-                <div class="flex justify-center items-center">
-								  <%= image_tag(entry.unlockable_flower.image_flower, size: '50x50', alt: entry.unlockable_flower.name ) if unlockable_flower.image.attached? %>
-                </div>
-              <% end %>
+              <div class="flex justify-center items-center">
+                <%= image_tag 'white_flower.png', size: '40x40'%>
+                <%# <%= image_tag(entry.unlockable_flower.image_flower, size: '50x50', alt: entry.unlockable_flower.name ) if entry.unlockable_flower.image.attached? %>
+              </div>
             </td>
+          <% end %>
+          <% (8 - row.length).times do %>
+            <td class="w-24 h-24 p-2.5 border-2 border-customBrown2 box-border text-center "></td>
           <% end %>
         </tr>
       <% end %>
