@@ -12,7 +12,7 @@
         </div>
         <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-customGreen rounded-box w-60 text-orange-200">
           <li><%= link_to "マイページ", mypage_path %></li>
-          <li><a>自己否定脱却トレーニング</a></li>
+          <li><%= link_to "自己否定脱却トレーニング", new_self_esteem_training_path %></li>
           <li><a>幸せ日記</a></li>
           <li><a>今日の幸せ日記を作成</a></li>
           <li><%= link_to t('defaults.sign_out'), "/sign_out", data: { turbo_method: :delete, turbo_confirm: "ログアウトしますか?" } %></li>
