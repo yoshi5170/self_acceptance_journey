@@ -1,2 +1,16 @@
-<h1>Admin::UnlockableFlowers#new</h1>
-<p>Find me in app/views/admin/unlockable_flowers/new.html.erb</p>
+<div class="bg-customBeige text-customBrown h-screen flex items-center justify-center ">
+  <%= form_with url: admin_unlockable_flowers_path, local: true do |f|%>
+    <div>
+      <%= f.label :name%><br>
+      <%= f.text_field :name%>
+    </div>
+    <div>
+      <%= f.label :threshold %><br>
+      <%= f.text_field :threshold%>
+    </div>
+    <div class="my-3">
+      <%= f.label :flower_image%><br>
+      <%= f.file_field :flower_image%>
+    </div>
+  <%end%>
+</div>
