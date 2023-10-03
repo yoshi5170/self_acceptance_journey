@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   namespace :admin do
-    root to: 'unlockable_flowers#new'
+    get 'dashboards/index'
+    root 'dashboards#index'
 
     resources :unlockable_flowers, only: %i[new create destroy]
 
-    get 'login', to: 'dashboards#index'
+    get 'login', to: 'user_sessions#new'
     post 'login', to: 'user_sessions#create'
     delete 'logout', to: 'user_sessions#destroy'
   end
