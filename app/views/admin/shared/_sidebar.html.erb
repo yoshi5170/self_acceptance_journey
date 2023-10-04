@@ -13,6 +13,7 @@
       <li><%= link_to "ダッシュボード", admin_dashboards_index_path %></li>
       <li><%= link_to "花一覧", admin_unlockable_flowers_path %></li>
       <li><%= link_to "新規の花を作成", new_admin_unlockable_flower_path %></li>
+      <li><%= link_to t('defaults.logout'), admin_logout_path, data: { turbo_method: :delete, turbo_confirm: "ログアウトしますか?" } %></li>
     </ul>
   </div>
 </div>
