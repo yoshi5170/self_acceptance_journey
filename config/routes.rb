@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     get 'dashboards/index'
     root 'dashboards#index'
 
-    resources :unlockable_flowers, only: %i[new create destroy]
+    resources :unlockable_flowers, only: %i[index new create destroy]
 
     get 'login', to: 'user_sessions#new'
     post 'login', to: 'user_sessions#create'
