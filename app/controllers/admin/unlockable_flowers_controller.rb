@@ -1,4 +1,8 @@
 class Admin::UnlockableFlowersController < Admin::BaseController
+  def index
+    @unlockable_flowers= UnlockableFlower.all
+  end
+
   def new
     @unlockable_flower = UnlockableFlower.new
   end
