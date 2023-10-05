@@ -11,9 +11,9 @@
   </head>
 
   <body>
-    <div>
-      <%#= render 'shared/flash_message' %>
+    <div class="h-screen bg-slate-200">
       <%= render 'admin/shared/sidebar' %>
+      <%= render 'shared/flash_message' %>
       <%= yield %>
     </div>
   </body>
