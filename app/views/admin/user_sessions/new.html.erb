@@ -1,15 +1,20 @@
-<div class="bg-customBeige text-customBrown h-screen flex items-center justify-center ">
-  <%= form_with url: admin_login_path, local: true do |f|%>
-    <div>
-      <%= f.label :email%><br>
-      <%= f.text_field :email%>
+<div class="bg-slate-200 text-customBrown h-screen flex items-center justify-center ">
+  <div class="space-y-4">
+    <h1 class="text-2xl mb-4 text-center">ログイン</h1>
+    <div class="bg-white border-2 border-gray-400 rounded-lg px-4 py-6">
+      <%= form_with url: admin_login_path, local: true do |f|%>
+        <div class="mb-2">
+          <%= f.label :email%><br>
+          <%= f.text_field :email, class: "bg-white border-2 border-gray-200" %>
+        </div>
+        <div  class="mb-2">
+          <%= f.label :password %><br>
+          <%= f.password_field :password, class: "bg-white border-2 border-gray-200"%>
+        </div>
+        <div class="mb-2 text-center">
+          <%= f.submit "ログイン", class: "bg-orange-100 border-2 border-gray-200 rounded-lg px-2 py-1 hover:bg-orange-200"%>
+        </div>
+      <%end%>
     </div>
-    <div>
-      <%= f.label :password %><br>
-      <%= f.password_field :password%>
-    </div>
-    <div>
-      <%= f.submit "ログイン" %>
-    </div>
-  <%end%>
+  </div>
 </div>
