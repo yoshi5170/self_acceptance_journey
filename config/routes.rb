@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'dashboards/index'
+    root 'dashboards#index'
+
+    resources :unlockable_flowers, only: %i[index new create destroy]
+
+    get 'login', to: 'user_sessions#new'
+    post 'login', to: 'user_sessions#create'
+    delete 'logout', to: 'user_sessions#destroy'
+  end
   resources :self_esteem_trainings, only: %i[new] do
     collection do
       get 'search'

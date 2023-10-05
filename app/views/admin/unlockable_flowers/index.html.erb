@@ -1,0 +1,30 @@
+<div class="w-screen">
+  <table class="table">
+    <!-- head -->
+    <thead class="border-2 border-black mr-10">
+      <tr>
+        <th class="w-40">ID</th>
+        <th class="w-40">Name</th>
+        <th class="w-40">Threshold</th>
+        <th class="w-40">Flower Image</th>
+        <th class="w-40"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- row 1 -->
+      <% @unlockable_flowers.each do |flower| %>
+        <tr>
+          <td><%= flower.id %></td>
+          <td><%= flower.name %></td>
+          <td><%= flower.threshold %></td>
+          <td><%= image_tag (flower.flower_image).variant( resize:"40x40!" ) %></td>
+          <td>
+            <%= link_to "詳細", "#" %>
+            <%= link_to "編集", "#" %>
+            <%= link_to "削除", "#" %>
+          </td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</div>

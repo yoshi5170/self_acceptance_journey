@@ -1,0 +1,15 @@
+<div class="bg-customBeige text-customBrown h-screen flex items-center justify-center ">
+  <%= form_with url: admin_login_path, local: true do |f|%>
+    <div>
+      <%= f.label :email%><br>
+      <%= f.text_field :email%>
+    </div>
+    <div>
+      <%= f.label :password %><br>
+      <%= f.password_field :password%>
+    </div>
+    <div>
+      <%= f.submit "ログイン" %>
+    </div>
+  <%end%>
+</div>
