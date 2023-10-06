@@ -13,13 +13,30 @@ ja:
     top:
       how_to: '使い方'
       do_test: '診断をする'
+    terms:
+      title: '利用規約'
+    privacy:
+      titile: 'プライバシーポリシー'
   sessions:
+    new:
+      title: 'ログイン'
     create:
       success: 'ログインしました'
     failure:
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
+  mypages:
+    show:
+      title: 'マイページ'
+  self_esteem_trainings:
+    new:
+      title: '自己否定脱却トレーニング'
+    search:
+      title: '結果'
+  gardens:
+    show:
+      title: 'ガーデン'
   admin:
     user_sessions:
       new:
@@ -29,6 +46,11 @@ ja:
         fail: 'ログインに失敗しました'
       destroy:
         success: 'ログアウトしました'
-      dashboards:
+    dashboards:
         index:
           titile: 'ダッシュボード'
+    unlockable_flowers:
+      index:
+        title: '花一覧'
+      new:
+        title: '花登録'
