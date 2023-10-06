@@ -7,7 +7,28 @@ ja:
     contact: 'お問合せ'
     login: "ログイン"
     sign_out: "ログアウト"
+    message:
+      require_login: 'ログインしてください'
   static_pages:
     top:
       how_to: '使い方'
       do_test: '診断をする'
+  sessions:
+    create:
+      success: 'ログインしました'
+    failure:
+      fail: 'ログインに失敗しました'
+    destroy:
+      success: 'ログアウトしました'
+  admin:
+    user_sessions:
+      new:
+        title: 'ログイン'
+      create:
+        success: 'ログインしました'
+        fail: 'ログインに失敗しました'
+      destroy:
+        success: 'ログアウトしました'
+      dashboards:
+        index:
+          titile: 'ダッシュボード'
