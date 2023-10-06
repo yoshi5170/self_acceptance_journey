@@ -48,7 +48,7 @@ ja:
         success: 'ログアウトしました'
     dashboards:
         index:
-          titile: 'ダッシュボード'
+          title: 'ダッシュボード'
     unlockable_flowers:
       index:
         title: '花一覧'
