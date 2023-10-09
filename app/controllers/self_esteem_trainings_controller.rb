@@ -6,18 +6,23 @@ class SelfEsteemTrainingsController < ApplicationController
 
   def search
     # OpenAIへのリクエストを行い、結果を取得
-    prompt = "Taking any self-deprecating statement such as '#{text_params}', rephrase it into a positive affirmation emphasizing inherent worth and personal growth in less than 30 words."
+    additional_prompt = "入力された自己否定的な文を自己受容できるような文に変換して"
+    #prompt = "Taking any self-deprecating statement such as '#{text_params}', rephrase it into a positive affirmation emphasizing inherent worth and personal growth in less than 30 words."
 		Rails.logger.info "Preparing to send request to OpenAI..."
     @client = OpenAI::Client.new(access_token: @api_key)
     response = @client.chat(
       parameters: {
         model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: prompt }]
+        messages: [
+          { role: "system", content: additional_prompt },
+          { role: "user", content: text_params }
+        ],
       }
     )
     Rails.logger.info "Received response from OpenAI: #{response.inspect}"
     @chat = response.dig("choices", 0, "message", "content") if response.present?
-
+    #@chat = "私のプレゼンテーションのスキルはまだ改善の余地がありますが、他の人と比べて自分を貶める必要はないと気づきました。失敗から学び、成長することができるチャンスです。私は自分自身を大切にし、自己価値を持ち続けることを選びます。
+              #私のプレゼンテーションのスキルはまだ改善の余地がありますが、他の人と比べて自分を貶める必要はないと気づきました。失敗から学び、成長することができるチャンスです。私は自分自身を大切にし、自己価値を持ち続けることを選びます。"
     # レスポンスが存在する場合、新しいトレーニングセッションを作成
     # if @chat.present?
     #   @training = current_user.self_negation_trainings.create(trained_at: Time.current)

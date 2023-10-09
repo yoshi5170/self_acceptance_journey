@@ -5,15 +5,18 @@
       <p class="pt-5">自分を責めてしまう思考が頭をよぎったら、この機能を見てください。</p>
       <p class="pb-10">思考を再評価し、自分を優しく見つめ直すトレーニングになります。</p>
   </div>
-  <div class="flex flex-col items-center justify-center">
+  <div class="input-area flex flex-col items-center justify-center">
     <p class="text-customGreen2 p-2 mb-1">自己否定な思考を入力してください</p>
-    <%= form_with(url: search_self_esteem_trainings_path, method: :get, local: true, class: "grid gap-4") do |f| %>
+    <%= form_with(url: search_self_esteem_trainings_path, method: :get, local: true, class: "grid gap-4")do |f| %>
       <div>
         <%= f.text_area :text, size: "80x3", class: "bg-white border-2 border-slate-300 p-2 rounded-lg" %>
       </div>
       <div class="justify-self-center">
-        <%= f.submit '変換', class: "bg-customGreen text-customBeige px-6 py-2 rounded-full hover:bg-emerald-900" %>
+        <%= f.submit '変換', class: "bg-customGreen text-customBeige px-6 py-2 rounded-full hover:bg-emerald-900", id: "convertButton"%>
       </div>
     <% end %>
   </div>
+</div>
+<div class='animation-area hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50' id='animationArea'>
+  <%= image_tag 'flower.gif', size: "600x600", id: 'animationGif' %>
 </div>

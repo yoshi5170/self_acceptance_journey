@@ -1,8 +1,18 @@
 <% content_for( :title, t('.title'))%>
-<div class="bg-customBeige text-customGreen flex flex-col items-center justify-center h-screen">
-  <h3 class="text-teal-500 p-3 my-2">回答</h3>
-  <p class="text-violet-300"><%= @chat %></p>
-  <div class="text-teal-500 p-3 my-2 hover:bg-violet-600 hover:text-teal-100">
-    <%= link_to '入力ページに戻る', new_self_esteem_training_path %>
+<div class="bg-customBeige text-customGreen">
+  <div class="relative flex flex-col w-3/4 mx-auto">
+    <%# <h3 class="text-teal-500 p-3 my-2">回答</h3> %>
+    <div class="absolute top-36 left-0 w-auto mx-60 px-4">
+      <p class="text-customGreen text-center font-mono"><%= @chat %></p>
+    </div>
+    <div class="flex justify-center mt-48">
+      <%= image_tag 'speech_balloon_01.png', size: '700x150', class: 'opacity-60' %>
+    </div>
+    <div>
+      <%= image_tag 'rabbit.png', size: '150x150', class:'ml-64'%>
+    </div>
+    <div class="bg-customGreen2 text-customBeige shadow-lg rounded-full text-center w-1/4 mx-auto mb-20 py-2 hover:bg-customGreen3 ">
+      <%= link_to '入力ページに戻る', new_self_esteem_training_path %>
+    </div>
   </div>
 </div>
