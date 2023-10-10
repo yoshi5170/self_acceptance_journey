@@ -14,7 +14,7 @@
           <li><%= link_to "マイページ", mypage_path %></li>
           <li><%= link_to "自己否定脱却トレーニング", new_self_esteem_training_path %></li>
           <li><a>幸せ日記</a></li>
-          <li><a>今日の幸せ日記を作成</a></li>
+          <li><%= link_to "今日の幸せ日記を作成", diaries_new_path %></li>
           <li><%= link_to t('defaults.sign_out'), "/sign_out", data: { turbo_method: :delete, turbo_confirm: "ログアウトしますか?" } %></li>
         </ul>
       </div>
