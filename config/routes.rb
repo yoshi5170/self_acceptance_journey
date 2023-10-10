@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'diaries/new'
   namespace :admin do
     get 'dashboards/index'
     root 'dashboards#index'
