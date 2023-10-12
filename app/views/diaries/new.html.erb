@@ -1,2 +1,30 @@
-<h1>Diaries#new</h1>
-<p>Find me in app/views/diaries/new.html.erb</p>
+<% content_for(:title, t('.title'))%>
+<div class="bg-customBeige text-customGreen h-screen">
+  <div class="container mx-auto">
+    <h1 class="text-2xl font-bold text-center py-6">幸せ日記作成</h1>
+  </div>
+  <div class="container mx-auto h-3/4">
+    <div class="flex ml-40">
+      <%= @date %>
+    </div>
+    <div class="flex flex-col justify-center border-2 border-customGreen rounded-lg px-4 py-10 w-3/4 mx-auto">
+      <div class="w-1/2 mx-auto text-center">
+        <p>今日のよかったことを入力してください</p>
+      </div>
+      <div class="w-2/3 mx-auto">
+        <%= form_with model: @diary_form, url: diaries_path do |f| %>
+          <%= f.hidden_field :user_id, value: current_user.id, name: "diary_form[user_id]" %>
+          <%= render 'shared/error_messages', object: @diary_form %>
+            <% 3.times do |index| %>
+              <div class="my-4">
+                <%= f.text_field :entries_contents, multiple: true, value: @diary_form.entries_contents[index], placeceholder: "良かったことを入力", class: "w-full border border-customGreen rounded-lg bg-customGreen2"%>
+              </div>
+            <% end %>
+            <div class="my-2 text-center">
+              <%= f.submit "保存", class: "bg-customGreen text-customBeige my-2 px-10 py-2 rounded-full drop-shadow-lg hover:bg-customGreen4 hover:drop-shadow-lg"%>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
