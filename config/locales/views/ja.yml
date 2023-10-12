@@ -36,7 +36,16 @@ ja:
       title: '結果'
   gardens:
     show:
-      title: 'ガーデン'
+      title:  'ガーデン'
+  diaries:
+    index:
+      title: '幸せ日記一覧'
+    new:
+      title: '幸せ日記作成'
+    edit:
+      title: '幸せ日記編集'
+    show:
+      title: '幸せ日記詳細'
   admin:
     user_sessions:
       new:
