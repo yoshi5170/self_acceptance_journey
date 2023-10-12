@@ -8,9 +8,9 @@ class DiariesController < ApplicationController
     @diary_form = DiaryForm.new(diary_form_params)
 
     if @diary_form.save
-      redirect_to root_path, success: '日記が作成されました'
+      redirect_to root_path, success: t('.success')
     else
-      flash.now[:danger]= "日記作成に失敗しました"
+      flash.now[:danger]= t('.fail')
       render :new, status: :unprocessable_entity
     end
   end

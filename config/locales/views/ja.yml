@@ -42,6 +42,9 @@ ja:
       title: '幸せ日記一覧'
     new:
       title: '幸せ日記作成'
+    create:
+      success: '日記が作成されました'
+      fail: '日記作成に失敗しました'
     edit:
       title: '幸せ日記編集'
     show:
