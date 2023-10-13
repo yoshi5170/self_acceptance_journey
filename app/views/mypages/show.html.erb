@@ -1,13 +1,16 @@
 <% content_for( :title, t('.title'))%>
-<div class="bg-customBeige h-screen flex flex-col items-center justify-center">
-  <div class="w-1/3">
-    <ul>
-      <li class="bg-customGreen2 text-customBeige mb-4 p-2 rounded-full flex items-center justify-center">
-        <%= link_to 'プロフィール編集', "#" %>
-      </li>
-      <li class="bg-customGreen2 text-customBeige mb-4 p-2 rounded-full flex items-center justify-center">
-        <%= link_to 'マイガーデン', garden_path %>
-      </li>
-    </ul>
+<div class="bg-customBeige min-h-screen flex flex-col">
+  <div class="container mx-auto bg-customBeige3 border-2 border-customGreen rounded-lg mt-20 w-2/5">
+    <h1 class="text-center text-customGreen text-2xl font-bold my-4">マイページ</h1>
+    <div class="container mx-auto w-1/2 py-2">
+      <ul>
+        <li class="bg-customGreen4 text-customBeige text-center mb-4 p-2 rounded-full hover:bg-customGreen hover:drop-shadow-lg border-2 border-customGreen2">
+          <%= link_to 'プロフィール編集', "#" %>
+        </li>
+        <li class="bg-customGreen4 text-customBeige text-center mb-4 p-2 rounded-full hover:bg-customGreen hover:drop-shadow-lg border-2 border-customGreen2">
+          <%= link_to 'マイガーデン', garden_path %>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

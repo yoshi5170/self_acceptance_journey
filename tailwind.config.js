@@ -20,6 +20,8 @@ module.exports = {
         customBrown3: '#a98467',
         customBeige: '#F0ECE3',
         customBeige2: '#e2dbc9',
+        customBeige3: '#f7f5f0',
+        customBeige4: '#dcd3bd',
       }
     }
   },

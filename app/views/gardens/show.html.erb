@@ -19,7 +19,7 @@
             <% if @planted_flowers[counter] %>
               <td class="w-24 h-24 p-2.5 border-2 border-customBrown2 box-border text-center ">
                 <div class="flex justify-center items-center">
-                  <%= image_tag 'white_flower.png', size: '50x50' %>
+                  <%= image_tag(@planted_flowers[counter].unlockable_flower.flower_image, size: '50x50', alt: @planted_flowers[counter].unlockable_flower.name) %>
                 </div>
               </td>
             <% else %>
