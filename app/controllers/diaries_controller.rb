@@ -1,4 +1,8 @@
 class DiariesController < ApplicationController
+  def index
+    @diaries = current_user.diaries.includes(:diary_entries).order(created_at: :desc)
+  end
+
   def new
     @date = Date.current
     @diary_form = DiaryForm.new
