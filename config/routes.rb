@@ -15,7 +15,7 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  resources :diaries, only: %i[new create]
+  resources :diaries, only: %i[index new create]
   resource :mypage, only: %i[show]
   resource :garden, only: %i[show]
   root 'static_pages#top'
