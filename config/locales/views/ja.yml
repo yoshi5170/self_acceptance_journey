@@ -49,6 +49,11 @@ ja:
       title: '幸せ日記編集'
     show:
       title: '幸せ日記詳細'
+  questions:
+    index:
+      title: '診断'
+    result:
+      title: '診断結果'
   admin:
     user_sessions:
       new:
