@@ -12,7 +12,7 @@ class DiariesController < ApplicationController
     @diary_form = DiaryForm.new(diary_form_params)
 
     if @diary_form.save
-      redirect_to root_path, success: t('.success')
+      redirect_to diaries_path, success: t('.success')
     else
       flash.now[:danger]= t('.fail')
       render :new, status: :unprocessable_entity
