@@ -58,9 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const selectedAnswer = document.querySelector(`input[data-question-id="${questionNumber}"]:checked`);
     if (selectedAnswer) {
         // すべてのラベルから.selected-labelを削除
-        // document.querySelectorAll(`[for^="calculate_answer_${questionNumber}_"]`).forEach(label => {
-        //     label.classList.remove('bg-customGreen2');
-        // });
+        document.querySelectorAll(`[for^="calculate_answer_${questionNumber}_"]`).forEach(label => {
+            label.classList.remove('bg-customGreen2');
+        });
 
         // 選択されたラジオボタンのラベルに.selected-labelを追加
         const selectedLabel = document.querySelector(`label[for="${selectedAnswer.id}"]`);
