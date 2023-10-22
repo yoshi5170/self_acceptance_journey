@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'diaries/new'
   namespace :admin do
     get 'dashboards/index'
     root 'dashboards#index'
@@ -25,4 +24,10 @@ Rails.application.routes.draw do
   get "/auth/:provider/callback", to: "sessions#create"
   get "/auth/failure", to: "sessions#failure"
   delete "/sign_out", to: "sessions#destroy"
+  resources :questions, only: [:index] do
+    collection do
+      post :calculate
+      get :result
+    end
+  end
 end
