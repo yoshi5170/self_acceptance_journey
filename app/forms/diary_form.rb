@@ -1,7 +1,7 @@
 class DiaryForm
   include ActiveModel::Model
 
-  attr_accessor :user_id, :entries_contents
+  attr_accessor :user_id, :entries_contents, :entries_ids
 
   def initialize(attributes = {})
     super(attributes)
@@ -18,6 +18,21 @@ class DiaryForm
       diary = Diary.create(user_id: user_id, date: Time.current)
       entries_contents.each do |content|
         diary.diary_entries.create!(content: content)
+      end
+    end
+
+    true
+  rescue ActiveRecord::RecordInvalid
+    false
+  end
+
+  def update
+    return false unless valid?
+
+    ActiveRecord::Base.transaction do
+      entries_ids.each_with_index do |id, index|
+        entry = DiaryEntry.find(id)
+        entry.update!(content: entries_contents[index])
       end
     end
 

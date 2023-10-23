@@ -1,0 +1,21 @@
+<% content_for(:title, t('.title'))%>
+<div class="bg-customBeige3 h-screen flex items-center">
+  <div class="border-dashed border-2 border-customGreen rounded-lg w-3/5 mx-auto">
+    <div class="flex-1 flex items-center">
+      <div class="px-2">
+        <h2><%= @diary.created_at.to_date %>（<%= I18n.l(@diary.created_at, format: '%a') %>）</h2>
+      </div>
+      <div class="p-2 border-l-2 border-customGreen2">
+        <ul class="list-disc pl-5">
+          <% @diary.diary_entries.each do |entry| %>
+              <li><%= entry.content %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div>
+      <%= link_to "編集", edit_diary_path(@diary), class: "bg-customGreen4 text-customBeige my-2 px-5 py-2 rounded-full drop-shadow-lg hover:bg-customGreen hover:drop-shadow-lg border-2 border-customGreen2" %>
+      <%= link_to "削除", diary_path(@diary), class:"bg-customGreen4 text-customBeige my-2 px-5 py-2 rounded-full drop-shadow-lg hover:bg-customGreen hover:drop-shadow-lg border-2 border-customGreen2", data: { turbo_method: :delete, turbo_confirm: "日記を削除しますか?" } %>
+  </div>
+</div>

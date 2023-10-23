@@ -49,6 +49,9 @@ ja:
       title: '幸せ日記編集'
     show:
       title: '幸せ日記詳細'
+    update:
+      success: '日記を編集しました'
+      fail: '日記の編集に失敗しました'
   questions:
     index:
       title: '診断'
