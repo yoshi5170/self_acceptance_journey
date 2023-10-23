@@ -52,6 +52,8 @@ ja:
     update:
       success: '日記を編集しました'
       fail: '日記の編集に失敗しました'
+    destroy:
+      success: '日記を削除しました'
   questions:
     index:
       title: '診断'
