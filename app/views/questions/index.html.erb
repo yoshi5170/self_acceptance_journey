@@ -9,7 +9,7 @@
         <button type="button" class="text-customBeige bg-customGreen  transition duration-150 ease-in-out border-2 border-customGreen2 rounded-xl drop-shadow-lg hover:bg-customGreen4 hover:drop-shadow-lg hover:-translate-y-1 px-4 py-2 my-8" id="start-questions">診断を始める</button>
       </div>
       <div class="container mx-auto text-center">
-        <%= form_with url:calculate_questions_path, scope: :calculate, method: :post do |f| %>
+        <%= form_with url:calculate_questions_path, scope: :calculate, method: :post, data: { turbo: false } do |f| %>
           <div class='error-message hidden px-10 py-2 mb-10 mx-10 text-sm text-red-800 bg-red-100 rounded-xl dark:bg-red-100 dark:text-red-800' id="error_message">選択してください</div>
           <% @questions.each_with_index do |question, index| %>
             <div id='question_<%= index+1 %>', class='hidden'>
