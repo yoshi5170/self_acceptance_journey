@@ -1,5 +1,5 @@
 class DiariesController < ApplicationController
-  before_action :set_diary, only: [:show, :edit, :update]
+  before_action :set_diary, only: [:show, :edit, :update, :destroy]
 
   def index
     @diaries = current_user.diaries.includes(:diary_entries).order(created_at: :desc)
@@ -41,6 +41,10 @@ class DiariesController < ApplicationController
     end
   end
 
+  def destroy
+    @diary.destroy!
+    redirect_to diaries_path, success: t('.success')
+  end
 
   private
 

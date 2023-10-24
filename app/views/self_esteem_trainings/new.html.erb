@@ -7,10 +7,9 @@
         <p class="pb-10">思考を再評価し、自分を優しく見つめ直すトレーニングになります。</p>
     </div>
     <div class="flex flex-col items-center justify-center">
-      <p class="text-customGreen2 p-2 mb-1">自己否定な思考を入力してください</p>
-      <%= form_with(url: search_self_esteem_trainings_path, method: :get, class: "grid gap-4")do |f| %>
+      <%= form_with(url: search_self_esteem_trainings_path, method: :get, class: "grid gap-4", data: { turbo: false })do |f| %>
         <div>
-          <%= f.text_area :text, size: "80x3", class: "bg-customBeige3 border-2 border-customGreen3 p-2 rounded-lg" %>
+          <%= f.text_area :text, size: "80x3", class: "bg-customBeige3 border-2 border-customGreen3 p-2 rounded-lg", placeholder:"自己否定な思考を入力してください"%>
         </div>
         <div class="justify-self-center">
           <%= f.submit '変換', class: "bg-customGreen text-customBeige px-6 py-2 rounded-full drop-shadow-lg hover:bg-customGreen4 hover:drop-shadow-lg border-2 border-customGreen2", id: "convertButton"%>

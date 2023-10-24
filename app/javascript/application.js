@@ -3,7 +3,7 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "@fortawesome/fontawesome-free/js/all";
-Turbo.session.drive = false
+// Turbo.session.drive = false
 
 document.addEventListener('DOMContentLoaded', () => {
   const convertButton = document.getElementById('convertButton');
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("turbo:load", () => {
   let currentQuestion = 1;
   const totalQuestions = 10;
 
