@@ -1,0 +1,2 @@
+class MonthlyTheme < ApplicationRecord
+end
