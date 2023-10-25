@@ -1,15 +1,14 @@
 <% content_for( :title, t('.title'))%>
 <div class="h-screen bg-customBeige">
   <div class="flex flex-col justify-center">
-    <h1 class="text-customGreen text-center my-6">マイガーデン</h1>
-    <div class="bg-customGreen text-white max-w-xl mx-auto my-10"> <!-- max-w-xl で最大幅を設定し、mx-auto で中央に配置 -->
-      <h3 class="text-center">総花数<%= @total_flowers_count %>本 | 週花数<%= @weekly_flowers_count %>本</h3>
+    <h1 class="text-customGreen text-2xl font-bold text-center my-6">マイガーデン</h1>
+    <div class="text-white max-w-xl mx-auto my-6"> <!-- max-w-xl で最大幅を設定し、mx-auto で中央に配置 -->
+      <h3 class="text-center bg-customGreen border-2 rounded-xl px-4 py-2">総花数<%= @total_flowers_count %>本 | 週花数<%= @weekly_flowers_count %>本</h3>
     </div>
   </div>
-  <div class="flex items-center justify-center mt-8">
+  <div class="flex items-center justify-center mt-4">
     <%= paginate @planted_flowers %>
   </div>
-
   <div class="flex items-center justify-center mt-2">
     <% counter = 0 %>
     <table class="border-collapse bg-customBrown">
@@ -17,7 +16,7 @@
         <tr>
           <% 8.times do |column| %>
             <% if @planted_flowers[counter] %>
-              <td class="w-24 h-24 p-2.5 border-2 border-customBrown2 box-border text-center ">
+              <td class="w-15 h-15 p-2.5 border-2 border-customBrown2 box-border text-center sm:w-20 sm:h-20 md:w-22 md:h-22 lg:w-24 lg:h-24">
                 <div class="flex justify-center items-center">
                   <%= image_tag(@planted_flowers[counter].unlockable_flower.flower_image, size: '50x50', alt: @planted_flowers[counter].unlockable_flower.name) %>
                 </div>
