@@ -15,15 +15,19 @@ class DiaryForm
     return false unless valid?
 
     ActiveRecord::Base.transaction do
-      diary = Diary.create(user_id: user_id, date: Time.current)
+      diary = Diary.new(user_id: user_id, date: Time.current.to_date)
       entries_contents.each do |content|
-        diary.diary_entries.create!(content: content)
+        diary.diary_entries.build(content: content)
+      end
+      if diary.save
+        true
+      else
+        diary.errors.full_messages.each do |message|
+          errors.add(:base, message)
+        end
+        false
       end
     end
-
-    true
-  rescue ActiveRecord::RecordInvalid
-    false
   end
 
   def update
@@ -42,6 +46,7 @@ class DiaryForm
   end
 
   private
+
 
   def all_entries_must_be_present
     if entries_contents.any?(&:blank?)

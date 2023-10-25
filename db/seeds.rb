@@ -54,47 +54,67 @@
 
 
 #質問文の作成
-Question.create!([
+# Question.create!([
+#   {
+#     text: "全体的に、私は自分自身に満足している。",
+#     score_type: 0
+#   },
+#   {
+#     text: "時々、自分は全くダメだと感じる。",
+#     score_type: 1
+#   },
+#   {
+#     text: "自分には良いところがいくつかあると思う。",
+#     score_type: 0
+#   },
+#   {
+#     text: "私は他の多くの人たちと同じくらいうまく物事をこなせると思う。",
+#     score_type: 0
+#   },
+#   {
+#     text: "私は自分を誇るべき点があまりないと感じる。",
+#     score_type: 1
+#   },
+#   {
+#     text: "時々、自分は役に立たないと感じることがあります。",
+#     score_type: 1
+#   },
+#   {
+#     text: "他の人と同じくらい、自分にも価値があると感じている。",
+#     score_type: 0
+#   },
+#   {
+#     text: "私はもっと自分自身を尊重できるようになりたいと思っている。",
+#     score_type: 1
+#   },
+#   {
+#     text: "全体的に見て、私は自分が出来損ないだと感じる傾向がある。",
+#     score_type: 1
+#   },
+#   {
+#     text: "自分に対して前向きな考えを持っている。",
+#     score_type: 0
+#   }
+# ])
+
+monthly_theme = MonthlyTheme.create!(
+  month: 2,
+  title: "愛と自己愛",
+  message: "他人を愛する前に、まず自分自身を愛しましょう。自己愛の大切さを学ぶ月です。"
+)
+
+monthly_theme.theme_resources.create!([
   {
-    text: "全体的に、私は自分自身に満足している。",
-    score_type: 0
+    content: "自己愛の重要性",
+    url: "https://www.clientpartners.jp/column/3549.html"
   },
   {
-    text: "時々、自分は全くダメだと感じる。",
-    score_type: 1
+    content: "自分を大切にする方法",
+    url: "https://kimochi-care.net/blog/archives/2010"
   },
   {
-    text: "自分には良いところがいくつかあると思う。",
-    score_type: 0
-  },
-  {
-    text: "私は他の多くの人たちと同じくらいうまく物事をこなせると思う。",
-    score_type: 0
-  },
-  {
-    text: "私は自分を誇るべき点があまりないと感じる。",
-    score_type: 1
-  },
-  {
-    text: "時々、自分は役に立たないと感じることがあります。",
-    score_type: 1
-  },
-  {
-    text: "他の人と同じくらい、自分にも価値があると感じている。",
-    score_type: 0
-  },
-  {
-    text: "私はもっと自分自身を尊重できるようになりたいと思っている。",
-    score_type: 1
-  },
-  {
-    text: "全体的に見て、私は自分が出来損ないだと感じる傾向がある。",
-    score_type: 1
-  },
-  {
-    text: "自分に対して前向きな考えを持っている。",
-    score_type: 0
+    content: "自己愛のエクササイズ",
+    url: "https://www.businessinsider.jp/post-231577"
   }
 ])
-
 puts "Sample data created successfully!"

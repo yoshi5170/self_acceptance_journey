@@ -1,23 +1,26 @@
 <% content_for( :title, t('.title'))%>
-<div class="bg-customBeige text-customGreen min-h-screen grid grid-rows-3">
-  <div class="input-area" >
-    <div class="text-center mt-5">
-        <h1 class="font-bold text-4xl py-4 my-4">自己否定脱却トレーニング</h1>
-        <p class="pt-5">自分を責めてしまう思考が頭をよぎったら、この機能を見てください。</p>
-        <p class="pb-10">思考を再評価し、自分を優しく見つめ直すトレーニングになります。</p>
+<div class="bg-customBeige text-customGreen min-h-screen">
+  <div class="input-area container mx-auto px-5 py-10">
+      <div class="text-center mt-5">
+          <h1 class="font-bold text-4xl py-4 my-4">自己否定脱却トレーニング</h1>
+          <p class="pt-5">自分を責めてしまう思考が頭をよぎったら、この機能を見てください。</p>
+          <p class="pb-10">思考を再評価し、自分を優しく見つめ直すトレーニングになります。</p>
+      </div>
+      <div class="flex justify-center">
+        <%= form_with(url: search_self_esteem_trainings_path, method: :get, class: "grid gap-4", data: { turbo: false })do |f| %>
+          <div class="px-8 py-10 mx-auto">
+            <div>
+              <%= f.text_area :text, size: "80x3", class: "w-full bg-customBeige3 border-2 border-customGreen3 p-2 rounded-lg", placeholder:"自己否定な思考を入力してください"%>
+            </div>
+          </div>
+          <div class="my-2 text-center">
+            <%= f.submit '変換', class: "bg-customGreen text-customBeige px-6 py-2 rounded-full drop-shadow-lg hover:bg-customGreen4 hover:drop-shadow-lg border-2 border-customGreen2", id: "convertButton"%>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <div class="flex flex-col items-center justify-center">
-      <%= form_with(url: search_self_esteem_trainings_path, method: :get, class: "grid gap-4", data: { turbo: false })do |f| %>
-        <div>
-          <%= f.text_area :text, size: "80x3", class: "bg-customBeige3 border-2 border-customGreen3 p-2 rounded-lg", placeholder:"自己否定な思考を入力してください"%>
-        </div>
-        <div class="justify-self-center">
-          <%= f.submit '変換', class: "bg-customGreen text-customBeige px-6 py-2 rounded-full drop-shadow-lg hover:bg-customGreen4 hover:drop-shadow-lg border-2 border-customGreen2", id: "convertButton"%>
-        </div>
-      <% end %>
+    <div class='animation-area hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 drop-shadow-2xl' id='animationArea'>
+      <%= image_tag 'flower.gif', size: "300x300", id: 'animationGif', class: 'border-2 border-customBeige2 rounded-full drop-shadow-lg'%>
     </div>
-  </div>
-  <div class='animation-area hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 drop-shadow-2xl' id='animationArea'>
-    <%= image_tag 'flower.gif', size: "300x300", id: 'animationGif', class: 'border-2 border-customBeige2 rounded-full drop-shadow-lg'%>
   </div>
 </div>
