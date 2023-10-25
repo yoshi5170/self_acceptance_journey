@@ -1,5 +1,5 @@
 class MonthlyTheme < ApplicationRecord
-  has_may :theme_resources, dependent: :destroy
+  has_many :theme_resources, dependent: :destroy
 
   def self.send_monthly_notification(month)
     monthly_theme = find_by(month: month)
