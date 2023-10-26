@@ -3,7 +3,8 @@
   <div class="space-y-4">
     <h1 class="text-2xl mb-4 text-center">診断の質問を登録する</h1>
     <div class="bg-slate-300 border-2 border-inherit p-5 rounded-xl" >
-      <%= form_with model: @question, url: admin_questions_path, local: true do |f|%>
+      <%= form_with model: [:admin, @question], local: true do |f|%>
+        <%= render 'shared/error_messages', object: f.object %>
         <div class="flex flex-col justify-center my-4">
           <%= f.label :text%>
           <%= f.text_field :text, class: "bg-white border-2 border-gray-200"%>
