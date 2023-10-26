@@ -1,7 +1,7 @@
 <% content_for(:title, t('.title')) %>
 <div class="text-customBrown h-screen flex flex-col items-center justify-center ">
   <div class="space-y-4">
-    <h1 class="text-2xl mb-4 text-center">新しい花を登録する</h1>
+    <h1 class="text-2xl mb-4 text-center">花を編集する</h1>
     <div class="bg-slate-300 border-2 border-inherit p-5 rounded-xl" >
       <%= form_with model:[:admin, @unlockable_flower], local: true do |f|%>
         <%= render 'shared/error_messages', object: f.object %>
@@ -18,7 +18,7 @@
           <%= f.file_field :flower_image %>
         </div>
         <div class="mt-4 text-center">
-          <%= f.submit "登録", class: "bg-orange-100 border-2 border-gray-200 rounded-lg px-2 py-1 hover:bg-orange-200" %>
+          <%= f.submit "編集", class: "bg-orange-100 border-2 border-gray-200 rounded-lg px-2 py-1 hover:bg-orange-200" %>
         <div>
       <%end%>
     </div>

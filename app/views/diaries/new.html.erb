@@ -3,17 +3,17 @@
   <div class="container mx-auto px-5 py-10">
     <h1 class="text-2xl font-bold text-center pt-4">幸せ日記作成</h1>
   </div>
-  <div class="container mx-auto px-5 py-8">
+  <div class="container mx-auto lg:px-5 py-8">
     <div class="flex justify-center">
       <h2 class="w-4/5"><%= @date %></h2>
     </div>
     <div class="flex justify-center">
-      <%= form_with model: @diary_form, url: diaries_path, class: "w-4/5" do |f| %>
+      <%= form_with model: @diary_form, url: diaries_path, class: "lg:w-4/5" do |f| %>
         <div class="border-dashed border-2 border-customGreen rounded-lg px-8 py-10 mx-auto">
           <div class="text-center">
             <p>今日のよかったことを入力してください</p>
           </div>
-          <div class="">
+          <div>
             <%= f.hidden_field :user_id, value: current_user.id, name: "diary_form[user_id]" %>
             <%= render 'shared/error_messages', object: @diary_form %>
               <% total_entries.times do |index| %>

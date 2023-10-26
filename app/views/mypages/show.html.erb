@@ -3,13 +3,13 @@
   <div class="container mx-auto px-5 py-10">
     <h1 class="text-2xl font-bold text-center text-customGreen pt-4">マイページ</h1>
   </div>
-  <div class="container mx-auto py-10 px-60">
-    <div class="bg-customBeige3 border-2 border-customGreen2 rounded-xl flex flex-col justify-center pt-10 pb-6">
-      <ul>
-        <li class="bg-customGreen4 text-customBeige text-center mx-40 mb-6 py-4 rounded-full hover:bg-customGreen hover:drop-shadow-lg border-2 border-customGreen2">
+  <div class="container mx-auto md:py-5 md:px-10 lg:px-40">
+    <div class="bg-customBeige3 border-2 border-customGreen2 rounded-xl text-center pt-6 pb-2 w-full md:flex md:flex-col md:items-center">
+      <ul class="mx-4 md:w-1/2 ">
+        <li class="bg-customGreen4 text-customBeige rounded-full hover:bg-customGreen hover:drop-shadow-lg border-2 border-customGreen2 mb-6 py-4">
           <%= link_to 'プロフィール編集', "#" %>
         </li>
-        <li class="bg-customGreen4 text-customBeige text-center mx-40 mb-6 py-4 rounded-full hover:bg-customGreen hover:drop-shadow-lg border-2 border-customGreen2">
+        <li class="bg-customGreen4 text-customBeige rounded-full hover:bg-customGreen hover:drop-shadow-lg border-2 border-customGreen2 mb-6 py-4">
           <%= link_to 'マイガーデン', garden_path %>
         </li>
       </ul>
