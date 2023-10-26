@@ -1,2 +1,26 @@
-<h1>Admin::Questions#new</h1>
-<p>Find me in app/views/admin/questions/new.html.erb</p>
+<% content_for(:title, t('.title')) %>
+<div class="text-customBrown h-screen flex flex-col items-center justify-center ">
+  <div class="space-y-4">
+    <h1 class="text-2xl mb-4 text-center">診断の質問を登録する</h1>
+    <div class="bg-slate-300 border-2 border-inherit p-5 rounded-xl" >
+      <%= form_with model: @question, url: admin_questions_path, local: true do |f|%>
+        <div class="flex flex-col justify-center my-4">
+          <%= f.label :text%>
+          <%= f.text_field :text, class: "bg-white border-2 border-gray-200"%>
+        </div>
+        <div class="flex flex-col justify-center my-4">
+          <%= f.label :score_type %>
+          <%= f.collection_radio_buttons :score_type, Question.score_types, :last, :first do |b| %>
+            <div class="mr-3">
+              <%= b.radio_button %>
+              <%= b.label %>
+            </div>
+          <% end %>
+        </div>
+        <div class="mt-4 text-center">
+          <%= f.submit "登録", class: "bg-orange-100 border-2 border-gray-200 rounded-lg px-2 py-1 hover:bg-orange-200" %>
+        <div>
+      <%end%>
+    </div>
+  </div>
+</div>
