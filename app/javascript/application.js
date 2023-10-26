@@ -1,12 +1,12 @@
 // Entry point for the build script in your package.json
-import "flower";
+import "./flower";
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "@fortawesome/fontawesome-free/js/all";
 //Turbo.session.drive = false
 
 
-
+console.log("JavaScript file");
 document.addEventListener("turbo:load", () => {
   let currentQuestion = 1;
   const totalQuestions = 10;
