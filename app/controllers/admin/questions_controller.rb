@@ -11,7 +11,7 @@ class Admin::QuestionsController < Admin::BaseController
   def create
     @question = Question.new(question_params)
     if @question.save
-      redirect_to questions_path, success: '質問をしました'
+      redirect_to admin_questions_path, success: '質問を作成しました'
     else
       flash.new[:danger] = '質問作成に失敗しました'
       render :new, status: :unprocessable_entity
@@ -24,7 +24,7 @@ class Admin::QuestionsController < Admin::BaseController
 
   def update
     if @question.update(question_params)
-      redirect_to questions_path, success: '質問をしました'
+      redirect_to admin_questions_path, success: '質問を更新しました'
     else
       flash.new[:danger] = '質問作成に失敗しました'
       render :edit, status: :unprocessable_entity
@@ -33,7 +33,7 @@ class Admin::QuestionsController < Admin::BaseController
 
   def destroy
     @question.destroy!
-    redirect_to questions_path, success: '質問を削除しました'
+    redirect_to admin_questions_path, success: '質問を削除しました'
   end
 
 private
