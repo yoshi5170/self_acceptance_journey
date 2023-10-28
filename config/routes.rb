@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   namespace :admin do
     get 'dashboards/index'
     root 'dashboards#index'
@@ -22,9 +23,6 @@ Rails.application.routes.draw do
   get 'top', to:'static_pages#top'
   get 'terms', to: 'static_pages#terms'
   get 'privacy', to: 'static_pages#privacy'
-  get "/auth/:provider/callback", to: "sessions#create"
-  get "/auth/failure", to: "sessions#failure"
-  delete "/sign_out", to: "sessions#destroy"
   resources :questions, only: [:index] do
     collection do
       post :calculate
