@@ -1,16 +1,13 @@
 class Admin::BaseController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_admin
   layout 'admin/layouts/application'
-  skip_before_action :require_login
-  helper_method :admin_logged_in?
-  before_action :not_authenticated
 
-  def admin_logged_in?
-    session[:admin_logged_in].present? && session[:admin_logged_in] == Rails.application.credentials.admin[:id]
-  end
+  private
 
-  def not_authenticated
-    unless admin_logged_in?
-      redirect_to admin_login_path, warning: t('defaults.message.require_login')
+  def check_admin
+    unless current_user.admin?
+      redirect_to root_path, warning: '権限がありません。'
     end
   end
 end
