@@ -13,19 +13,7 @@
     </thead>
     <tbody>
       <!-- row 1 -->
-      <% @unlockable_flowers.each do |flower| %>
-        <tr>
-          <td><%= flower.id %></td>
-          <td><%= flower.name %></td>
-          <td><%= flower.threshold %></td>
-          <td><%= image_tag (flower.flower_image).variant( resize:"40x40!" ) %></td>
-          <td>
-            <%= link_to "詳細", "#" %>
-            <%= link_to "編集", edit_admin_unlockable_flower_path(flower) %>
-            <%= link_to "削除", admin_unlockable_flower_path(flower), data: { turbo_method: :delete, turbo_confirm: "花を削除しますか?"}, class: "hover:text-red" %>
-          </td>
-        </tr>
-      <%end%>
+      <%= render partial: 'unlockable_flower', collection: @unlockable_flowers%>
     </tbody>
   </table>
 </div>
