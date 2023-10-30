@@ -1,0 +1,10 @@
+<tr>
+  <td><%= question.id %></td>
+  <td><%= question.text %></td>
+  <td><%= question.score_type %></td>
+  <td>
+    <%= link_to t('defaults.edit'), admin_question_path(question), class: "hover:text-green-600 border border-gray-400 p-2 m-2 rounded-lg" %>
+    <%= link_to t('defaults.edit'), edit_admin_question_path(question), class: "hover:text-yellow-600 border border-gray-400 p-2 m-2 rounded-lg" %>
+    <%= link_to t('defaults.delete'), admin_question_path(question), data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete_confirm')}, class: "hover:text-red-600 border border-gray-400 p-2 m-2 rounded-lg" %>
+  </td>
+</tr>
