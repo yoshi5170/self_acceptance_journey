@@ -1,12 +1,9 @@
 ja:
   defaults:
-    login: 'ログイン'
-    logout: 'ログアウト'
     terms_of_use: '利用規約'
     privacy_policy: 'プライバシーポリシー'
     contact: 'お問合せ'
-    login: "ログイン"
-    sign_out: "ログアウト"
+    sign_out: 'ログアウト'
     message:
       require_login: 'ログインしてください'
   static_pages:
@@ -17,15 +14,6 @@ ja:
       title: '利用規約'
     privacy:
       titile: 'プライバシーポリシー'
-  sessions:
-    new:
-      title: 'ログイン'
-    create:
-      success: 'ログインしました'
-    failure:
-      fail: 'ログインに失敗しました'
-    destroy:
-      success: 'ログアウトしました'
   mypages:
     show:
       title: 'マイページ'
@@ -60,7 +48,7 @@ ja:
     result:
       title: '診断結果'
   admin:
-    user_sessions:
+    sessions:
       new:
         title: 'ログイン'
       create:
@@ -76,3 +64,12 @@ ja:
         title: '花一覧'
       new:
         title: '花登録'
+      edit:
+        title: '花編集'
+    questions:
+      index:
+        title: '診断質問一覧'
+      new:
+        title: '診断質問作成'
+      edit:
+        title: '診断質問編集'
