@@ -4,8 +4,11 @@ ja:
     privacy_policy: 'プライバシーポリシー'
     contact: 'お問合せ'
     sign_out: 'ログアウト'
+    show: '詳細'
+    edit: '編集'
+    delete: '削除'
     message:
-      require_login: 'ログインしてください'
+      delete_confirm: '削除しますか?'
   static_pages:
     top:
       how_to: '使い方'
