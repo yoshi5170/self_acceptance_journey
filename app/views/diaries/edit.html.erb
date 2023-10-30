@@ -1,35 +1,14 @@
 <% content_for(:title, t('.title'))%>
 <div class="bg-customBeige text-customGreen min-h-screen">
   <div class="container mx-auto px-5 py-10">
-    <h1 class="text-2xl font-bold text-center pt-4">幸せ日記編集</h1>
+    <h1 class="text-2xl font-bold text-center pt-4"><%= t('.title') %></h1>
   </div>
   <div class="container mx-auto lg:px-5 py-8">
     <div class="flex justify-center">
-      <h2 class="w-4/5"> <%= @diary.date.to_date %>(<%= I18n.l(@diary.date, format: '%a') %>)</h2>
+      <h2 class="w-4/5"> <%= @diary.date %>(<%= I18n.l(@diary.date, format: '%a') %>)</h2>
     </div>
     <div class="flex justify-center">
-      <%= form_with model: @diary_form, url: diary_path(@diary), method: :patch, class: "lg:w-4/5" do |f| %>
-        <div class="border-dashed border-2 border-customGreen rounded-lg px-8 py-10 mx-auto">
-          <div class="text-center">
-            <p>今日のよかったことを入力してください</p>
-          </div>
-          <div>
-            <%= f.hidden_field :user_id, value: current_user.id, name: "diary_form[user_id]" %>
-            <%= render 'shared/error_messages', object: @diary_form %>
-              <% total_entries.times do |index| %>
-                <div class="my-4">
-                  <% if @diary_form.entries_ids.present? %>
-                    <%= f.hidden_field :entries_ids, multiple: true, value: @diary_form.entries_ids[index] %>
-                  <% end %>
-                  <%= f.text_area :entries_contents, size: "80x2", multiple: true, value: @diary_form.entries_contents[index], placeholder:"良かったことを入力", class: "w-full border-2 border-customGreen2 rounded-xl bg-customBeige py-2 px-4"%>
-                </div>
-              <% end %>
-          </div>
-        </div>
-        <div class="my-2 text-center">
-          <%= f.submit "編集する",  class: "bg-customGreen4 text-customBeige my-2 px-10 py-2 rounded-full drop-shadow-lg hover:bg-customGreen hover:drop-shadow-lg border-2 border-customGreen2"%>
-        </div>
-      <% end %>
+      <%= render 'form', diary_form: @diary_form, form_url: diary_path(@diary), form_method: :patch %>
     </div>
   </div>
 </div>
