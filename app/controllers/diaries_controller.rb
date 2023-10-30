@@ -12,7 +12,8 @@ class DiariesController < ApplicationController
 
 
   def create
-    @diary_form = DiaryForm.new(diary_form_params)
+    @date = Date.current
+    @diary_form = DiaryForm.new(diary_form_params.merge(user_id: current_user.id))
 
     if @diary_form.save
       redirect_to diaries_path, success: t('.success')
@@ -28,11 +29,11 @@ class DiariesController < ApplicationController
 
   def edit
     @diary_entries = @diary.diary_entries.order(:id)
-    @diary_form = DiaryForm.new(user_id: @diary.user_id, entries_contents: @diary_entries.map(&:content), entries_ids: @diary_entries.map(&:id))
+    @diary_form = DiaryForm.new(diary: @diary)
   end
 
   def update
-    @diary_form = DiaryForm.new(diary_form_params)
+    @diary_form = DiaryForm.new(diary_form_params, diary: @diary)
     if @diary_form.update
       redirect_to diary_path(@diary.id), success: t('.success')
     else
@@ -53,6 +54,6 @@ class DiariesController < ApplicationController
   end
 
   def diary_form_params
-    params.require(:diary_form).permit(:user_id, entries_contents: [], entries_ids: [])
+    params.require(:diary_form).permit(entries_contents: [], entries_ids: [])
   end
 end
