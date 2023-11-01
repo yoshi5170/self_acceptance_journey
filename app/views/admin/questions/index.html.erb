@@ -1,5 +1,6 @@
 <% content_for(:title, t('.title')) %>
 <div class="container mx-auto">
+  <h1 class="text-3xl my-10 text-center"><%= t('.title') %></h1>
   <table class="table m-4">
     <!-- head -->
     <thead>
@@ -12,18 +13,7 @@
     </thead>
     <tbody>
       <!-- row 1 -->
-      <% @questions.each do |question| %>
-        <tr>
-          <td><%= question.id %></td>
-          <td><%= question.text %></td>
-          <td><%= question.score_type %></td>
-          <td>
-            <%= link_to "詳細", admin_question_path(question), class: "hover:text-red" %>
-            <%= link_to "編集", edit_admin_question_path(question), class: "hover:text-red" %>
-            <%= link_to "削除", admin_question_path(question), data: { turbo_method: :delete, turbo_confirm: "質問をを削除しますか?"}, class: "hover:text-red" %>
-          </td>
-        </tr>
-      <% end %>
+      <%= render partial: 'question', collection: @questions %>
     </tbody>
   </table>
 </div>

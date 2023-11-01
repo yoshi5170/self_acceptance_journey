@@ -1,34 +1,43 @@
-<h2>Sign up</h2>
-
-<%= form_with model: @user, url: user_registration_path do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+<% content_for(:title, t('.sign_up'))%>
+<div class="bg-customBeige text-customGreen min-h-screen">
+  <div class="container mx-auto px-5 py-8" >
+    <h2 class="text-3xl font-bold text-center pt-4"><%= t('.sign_up') %></h2>
   </div>
+  <div class="container mx-auto px-5 py-8">
+    <div class="rounded-xl border-2 border-customGreen3 px-6 pt-10 pb-6 sm:mx-32 md:mx-40 lg:mx-80 lg:border-4 xl:mx-96">
+      <div class="flex flex-col">
+        <%= form_with model: @user, url: user_registration_path do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+          <div class="field mb-6">
+            <%= f.label :name %><br>
+            <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "w-full border-2 border-customGreen2 rounded-xl bg-customBeige3 py-2 px-4"%>
+          </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email" %>
+          <div class="field mb-6">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autocomplete: "email", class: "w-full border-2 border-customGreen2 rounded-xl bg-customBeige3 py-2 px-4"%>
+          </div>
+
+          <div class="field mb-6">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "new-password", class: "w-full border-2 border-customGreen2 rounded-xl bg-customBeige3 py-2 px-4"%>
+          </div>
+
+          <div class="field mb-6">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "w-full border-2 border-customGreen2 rounded-xl bg-customBeige3 py-2 px-4"%>
+          </div>
+
+          <div class="actions text-center border-2 border-customGreen2 rounded-xl bg-customBeige py-2 px-4 mt-10 mb-4 transition ease-in-out hover:bg-customGreen3 hover:drop-shadow-lg hover:-translate-y-1">
+            <%= f.submit  t('.sign_up') %>
+          </div>
+        <% end %>
+
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

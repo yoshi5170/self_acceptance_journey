@@ -1,9 +1,15 @@
 <header class="bg-customGreen flex flex-row justify-between items-center h-20">
-  <div class="text-orange-200 mx-4">
+  <div class="text-orange-200 mx-6 text-2xl font-bold">
     <%= link_to "JustBe U", "/" %>
   </div>
-  <div class="flex items-center space-x-1 mx-4">
-    <%= link_to 'ログイン', new_user_session_path %>
-    <%= link_to '新規登録', new_user_registration_path %>
+  <div class="flex items-center space-x-1 mx-6 text-customGreen2">
+    <%= link_to new_user_session_path, class:'mx-2' do %>
+      <i class="fa-solid fa-right-to-bracket text-center text-xl w-full"></i>
+      <p class="text-sm font-semibold"><%= t('devise.sessions.new.sign_in') %></p>
+    <% end %>
+    <%= link_to new_user_registration_path, class:'mx-2' do %>
+      <i class="fa-solid fa-user-plus text-center text-xl w-full"></i>
+      <p class="text-sm font-semibold"><%= t('devise.shared.links.sign_up') %></p>
+    <% end %>
   </div>
 </header>

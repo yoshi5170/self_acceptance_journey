@@ -1,0 +1,18 @@
+<%= form_with model:[:admin, unlockable_flower], local: true do |f|%>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="flex flex-col justify-center my-4">
+    <%= f.label :name%>
+    <%= f.text_field :name, class: "bg-white border-2 border-gray-200"%>
+  </div>
+  <div class="flex flex-col justify-center my-4">
+    <%= f.label :threshold %>
+    <%= f.number_field :threshold, class: "bg-white border-2 border-gray-200"%>
+  </div>
+  <div class="flex flex-col justify-center my-4">
+    <%= f.label :flower_image%>
+    <%= f.file_field :flower_image %>
+  </div>
+  <div class="mt-4 text-center">
+    <%= f.submit class: "bg-orange-100 border-2 border-gray-200 rounded-lg px-2 py-1 hover:bg-orange-200" %>
+  <div>
+<%end%>

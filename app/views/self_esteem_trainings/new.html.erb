@@ -2,15 +2,15 @@
 <div class="bg-customBeige text-customGreen min-h-screen">
   <div class="input-area container mx-auto px-5 py-10">
       <div class="text-center mt-5">
-          <h1 class="font-bold text-4xl py-4 my-4">自己否定脱却トレーニング</h1>
-          <p class="pt-5">自分を責めてしまう思考が頭をよぎったら、この機能を見てください。</p>
-          <p class="pb-10">思考を再評価し、自分を優しく見つめ直すトレーニングになります。</p>
+          <h1 class="font-bold text-xl sm:text-3xl py-4 my-4">自己否定脱却トレーニング</h1>
+          <p class="text-xs sm:text-sm md:text-base pt-5 pb-2 mx-6 md:mx-0">自分を責めてしまう思考が頭をよぎったら、この機能を見てください。</p>
+          <p class="text-xs sm:text-sm md:text-base pb-10 mx-6 md:mx-0">思考を再評価し、自分を優しく見つめ直すトレーニングになります。</p>
       </div>
       <div class="flex justify-center">
         <%= form_with(url: search_self_esteem_trainings_path, method: :get, class: "grid gap-4", data: { turbo: false })do |f| %>
-          <div class="px-8 py-10 mx-auto">
+          <div class="sm:px-8 sm:py-10 sm:mx-auto">
             <div>
-              <%= f.text_area :text, size: "80x3", class: "w-full bg-customBeige3 border-2 border-customGreen3 p-2 rounded-lg", placeholder:"自己否定な思考を入力してください"%>
+              <%= f.text_area :text, size: "80x3", class: "w-full bg-customBeige3 border-2 border-customGreen3 p-2 rounded-lg text-sm md:text-base", placeholder:"自己否定な思考を入力してください"%>
             </div>
           </div>
           <div class="my-2 text-center">

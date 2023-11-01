@@ -9,34 +9,34 @@
 
 
 # ユーザーを取得（もしこのようなユーザーが存在しない場合、適切にユーザーを選択または作成してください）
-# user = User.find_by(nickname: "yoshi_5170")
+user = User.find_by(id: 1)
 
-# # ユーザーが存在するかを確認
-# if user
-#   # UnlockableFlowerをthresholdの昇順で取得
-#   flowers = UnlockableFlower.order(threshold: :asc)
+# ユーザーが存在するかを確認
+if user
+  # UnlockableFlowerをthresholdの昇順で取得
+  flowers = UnlockableFlower.order(threshold: :asc)
 
-#   250.times do |i|
-#     flower_to_add = nil  # ここで繰り返しのたびにflower_to_addをリセット
+  80.times do |i|
+    flower_to_add = nil  # ここで繰り返しのたびにflower_to_addをリセット
 
-#     # トレーニングのための仮データを追加（必要であれば）
-#     # user.self_negation_trainings.create(trained_at: Time.current - i.days)
+    # トレーニングのための仮データを追加（必要であれば）
+    # user.self_negation_trainings.create(trained_at: Time.current - i.days)
 
-#     total_trainings = i + 1
-#     flowers.each do |flower|
-#       if total_trainings <= flower.threshold
-#         flower_to_add = flower
-#         break
-#       end
-#     end
+    total_trainings = i + 1
+    flowers.each do |flower|
+      if total_trainings <= flower.threshold
+        flower_to_add = flower
+        break
+      end
+    end
 
-#     if flower_to_add
-#       user.planted_flowers.create(unlockable_flower: flower_to_add, added_at: Time.current - i.hours)
-#     end
-#   end
-# else
-#   puts "指定されたユーザーが存在しないため、データを作成できませんでした。"
-# end
+    if flower_to_add
+      user.planted_flowers.create(unlockable_flower: flower_to_add, added_at: Time.current - i.hours)
+    end
+  end
+else
+  puts "指定されたユーザーが存在しないため、データを作成できませんでした。"
+end
 
 
 
@@ -97,24 +97,24 @@
 #   }
 # ])
 
-monthly_theme = MonthlyTheme.create!(
-  month: 2,
-  title: "愛と自己愛",
-  message: "他人を愛する前に、まず自分自身を愛しましょう。自己愛の大切さを学ぶ月です。"
-)
+# monthly_theme = MonthlyTheme.create!(
+#   month: 2,
+#   title: "愛と自己愛",
+#   message: "他人を愛する前に、まず自分自身を愛しましょう。自己愛の大切さを学ぶ月です。"
+# )
 
-monthly_theme.theme_resources.create!([
-  {
-    content: "自己愛の重要性",
-    url: "https://www.clientpartners.jp/column/3549.html"
-  },
-  {
-    content: "自分を大切にする方法",
-    url: "https://kimochi-care.net/blog/archives/2010"
-  },
-  {
-    content: "自己愛のエクササイズ",
-    url: "https://www.businessinsider.jp/post-231577"
-  }
-])
-puts "Sample data created successfully!"
+# monthly_theme.theme_resources.create!([
+#   {
+#     content: "自己愛の重要性",
+#     url: "https://www.clientpartners.jp/column/3549.html"
+#   },
+#   {
+#     content: "自分を大切にする方法",
+#     url: "https://kimochi-care.net/blog/archives/2010"
+#   },
+#   {
+#     content: "自己愛のエクササイズ",
+#     url: "https://www.businessinsider.jp/post-231577"
+#   }
+# ])
+# puts "Sample data created successfully!"

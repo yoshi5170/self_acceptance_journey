@@ -3,25 +3,7 @@
   <div class="space-y-4">
     <h1 class="text-2xl mb-4 text-center">診断の質問を編集する</h1>
     <div class="bg-slate-300 border-2 border-inherit p-5 rounded-xl" >
-      <%= form_with model: [:admin, @question], local: true do |f|%>
-        <%= render 'shared/error_messages', object: f.object %>
-        <div class="flex flex-col justify-center my-4">
-          <%= f.label :text%>
-          <%= f.text_field :text, class: "bg-white border-2 border-gray-200"%>
-        </div>
-        <div class="flex flex-col justify-center my-4">
-          <%= f.label :score_type %>
-          <%= f.collection_radio_buttons :score_type, Question.score_types, :last, :first do |b| %>
-            <div class="mr-3">
-              <%= b.radio_button %>
-              <%= b.label %>
-            </div>
-          <% end %>
-        </div>
-        <div class="mt-4 text-center">
-          <%= f.submit "編集", class: "bg-orange-100 border-2 border-gray-200 rounded-lg px-2 py-1 hover:bg-orange-200" %>
-        <div>
-      <%end%>
+      <%= render 'form', question: @question %>
     </div>
   </div>
 </div>

@@ -80,6 +80,19 @@ document.addEventListener("turbo:load", () => {
       updateSelectedLabelBackground(currentQuestion);
       updateButtonVisibility();
     }
+
+    if (event.target.id === 'submit-button') {
+      const lastQuestionAnswerSelected = document.querySelector(`input[data-question-id="10"]:checked`);
+
+      if (!lastQuestionAnswerSelected) {
+          // エラーメッセージを表示する
+          document.getElementById(`error_message`).classList.remove('hidden');
+          event.preventDefault();
+          return;
+      } else {
+          document.getElementById(`error_message`).classList.add('hidden');
+      }
+    }
   });
 
 });

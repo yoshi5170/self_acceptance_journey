@@ -15,6 +15,7 @@ module.exports = {
         customGreen2: '#B7B7A4',
         customGreen3: '#c8c8ba',
         customGreen4: '#80866e',
+        customGreen5: '#6F7D42',
         customBrown: '#B98B73',
         customBrown2: '#ddb892',
         customBrown3: '#a98467',
