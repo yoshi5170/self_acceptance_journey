@@ -13,7 +13,13 @@ class QuestionsController < ApplicationController
 
   def result
     @total_score = session[:total_score]
-    session.delete(:total_score)
+    if @total_score
+      @result = Result.find_by("score_range_start <= ? AND score_range_end >= ?", @total_score, @total_score)
+      session.delete(:total_score)
+    else
+      redirect_to root_path, danger: "診断し直してください"
+      return
+    end
   end
 
   private
