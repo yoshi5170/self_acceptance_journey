@@ -1,10 +1,10 @@
 <div class="bg-customBeige text-customBrown min-h-screen flex flex-col justify-center items-center">
-  <div class>
+  <div>
     <%= image_tag 'JustBeU.png', size: '500x500', class: 'rounded-lg' %>
   </div>
   <h1 class="py-2 mb-4">まずは自己否定度診断をしてみよう！</h1>
-  <div>
-    <%= link_to (t '.do_test'), questions_path, class: "bg-customGreen text-customBeige rounded-lg drop-shadow-lg hover:bg-customGreen4 hover:drop-shadow-lg border-2 border-customGreen2 py-2 px-4"%>
+  <div class="text-sm md:text-base">
+    <%= link_to (t '.do_test'), questions_path, class: "bg-customGreen text-customBeige rounded-xl drop-shadow-lg hover:bg-customGreen4 hover:drop-shadow-lg border-2 border-customGreen2 py-2 px-2 md:px-4"%>
   </div>
   <p class="mt-10"><%= t '.how_to' %></p>
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
