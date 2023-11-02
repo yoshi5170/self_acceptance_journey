@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_28_125230) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_01_123752) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -84,6 +84,24 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_28_125230) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "recommendations", force: :cascade do |t|
+    t.bigint "result_id", null: false
+    t.string "title", null: false
+    t.text "description", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["result_id"], name: "index_recommendations_on_result_id"
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.integer "score_range_start", null: false
+    t.integer "score_range_end", null: false
+    t.text "description", null: false
+    t.string "title", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "self_esteem_trainings", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.datetime "trained_at", null: false
@@ -128,6 +146,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_28_125230) do
   add_foreign_key "diary_entries", "diaries"
   add_foreign_key "planted_flowers", "unlockable_flowers"
   add_foreign_key "planted_flowers", "users"
+  add_foreign_key "recommendations", "results"
   add_foreign_key "self_esteem_trainings", "users"
   add_foreign_key "theme_resources", "monthly_themes"
 end
