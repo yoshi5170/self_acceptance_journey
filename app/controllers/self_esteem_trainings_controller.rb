@@ -1,10 +1,10 @@
 class SelfEsteemTrainingsController < ApplicationController
-  before_action :set_token, only: :search
+  before_action :set_token, only: :result
 
   def new
   end
 
-  def search
+  def result
     # OpenAIへのリクエストを行い、結果を取得
     additional_prompt = "入力された自己否定的な文を自己受容できるような文に変換して"
     #prompt = "Taking any self-deprecating statement such as '#{text_params}', rephrase it into a positive affirmation emphasizing inherent worth and personal growth in less than 30 words."

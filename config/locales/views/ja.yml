@@ -22,8 +22,8 @@ ja:
       title: 'マイページ'
   self_esteem_trainings:
     new:
-      title: '自己否定脱却トレーニング'
-    search:
+      title: '自己受容トレーニング'
+    result:
       title: '結果'
   gardens:
     show:
