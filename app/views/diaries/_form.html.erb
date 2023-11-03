@@ -1,5 +1,5 @@
   <%= form_with model: diary_form, url: form_url, method: form_method, class: "lg:w-4/5" do |f| %>
-    <div class="border-dashed border-2 border-customGreen rounded-lg px-8 py-10 mx-auto">
+    <div class="border-dashed border-2 border-customGreen6 rounded-lg px-8 py-10 mx-auto">
       <div class="text-center">
         <p>今日のよかったことを入力してください</p>
       </div>
@@ -10,12 +10,12 @@
             <% if diary_form.entries_ids.present? %>
               <%= f.hidden_field :entries_ids, multiple: true, value: diary_form.entries_ids[index] %>
             <% end %>
-            <%= f.text_area :entries_contents, size: "80x2", multiple: true, value: diary_form.entries_contents[index], placeholder:"良かったことを入力", class: "w-full border-2 border-customGreen2 rounded-xl bg-customBeige3 py-2 px-4"%>
+            <%= f.text_area :entries_contents, size: "80x2", multiple: true, value: diary_form.entries_contents[index], placeholder:"良かったことを入力", class: "w-full border-2 border-customGreen7 rounded-xl bg-customBeige3 py-2 px-4"%>
           </div>
         <% end %>
       </div>
     </div>
     <div class="my-2 text-center">
-      <%= f.submit form_method == :post ? '登録する' : '編集する', class: "bg-customGreen4 text-customBeige my-2 px-10 py-2 rounded-full drop-shadow-lg hover:bg-customGreen hover:drop-shadow-lg border-2 border-customGreen2"%>
+      <%= f.submit form_method == :post ? '登録する' : '編集する', class: "bg-customGreen6 my-2 px-10 py-2 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2"%>
     </div>
   <% end %>
