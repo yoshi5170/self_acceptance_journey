@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   resources :self_esteem_trainings, only: %i[new] do
     collection do
-      get 'search'
+      get 'result'
     end
   end
 

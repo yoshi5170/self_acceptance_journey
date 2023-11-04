@@ -7,7 +7,7 @@ import "@fortawesome/fontawesome-free/js/all";
 
 
 console.log("JavaScript file");
-document.addEventListener("turbo:load", () => {
+document.addEventListener("DOMContentLoaded", () => {
   let currentQuestion = 1;
   const totalQuestions = 10;
 

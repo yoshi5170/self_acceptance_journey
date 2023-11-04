@@ -1,5 +1,5 @@
-<header class="bg-customGreen flex flex-row justify-between items-center h-20">
-  <div class="text-orange-200  ml-2 md:mx-6 text-xl md:text-2xl font-bold">
+<header class="bg-customGreen5 flex flex-row justify-between items-center h-20">
+  <div class="text-customGreen3 ml-2 md:mx-6 text-xl md:text-2xl font-bold">
     <%= link_to "JustBe U", "/" %>
   </div>
   <div class="flex items-center space-x-1 md:mx-6 text-customGreen2">
@@ -13,31 +13,27 @@
     <% end %>
 
     <nav class="md:hidden">
-      <details class="dropdown dropdown-end hover:text-customBeige3">
-        <summary class="text-orange-200 m-1 btn bg-customGreen border-none hover:bg-customGreen">
+      <details class="dropdown dropdown-end">
+        <summary class="text-customGreen2 m-1 btn bg-customGreen5 border-none hover:bg-customGreen5">
           <i class="fa-solid fa-bars h-6 w-8"></i>
         </summary>
-        <ul class="dropdown-content z-[1] menu px-6 py-2 shadow rounded-xl bg-customGreen w-80 text-white mt-3">
-          <div class="flex flex-row justify-start">
-            <li class="hover:bg-neutral-600 hover:rounded-xl">
+          <ul class="dropdown-content z-[1] menu px-4 py-2 shadow rounded-xl bg-customGreen5 w-80 text-customGreen2 mt-3">
+            <li class="hover:bg-customGreen hover:rounded-xl">
               <%= link_to new_user_session_path, class:'mx-2' do %>
                 <i class="fa-solid fa-right-to-bracket text-center text-lg w-full"></i>
                 <p class="text-sm font-semibold"><%= t('devise.sessions.new.sign_in') %></p>
               <% end %>
             </li>
-          </div>
-          <div class="flex flex-row justify-start">
-            <li class="hover:bg-neutral-600 hover:rounded-xl mt-2">
+            <li class="hover:bg-customGreen hover:rounded-xl mt-2">
               <%= link_to new_user_registration_path, class:'mx-2' do %>
                 <i class="fa-solid fa-user-plus text-center text-lg w-full"></i>
                 <p class="text-sm font-semibold"><%= t('devise.shared.links.sign_up') %></p>
               <% end %>
             </li>
-          </div>
-          <li class="hover:bg-neutral-600 hover:rounded-xl border-t-2 border-customGreen4 mt-4 pt-2">
-            <%= link_to "自己否定度診断", questions_path, class:"text-sm font-semibold mx-2 my-2" %>
-          </li>
-        </ul>
+            <li class="hover:bg-customGreen hover:rounded-xl border-t-2 border-customGreen4 mt-4 pt-2">
+              <%= link_to "自己否定度診断", questions_path, class:"text-sm font-semibold mx-2 my-2" %>
+            </li>
+          </ul>
       </details>
     </nav>
   </div>

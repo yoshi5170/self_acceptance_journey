@@ -98,24 +98,20 @@
 # ])
 
 monthly_theme = MonthlyTheme.create!(
-  month: 2,
-  title: "愛と自己愛",
-  message: "他人を愛する前に、まず自分自身を愛しましょう。自己愛の大切さを学ぶ月です。"
+  month: 11,
+  title: "セルフケアの重要性",
+  message: "心と体を大切に。この月は自分自身のケアにフォーカスしましょう。"
 )
 
 monthly_theme.theme_resources.create!([
   {
-    content: "自己愛の重要性",
-    url: "https://www.clientpartners.jp/column/3549.html"
+    content: "瞑想",
+    url: "https://www.youtube.com/watch?v=PZDqMqKyhNo"
   },
   {
-    content: "自分を大切にする方法",
-    url: "https://kimochi-care.net/blog/archives/2010"
+    content: "リラクゼーションテクニック",
+    url: "https://voi.id/ja/lifestyle/313654"
   },
-  {
-    content: "自己愛のエクササイズ",
-    url: "https://www.businessinsider.jp/post-231577"
-  }
 ])
 puts "Sample data created successfully!"
 
@@ -190,3 +186,23 @@ puts "Sample data created successfully!"
 # result4.recommendations.create!(title: "月次のテーマメッセージ", description: "毎月のテーマに基づいてのメッセージやアドバイスを受け取り、自己受容のヒントやサポートを得られます。")
 
 # puts "Sample data created successfully!"
+
+# 昨日の日付の日記と日記エントリを作成
+# user = User.find_by(email: 'sample@example.com')
+
+# yesterday_diary = Diary.create!(date: Date.yesterday, user_id: user.id)
+
+# DiaryEntry.create!([
+#   { content: '美味しいコーヒーを飲めた', diary_id: yesterday_diary.id },
+#   { content: '仕事で大きな進捗があった', diary_id: yesterday_diary.id },
+#   { content: '友人から嬉しいメッセージをもらった', diary_id: yesterday_diary.id }
+# ])
+
+# # 明日の日付の日記と日記エントリを作成（未来の日記ということで仮想の内容を登録）
+# tomorrow_diary = Diary.create!(date: Date.tomorrow, user_id: user.id)
+
+# DiaryEntry.create!([
+#   { content: '予定していたプロジェクトを前倒しで完了できそう', diary_id: tomorrow_diary.id },
+#   { content: '散歩中に綺麗な花を見つけた', diary_id: tomorrow_diary.id },
+#   { content: '新しいレシピで料理を試みて大成功', diary_id: tomorrow_diary.id }
+# ])

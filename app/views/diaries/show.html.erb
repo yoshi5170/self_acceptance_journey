@@ -1,5 +1,5 @@
 <% content_for(:title, t('.title'))%>
-<div class="bg-customBeige text-customGreen min-h-screen">
+<div class="bg-customBeige text-customGreen5 min-h-screen">
   <div class="container mx-auto px-5 py-10">
     <h1 class="text-2xl font-bold my-8 text-center">幸せ日記詳細</h1>
   </div>
@@ -8,17 +8,17 @@
       <h2 class="w-4/5"><%= @diary.created_at.to_date %>（<%= I18n.l(@diary.created_at, format: '%a') %>）</h2>
     </div>
     <div class="flex justify-center ">
-      <div class="border-dashed border-2 border-customGreen rounded-xl lg:w-4/5">
+      <div class="border-dashed border-2 border-customGreen6 rounded-xl lg:w-4/5">
         <div class="px-8 pt-16 pb-10 mx-auto">
           <% @diary.diary_entries.each_with_index do |entry, index| %>
-            <p class='bg-customGreen2 text-customGreen rounded-xl py-2 px-4 mb-6'><%= index+1 %>. <%= entry.content %></p>
+            <p class='bg-customGreen7 text-customGreen5 rounded-xl py-2 px-4 mb-6'><%= index+1 %>. <%= entry.content %></p>
           <% end %>
         </div>
       </div>
     </div>
     <div class="text-center my-8">
-      <%= link_to "編集", edit_diary_path(@diary), class: "bg-customGreen4 text-customBeige mx-6 my-2 px-5 py-2 rounded-full drop-shadow-lg hover:bg-customGreen hover:drop-shadow-lg border-2 border-customGreen2" %>
-      <%= link_to "削除", diary_path(@diary), class:"bg-customGreen4 text-customBeige mx-6 my-2 px-5 py-2 rounded-full drop-shadow-lg hover:bg-customGreen hover:drop-shadow-lg border-2 border-customGreen2", data: { turbo_method: :delete, turbo_confirm: "日記を削除しますか?" } %>
+      <%= link_to "編集", edit_diary_path(@diary), class: "bg-customGreen6 text-customGreen5 mx-6 my-2 px-5 py-2 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2" %>
+      <%= link_to "削除", diary_path(@diary), class:"bg-customGreen6 text-customGreen5 mx-6 my-2 px-5 py-2 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2", data: { turbo_method: :delete, turbo_confirm: "日記を削除しますか?" } %>
     </div>
   </div>
 </div>
