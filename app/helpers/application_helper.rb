@@ -8,4 +8,34 @@ module ApplicationHelper
 
     page_title.empty? ? base_title : page_title + '|' + base_title
   end
+
+  def default_meta_tags
+    {
+      site: 'JustBe U',
+      title: 'あなたの自己受容への旅をナビゲート',
+      reverse: true,
+      charset: 'utf-8',
+      description: 'JustBe Uでは、ありのままの自分を受け入れる手助けをします。診断から始まり、AIを活用した自己受容トレーニング、励ましのメッセージ、幸せ日記まで、自己否定の連鎖を断ち切り、自己受容へと向かう一歩を踏み出しましょう。自分の全てを受け止める旅、今スタートです。',
+      keywords: '自己受容, 自己肯定, 自己愛, ポジティブ思考, マインドフルネス, パーソナルグロース, セルフヘルプ, 自己改善, メンタルヘルス, ウェルビーイング, 自己受容を高める, 自己認識, セルフケア',
+      canonical: request.original_url,
+      separator: '|',
+      icon: [
+        { href: image_url('favicon.png') }
+      ],
+      og: {
+        site_name: :site,
+        title: :title,
+        description: :description,
+        type: 'website',
+        url: request.original_url,
+        image: image_url('ogp.png'),
+        local: 'ja-JP'
+      },
+      # Twitter用の設定を個別で設定する
+      twitter: {
+        card: 'summary_large_image',
+        image: image_url('ogp.png')
+      }
+    }
+  end
 end
