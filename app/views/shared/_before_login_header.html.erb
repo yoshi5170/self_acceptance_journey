@@ -19,19 +19,19 @@
         </summary>
           <ul class="dropdown-content z-[1] menu px-4 py-2 shadow rounded-xl bg-customGreen5 w-80 text-customGreen2 mt-3">
             <li class="hover:bg-customGreen hover:rounded-xl">
-              <%= link_to new_user_session_path, class:'mx-2' do %>
-                <i class="fa-solid fa-right-to-bracket text-center text-lg w-full"></i>
+              <%= link_to new_user_session_path, class:'flex items-center mx-2' do %>
+                <i class="fa-solid fa-right-to-bracket text-center text-lg"></i>
                 <p class="text-sm font-semibold"><%= t('devise.sessions.new.sign_in') %></p>
               <% end %>
             </li>
             <li class="hover:bg-customGreen hover:rounded-xl mt-2">
-              <%= link_to new_user_registration_path, class:'mx-2' do %>
-                <i class="fa-solid fa-user-plus text-center text-lg w-full"></i>
+              <%= link_to new_user_registration_path, class:'flex items-center mx-2' do %>
+                <i class="fa-solid fa-user-plus text-center text-lg"></i>
                 <p class="text-sm font-semibold"><%= t('devise.shared.links.sign_up') %></p>
               <% end %>
             </li>
             <li class="hover:bg-customGreen hover:rounded-xl border-t-2 border-customGreen4 mt-4 pt-2">
-              <%= link_to "自己否定度診断", questions_path, class:"text-sm font-semibold mx-2 my-2" %>
+              <%= link_to "自己否定度診断", questions_path, class:"text-sm font-semibold mx-2 my-2", data: { turbo: false }%>
             </li>
           </ul>
       </details>
