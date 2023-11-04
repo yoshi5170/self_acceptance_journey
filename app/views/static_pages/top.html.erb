@@ -1,14 +1,103 @@
-<div class="bg-customBeige text-customBrown min-h-screen flex flex-col justify-center items-center">
-  <div>
-    <%= image_tag 'JustBeU.png', size: '500x500', class: 'rounded-lg' %>
+<div class="bg-customBeige text-customGreen5 min-h-screen flex flex-col justify-center items-center">
+  <div class="container mx-auto py-2 px-4 my-20">
+    <%= image_tag 'JustBeU.png', size: '500x500', class: 'rounded-lg mx-auto' %>
+    <p class="text-center text-customBrown font-bold text-lg lg:text-xl italic tracking-wide">自己受容の旅を始めてみませんか?</p>
   </div>
-  <h1 class="py-2 mb-4">まずは自己否定度診断をしてみよう！</h1>
-  <%= link_to (t '.do_test'), questions_path, class: "text-sm md:text-base bg-customGreen text-customBeige rounded-xl drop-shadow-lg hover:bg-customGreen4 hover:drop-shadow-lg border-2 border-customGreen2 py-2 px-2 md:px-4"%>
-  <p class="mt-10"><%= t '.how_to' %></p>
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5" />
-  </svg>
-  <div class="line-it-button" data-lang="ja" data-type="friend" data-env="REAL"   data-lineId="@422itjde" style="display: none;"></div>
-  <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+
+  <div class="container mx-auto py-4 text-sm md:text-base mt-10 sm:px-4">
+    <div class="bg-customGreen5 text-customGreen7 px-4 pt-4 pb-8 sm:rounded-xl sm:mx-10 md:mx-24 lg:mx-46 sm:px-8 py-4">
+      <h2 class="font-bold text-lg mt-2 mb-4 md:text-xl">JustBe U にようこそ</h2>
+      <p class="leading-loose">JustBe U は自分を否定的に捉えてしまう部分を自己受容できるようサポートするサービスです。</p>
+      <p class="leading-loose">自分のプラス面もマイナス面も受け入れることで新たな視点から物事を見ることができるようなるかもしれません。</p>
+      <p class="leading-loose">🌱 自己受容の旅の第一歩として、まずは自己否定度診断をしてあなたの現在地を確認しましょう。ログイン不要で今すぐ始められます。</p>
+      <p class="leading-loose">診断結果によってあなたにおすすめの機能を提案します！</p>
+    </div>
+  </div>
+
+  <i class="fa-solid fa-arrow-down fa-2xl text-customGreen6 mt-4 mb-2"></i>
+  <%= link_to "今すぐ診断を始める", questions_path, data: { turbo: false }, class: "text-sm md:text-base bg-customGreen7 text-customGreen5 rounded-xl drop-shadow-lg hover:bg-customGreen6 hover:drop-shadow-lg border-2 border-customGreen2 py-2 px-4 md:px-4"%>
+
+  <div class="container mx-auto py-4 text-sm md:text-base mt-10 sm:px-4">
+    <div class="px-4 py-4 sm:mx-10 md:mx-24 lg:mx-46 sm:px-0">
+      <h2 class="font-bold text-lg mt-2 mb-4 md:text-xl">JustBe U でできること</h2>
+      <div class="collapse collapse-plus bg-customBeige3 mb-4 border border-customGreen5">
+        <input type="radio" name="my-accordion-3" checked="checked" />
+        <div class="collapse-title text-base font-medium">
+          月刊セルフケア
+        </div>
+        <div class="collapse-content">
+          <%= image_tag 'screen06.png', size: '320x563', class: 'rounded-lg mx-auto border border-customGreen2 mb-4' %>
+          <div class="py-2 mb-4 md:mx-16 lg:mx-24 xl:mx-48">
+            <p class="py-2">
+              💌 LINEで毎月のスタートに、自分を受け入れるためのヒント受け取りましょう!
+              各月のコンテンツは自己受容するためのアドバイスや実践的なエクササイズ、有益なリソースを提供します。
+              一年を通じて自己受容に必要なスキルや考え方を広げ、自分自身との関係を深める旅をサポートします。
+            </p>
+            <p class="text-xs text-gray-400 mt-4 mb-2 text-center">まずは下のリンクまたはQRコードから友達登録をお願いします</p>
+            <div class="flex flex-col justify-center items-center mt-2">
+              <div class="line-it-button" data-lang="ja" data-type="friend" data-env="REAL"   data-lineId="@733fqpjd" style="display: none;"></div>
+              <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+              <div class="mt-4">
+                <img src="https://qr-official.line.me/gs/M_733fqpjd_BW.png?oat_content=qr" width="100">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="collapse collapse-plus bg-customBeige3 mb-4 border border-customGreen5">
+        <input type="radio" name="my-accordion-3" />
+        <div class="collapse-title text-base font-medium">
+          自己受容トレーニング
+        </div>
+        <div class="collapse-content">
+          <%= image_tag 'screen01.png', size: '320x563', class: 'rounded-lg mx-auto border border-customGreen2 mb-4' %>
+          <div class="py-2 mb-4 md:mx-16 lg:mx-24 xl:mx-48">
+            <p>
+            自分を厳しく責めてしまうこと、ありますよね？でも、その考えを少し変えてみるだけで、自分自身をもっと受け入れられるようになります。
+            自己受容トレーニングではあなたが入力した自己否定的な思考や感情を自己受容に向けた視点でAIが変換してくれます。
+            自分を責める代わりに、自分の弱点や失敗を含めて全ての自分を受け入れる手助けをしてくれます。
+            </p>
+          </div>
+          <%= image_tag 'screen02.png', size: '320x563', class: 'rounded-lg mx-auto border border-customGreen2 mb-4' %>
+        </div>
+      </div>
+      <div class="collapse collapse-plus bg-customBeige3 mb-4 border border-customGreen5">
+        <input type="radio" name="my-accordion-3" />
+        <div class="collapse-title text-base font-medium">
+          マイガーデン
+        </div>
+        <div class="collapse-content">
+          <%= image_tag 'screen03.png', size: '320x563', class: 'rounded-lg mx-auto border border-customGreen2 mb-4' %>
+          <div class="py-2 mb-4 md:mx-16 lg:mx-24 xl:mx-48">
+            <p>
+              マイガーデンでは、自己受容の旅を視覚的に表現します。自己受容トレーニングをするとマイガーデンに花が咲き、総花数と週ごとの成長が目に見える形で表示されます。
+              使えば使うほど、ガーデンに色とりどりの花が咲き誇り、自己受容への成長を実感することができます。
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="collapse collapse-plus bg-customBeige3 mb-4 border border-customGreen5">
+        <input type="radio" name="my-accordion-3" />
+        <div class="collapse-title text-base font-medium">
+          幸せ日記
+        </div>
+        <div class="collapse-content">
+          <%= image_tag 'screen04.png', size: '320x563', class: 'rounded-lg mx-auto border border-customGreen2 mb-4' %>
+          <div class="py-2 mb-4 md:mx-16 lg:mx-24 xl:mx-48">
+            <p>
+              幸せ日記は、日々の小さな幸せを見つめ直すためのツールです。
+              1日の終わりにその日の良かった、うれしかった、幸せだと感じたことを3つ記録します。
+              これをすると、悪いことばかりに目がいくのを少し変えることができて、良かった点にも気づけるようになります。
+              寝る前に良かったことを書き留める習慣は、日常の中で感じるポジティブな瞬間を増やすことができるため、
+              自己受容につながります。特別な出来事でなくても、日常の些細なことを見つけ出し、１日を良いものとして終える手助けをします。
+            </p>
+          </div>
+          <%= image_tag 'screen05.png', size: '320x563', class: 'rounded-lg mx-auto border border-customGreen2 mb-4' %>
+          <p class="py-2 mb-4 md:mx-16 lg:mx-24 xl:mx-48 xl:text-center">日記の一覧ページから今までの日記の記録を確認することができます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
