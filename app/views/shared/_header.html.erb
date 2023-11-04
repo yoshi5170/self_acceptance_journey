@@ -1,10 +1,10 @@
 <header class="bg-customGreen5 flex flex-row justify-between items-center h-20">
   <div class="text-customGreen3 mx-6 text-2xl font-bold">
-      <%= link_to "JustBe U", "/" %>
+      <%= link_to "JustBe U", "/", data: { turbo: false }%>
   </div>
   <div class="flex items-center space-x-4 mx-4">
     <div class="hidden md:block text-customGreen2 mx-4 text-customGreen2">
-      <%= link_to "自己否定度診断", questions_path %>
+      <%= link_to "自己否定度診断", questions_path, data: { turbo: false }%>
     </div>
     <nav>
       <details class="dropdown dropdown-end">
@@ -16,7 +16,7 @@
           <li class="hover:bg-neutral-600 hover:rounded-xl"><%= link_to "自己受容トレーニング", new_self_esteem_training_path, data: { turbo: false }%></li>
           <li class="hover:bg-neutral-600 hover:rounded-xl"><%= link_to "幸せ日記一覧", diaries_path %></li>
           <li class="hover:bg-neutral-600 hover:rounded-xl"><%= link_to "今日の幸せ日記を作成", new_diary_path %></li>
-          <li class="md:hidden hover:bg-neutral-600 hover:rounded-xl"><%= link_to "自己否定度診断", questions_path %></li>
+          <li class="md:hidden hover:bg-neutral-600 hover:rounded-xl"><%= link_to "自己否定度診断", questions_path, data: { turbo: false }%></li>
           <li class="hover:bg-neutral-600 hover:rounded-xl"><%= link_to t('defaults.sign_out'), destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "ログアウトしますか?" } %></li>
         </ul>
       </details>
