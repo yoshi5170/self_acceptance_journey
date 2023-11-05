@@ -3,12 +3,15 @@
   <div class="input-area container mx-auto px-5 py-10">
       <div class="text-center mt-5">
           <h1 class="font-bold text-xl sm:text-3xl py-4 my-4">自己受容トレーニング</h1>
-          <p class="text-xs sm:text-sm md:text-base pt-5 pb-2 mx-6 md:mx-0">自分の頭に浮かぶ否定的な思考に気づいたら、それを自己受容に変えていきましょう。</p>
+          <p class="text-sm md:text-base pt-4 pb-8 mx-2 md:mx-0">自分の頭に浮かぶ否定的な思考に気づいたら、それを自己受容に変えていきましょう。</p>
       </div>
       <div class="flex justify-center">
         <%= form_with(url: result_self_esteem_trainings_path, method: :get, class: "grid gap-4", data: { turbo: false })do |f| %>
           <div class="sm:px-8 sm:py-10 sm:mx-auto">
             <div>
+              <p class="text-xs text-rose-900">*1日にトレーニングできる回数は2回までです。</p>
+              <p class="text-xs text-rose-900">*AIからの返答が10~20秒ほどかかります。</p>
+              <p class="text-xs text-rose-900">*50文字以内で入力してください</p>
               <%= f.text_area :text, size: "80x3", class: "w-full bg-customBeige3 border-2 border-customGreen3 p-2 rounded-lg text-sm md:text-base", placeholder:"例）人前で話すといつも緊張してしまう。こんなに緊張してしまう自分はダメだ。"%>
             </div>
           </div>
