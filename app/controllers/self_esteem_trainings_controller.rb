@@ -8,12 +8,11 @@ class SelfEsteemTrainingsController < ApplicationController
     # 今日のトレーニング回数を取得
     today_trainings_count = current_user.self_esteem_trainings.where('trained_at >= ?', Time.zone.now.beginning_of_day).count
 
-    if text_params.length > 10
-      flash.now[:danger] = '100文字以内で入力してください'
+    if text_params.length > 50
+      flash.now[:danger] = '50文字以内で入力してください'
       render :new
       return # ここで処理を終了させる
     end
-
     if today_trainings_count < 2
       # OpenAIへのリクエストを行い、結果を取得
       additional_prompt = "入力された自己否定的な文を自己受容できるような文に変換して"
@@ -39,8 +38,7 @@ class SelfEsteemTrainingsController < ApplicationController
         render :new
       end
     else
-      flash.now[:danger] = '今日の分のトレーニングは終えています'
-      render :new
+      redirect_to root_path, danger: '1日のトレーニング回数を超えています。'
     end
   end
 
