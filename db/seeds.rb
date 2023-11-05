@@ -8,35 +8,35 @@
 
 
 
-# ユーザーを取得（もしこのようなユーザーが存在しない場合、適切にユーザーを選択または作成してください）
-# user = User.find_by(id: 1)
+#ユーザーを取得（もしこのようなユーザーが存在しない場合、適切にユーザーを選択または作成してください）
+user = User.find_by(email: "sample@example.com")
 
-# # ユーザーが存在するかを確認
-# if user
-#   # UnlockableFlowerをthresholdの昇順で取得
-#   flowers = UnlockableFlower.order(threshold: :asc)
+# ユーザーが存在するかを確認
+if user
+  # UnlockableFlowerをthresholdの昇順で取得
+  flowers = UnlockableFlower.order(threshold: :asc)
 
-#   80.times do |i|
-#     flower_to_add = nil  # ここで繰り返しのたびにflower_to_addをリセット
+  420.times do |i|
+    flower_to_add = nil  # ここで繰り返しのたびにflower_to_addをリセット
 
-#     # トレーニングのための仮データを追加（必要であれば）
-#     # user.self_negation_trainings.create(trained_at: Time.current - i.days)
+    # トレーニングのための仮データを追加（必要であれば）
+    user.self_esteem_trainings.create(trained_at: Time.current - i.days)
 
-#     total_trainings = i + 1
-#     flowers.each do |flower|
-#       if total_trainings <= flower.threshold
-#         flower_to_add = flower
-#         break
-#       end
-#     end
+    total_trainings = i + 1
+    flowers.each do |flower|
+      if total_trainings <= flower.threshold
+        flower_to_add = flower
+        break
+      end
+    end
 
-#     if flower_to_add
-#       user.planted_flowers.create(unlockable_flower: flower_to_add, added_at: Time.current - i.hours)
-#     end
-#   end
-# else
-#   puts "指定されたユーザーが存在しないため、データを作成できませんでした。"
-# end
+    if flower_to_add
+      user.planted_flowers.create(unlockable_flower: flower_to_add, added_at: Time.current - i.hours)
+    end
+  end
+else
+  puts "指定されたユーザーが存在しないため、データを作成できませんでした。"
+end
 
 
 
@@ -97,23 +97,23 @@
 #   }
 # ])
 
-monthly_theme = MonthlyTheme.create!(
-  month: 11,
-  title: "セルフケアの重要性",
-  message: "心と体を大切に。この月は自分自身のケアにフォーカスしましょう。"
-)
+# monthly_theme = MonthlyTheme.create!(
+#   month: 11,
+#   title: "セルフケアの重要性",
+#   message: "心と体を大切に。この月は自分自身のケアにフォーカスしましょう。"
+# )
 
-monthly_theme.theme_resources.create!([
-  {
-    content: "瞑想",
-    url: "https://www.youtube.com/watch?v=PZDqMqKyhNo"
-  },
-  {
-    content: "リラクゼーションテクニック",
-    url: "https://voi.id/ja/lifestyle/313654"
-  },
-])
-puts "Sample data created successfully!"
+# monthly_theme.theme_resources.create!([
+#   {
+#     content: "瞑想",
+#     url: "https://www.youtube.com/watch?v=PZDqMqKyhNo"
+#   },
+#   {
+#     content: "リラクゼーションテクニック",
+#     url: "https://voi.id/ja/lifestyle/313654"
+#   },
+# ])
+# puts "Sample data created successfully!"
 
 
 
