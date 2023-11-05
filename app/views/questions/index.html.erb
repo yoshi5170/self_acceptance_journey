@@ -19,7 +19,7 @@
                 <div class="flex flex-col justify-center mt-6 mb-10 text-sm px-2 sm:px-10">
                   <% question.scores_for_role.each do |choice, score| %>
                     <%= f.radio_button "answer_#{question.id}", score, class:'hidden radio radio-accent ml-4', data: { question_id: index + 1 }%>
-                    <%= f.label nil, choice, value: score, class: 'text-customGreen5 bg-customGreen6 transition duration-150 ease-in-out border-2 border-customGreen2 rounded-3xl drop-shadow-lg hover:bg-customGreen2 hover:drop-shadow-lg hover:-translate-y-1 px-4 py-2 py-2 mb-4', for: "calculate_answer_#{question.id}_#{score}" %>
+                    <%= f.label nil, choice, value: score, class: 'text-customGreen5 bg-customGreen6 border-2 border-customGreen2 rounded-3xl drop-shadow-lg hover:bg-customGreen2 hover:drop-shadow-lg px-4 py-2 py-2 mb-4', for: "calculate_answer_#{question.id}_#{score}" %>
                   <% end %>
                 </div>
               </div>
