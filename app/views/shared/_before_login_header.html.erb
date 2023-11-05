@@ -3,12 +3,12 @@
     <%= link_to "JustBe U", "/" %>
   </div>
   <div class="flex items-center space-x-1 md:mx-6 text-customGreen2">
-    <%= link_to new_user_session_path, class:'mx-2 hidden md:block' do %>
-      <i class="fa-solid fa-right-to-bracket text-center text-xl w-full"></i>
+    <%= link_to new_user_session_path, class:'mx-2 hidden md:flex md:flex-col' do %>
+      <i class="fa-solid fa-right-to-bracket text-center text-xl"></i>
       <p class="text-sm font-semibold"><%= t('devise.sessions.new.sign_in') %></p>
     <% end %>
-    <%= link_to new_user_registration_path, class:'mx-2 hidden md:block' do %>
-      <i class="fa-solid fa-user-plus text-center text-xl w-full"></i>
+    <%= link_to new_user_registration_path, class:'mx-2 hidden md:flex md:flex-col' do %>
+      <i class="fa-solid fa-user-plus text-center text-xl"></i>
       <p class="text-sm font-semibold"><%= t('devise.shared.links.sign_up') %></p>
     <% end %>
 
