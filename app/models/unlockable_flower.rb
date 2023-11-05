@@ -2,6 +2,9 @@ class UnlockableFlower < ApplicationRecord
   has_many :planted_flowers, dependent: :restrict_with_error
   has_one_attached :flower_image
 
+  validates :name, presence: true, length: { maximum: 255 }
+  validates :threshold, presence: true, numericality: { only_integer: true }
+
   def self.find_flower(total_trainings)
     return nil if total_trainings == 0
     # unlockable_flowersをthresholdの昇順で取得

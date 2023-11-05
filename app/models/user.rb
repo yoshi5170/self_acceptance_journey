@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :diaries, dependent: :destroy
   has_many :self_esteem_trainings, dependent: :destroy
 
+  validates :name, presence: true, length: { maximum: 255 }
+
   def add_training_and_flower
     ActiveRecord::Base.transaction do
       self_esteem_trainings.create(trained_at: Time.current)

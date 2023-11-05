@@ -1,4 +1,6 @@
 class Question < ApplicationRecord
+  validates :text, presence: true, length: { maximum: 255 }
+  validates :score_type, presence: true, numericality: { only_integer: true }
   enum score_type: { down: 0, up: 1 }
 
   SCORES = {
