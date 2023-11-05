@@ -31,26 +31,28 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById(`submit-button`).classList.toggle('hidden', currentQuestion !== 10);  // 質問10以外の場合、結果ボタンを非表示に
   }
 
-  // 選択されたラジオボタンのラベルの背景色を変える関数
-  function updateSelectedLabelBackground(questionNumber) {
-    const selectedAnswer = document.querySelector(`input[data-question-id="${questionNumber}"]:checked`);
-    if (selectedAnswer) {
-        // すべてのラベルから.selected-labelを削除
-        document.querySelectorAll(`[for^="calculate_answer_${questionNumber}_"]`).forEach(label => {
-            label.classList.remove('bg-customGreen2');
-        });
+  // ラジオボタンがチェックされたときのイベントリスナーをすべてのラジオボタンに設定
+  document.querySelectorAll('input[type="radio"]').forEach(radio => {
+    radio.addEventListener('change', (event) => {
+      highlightSelectedOption(event.target);
+    });
+  });
 
-        // 選択されたラジオボタンのラベルに.selected-labelを追加
-        const selectedLabel = document.querySelector(`label[for="${selectedAnswer.id}"]`);
-        selectedLabel.classList.add('bg-customGreen2');
+  function highlightSelectedOption(selectedRadio) {
+    // すべてのラベルから背景色クラス（青色）を削除
+    document.querySelectorAll(`label`).forEach(label => {
+      label.classList.remove('bg-customGreen2'); // 青色の背景色を削除
+      label.classList.add('bg-customGreen6'); // 緑色の背景色を追加
+    });
+
+    // 選択されたラベルの背景色を変更
+    const selectedLabel = document.querySelector(`label[for="${selectedRadio.id}"]`);
+    if (selectedLabel) {
+      selectedLabel.classList.remove('bg-customGreen6'); // 緑色の背景色を削除
+      selectedLabel.classList.add('bg-customGreen2'); // 'bg-highlight' は選択されたときの背景色を設定するクラス名
     }
   }
 
-  document.addEventListener('change', (event) => {
-    if (event.target.classList.contains('radio')) {
-        updateSelectedLabelBackground(event.target.dataset.questionId);
-    }
-  });
 
   //次へボタンのクリック処理
   document.addEventListener('click', (event) => {
@@ -71,13 +73,19 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById(`question_${currentQuestion}`).classList.add('hidden');
       currentQuestion++;
       document.getElementById(`question_${currentQuestion}`).classList.remove('hidden');
-      updateSelectedLabelBackground(currentQuestion);
+      const selectedRadio = document.querySelector(`input[data-question-id="${currentQuestion}"]:checked`);
+      if (selectedRadio) {
+        highlightSelectedOption(selectedRadio);
+      }
       updateButtonVisibility();
     } else if (event.target.dataset.action === 'previous-question') {
       document.getElementById(`question_${currentQuestion}`).classList.add('hidden');
       currentQuestion--;
       document.getElementById(`question_${currentQuestion}`).classList.remove('hidden');
-      updateSelectedLabelBackground(currentQuestion);
+      const selectedRadio = document.querySelector(`input[data-question-id="${currentQuestion}"]:checked`);
+      if (selectedRadio) {
+        highlightSelectedOption(selectedRadio);
+      }
       updateButtonVisibility();
     }
 
