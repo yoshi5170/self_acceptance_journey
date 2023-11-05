@@ -19,6 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5秒後にフォームを送信
     setTimeout(() => {
       form.submit();
-    }, 10000); // 5秒
+    }, 5000); // 5秒
   });
 });
