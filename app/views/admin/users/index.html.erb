@@ -1,0 +1,19 @@
+<% content_for(:title, t('.title')) %>
+<div class="container mx-auto py-10">
+  <h1 class="text-3xl my-10 text-center"><%= t('.title') %></h1>
+  <table class="table m-4">
+    <!-- head -->
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>ROLE</th>
+        <th>EMAIL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- row 1 -->
+      <%= render @users %>
+    </tbody>
+  </table>
+</div>
