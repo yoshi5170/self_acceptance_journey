@@ -2,6 +2,45 @@ ja:
   activerecord:
     models:
       user: 'ユーザー'
+      diary: '日記'
+      diary_entry: '日記の内容'
+      monthly_theme: '月のテーマ'
+      theme_resource: 'テーマ材料'
+      planted_flower: '植えた花'
+      question: '質問'
+      recommendation: 'おすすめ'
+      result: '結果'
+      self_esteem_training: '自己受容トレーニング'
+      flower: '花'
     attributes:
       user:
         name: '名前'
+      diary:
+        date: '日付'
+      diary_entry:
+        content: '本文'
+      monthly_theme:
+        month: '月'
+        title: 'タイトル'
+        message: 'メッセージ'
+      theme_resource:
+        content: 'コンテンツ'
+        url: 'URL'
+      planted_flower:
+        added_at: '日時'
+      question:
+        text: '質問文'
+        score_type: '得点の種類'
+      recommendation:
+        title: '機能のタイトル'
+        description: '説明'
+      result:
+        score_range_start: '得点の始まり'
+        score_range_end: '得点の終わり'
+        title: 'タイトル'
+        description: '説明'
+      self_esteem_training:
+        trained_at: '日時'
+      flower:
+        name: '名前'
+        threshold: 'しきい値'

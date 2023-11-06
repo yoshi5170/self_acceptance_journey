@@ -9,14 +9,14 @@ class SelfEsteemTrainingsController < ApplicationController
     today_trainings_count = current_user.self_esteem_trainings.where('trained_at >= ?', Time.zone.now.beginning_of_day).count
 
     if text_params.length > 50
-      flash.now[:danger] = '50文字以内で入力してください'
+      flash.now[:danger] = t('.text_limit')
       render :new
-      return # ここで処理を終了させる
+      return
     end
+
     if today_trainings_count < 2
       # OpenAIへのリクエストを行い、結果を取得
       additional_prompt = "入力された自己否定的な文を自己受容できるような文に変換して"
-      #prompt = "Taking any self-deprecating statement such as '#{text_params}', rephrase it into a positive affirmation emphasizing inherent worth and personal growth in less than 30 words."
       Rails.logger.info "Preparing to send request to OpenAI..."
       @client = OpenAI::Client.new(access_token: @api_key)
       response = @client.chat(
@@ -38,10 +38,9 @@ class SelfEsteemTrainingsController < ApplicationController
         render :new
       end
     else
-      redirect_to root_path, danger: '1日のトレーニング回数を超えています。'
+      redirect_to root_path, danger: t('.fail')
     end
   end
-
 
   private
 
