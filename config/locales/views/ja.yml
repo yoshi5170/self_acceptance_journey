@@ -33,6 +33,7 @@ ja:
   diaries:
     index:
       title: '幸せ日記一覧'
+      no_result: '日記がありません'
     new:
       title: '幸せ日記作成'
     create:
