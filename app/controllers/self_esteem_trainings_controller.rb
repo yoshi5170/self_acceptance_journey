@@ -5,32 +5,42 @@ class SelfEsteemTrainingsController < ApplicationController
   end
 
   def result
-    # OpenAIへのリクエストを行い、結果を取得
-    additional_prompt = "入力された自己否定的な文を自己受容できるような文に変換して"
-    #prompt = "Taking any self-deprecating statement such as '#{text_params}', rephrase it into a positive affirmation emphasizing inherent worth and personal growth in less than 30 words."
-		Rails.logger.info "Preparing to send request to OpenAI..."
-    @client = OpenAI::Client.new(access_token: @api_key)
-    response = @client.chat(
-      parameters: {
-        model: "gpt-3.5-turbo",
-        messages: [
-          { role: "system", content: additional_prompt },
-          { role: "user", content: text_params }
-        ],
-      }
-    )
-    Rails.logger.info "Received response from OpenAI: #{response.inspect}"
-    @chat = response.dig("choices", 0, "message", "content") if response.present?
+    # 今日のトレーニング回数を取得
+    today_trainings_count = current_user.self_esteem_trainings.where('trained_at >= ?', Time.zone.now.beginning_of_day).count
 
-    # レスポンスが存在する場合、新しいトレーニングセッションを作成
-    if @chat.present?
-      current_user.add_training_and_flower
-		else
+    if text_params.length > 50
+      flash.now[:danger] = t('.text_limit')
       render :new
+      return
     end
 
-  end
+    if today_trainings_count < 2
+      # OpenAIへのリクエストを行い、結果を取得
+      additional_prompt = "入力された自己否定的な文を自己受容できるような文に変換して"
+      Rails.logger.info "Preparing to send request to OpenAI..."
+      @client = OpenAI::Client.new(access_token: @api_key)
+      response = @client.chat(
+        parameters: {
+          model: "gpt-3.5-turbo",
+          messages: [
+            { role: "system", content: additional_prompt },
+            { role: "user", content: text_params }
+          ],
+        }
+      )
+      Rails.logger.info "Received response from OpenAI: #{response.inspect}"
+      @chat = response.dig("choices", 0, "message", "content") if response.present?
 
+      # レスポンスが存在する場合、新しいトレーニングセッションを作成
+      if @chat.present?
+        current_user.add_training_and_flower
+      else
+        render :new
+      end
+    else
+      redirect_to root_path, danger: t('.fail')
+    end
+  end
 
   private
 

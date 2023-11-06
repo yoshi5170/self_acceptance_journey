@@ -8,11 +8,13 @@ class User < ApplicationRecord
   has_many :diaries, dependent: :destroy
   has_many :self_esteem_trainings, dependent: :destroy
 
+  validates :name, presence: true, length: { maximum: 255 }
+
   def add_training_and_flower
     ActiveRecord::Base.transaction do
       self_esteem_trainings.create(trained_at: Time.current)
-      flower_to_add = UnlockableFlower.find_flower(self_esteem_trainings.count)
-      planted_flowers.create(unlockable_flower: flower_to_add, added_at: Time.current) if flower_to_add
+      flower_to_add = Flower.find_flower(self_esteem_trainings.count)
+      planted_flowers.create(flower: flower_to_add, added_at: Time.current) if flower_to_add
     end
   rescue ActiveRecord::RecordInvalid
     false

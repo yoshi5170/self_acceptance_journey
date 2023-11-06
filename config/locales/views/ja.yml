@@ -25,9 +25,11 @@ ja:
       title: '自己受容トレーニング'
     result:
       title: '結果'
+      text_limit: '50文字以内で入力してください'
+      fail: '1日のトレーニング回数を超えています。'
   gardens:
     show:
-      title:  'ガーデン'
+      title: 'マイガーデン'
   diaries:
     index:
       title: '幸せ日記一覧'
@@ -50,6 +52,7 @@ ja:
       title: '診断'
     result:
       title: '診断結果'
+      fail: '診断し直してください'
   admin:
     sessions:
       new:
@@ -62,7 +65,7 @@ ja:
     dashboards:
         index:
           title: 'ダッシュボード'
-    unlockable_flowers:
+    flowers:
       index:
         title: '花一覧'
       new:

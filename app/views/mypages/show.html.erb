@@ -1,7 +1,7 @@
 <% content_for( :title, t('.title'))%>
 <div class="bg-customBeige min-h-screen text-customGreen5">
   <div class="container mx-auto px-5 py-10">
-    <h1 class="text-3xl font-bold text-center pt-4">マイページ</h1>
+    <h1 class="text-3xl font-bold text-center pt-4"><%= t('.title') %></h1>
   </div>
   <div class="container mx-auto md:py-5 sm:px-28 md:px-32 lg:px-60 xl:px-80">
     <div class="text-center pt-6 pb-2 w-full sm:bg-customBeige3 sm:border-2 sm:border-customGreen5 sm:rounded-xl md:flex md:flex-col md:items-center">
@@ -10,7 +10,7 @@
           <%= link_to 'プロフィール編集（調整中）', "#" %>
         </li>
         <li class="rounded-full hover:bg-customGreen6 hover:drop-shadow-lg border-2 border-customGreen7 mb-6 py-2">
-          <%= link_to 'マイガーデン', garden_path %>
+          <%= link_to t("gardens.show.title"), garden_path %>
         </li>
       </ul>
     </div>
