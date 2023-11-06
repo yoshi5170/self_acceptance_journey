@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :dashboards, only: %i[index]
     root 'dashboards#index'
 
-    resources :unlockable_flowers
+    resources :flowers
     resources :questions
   end
 

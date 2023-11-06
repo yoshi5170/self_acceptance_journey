@@ -13,8 +13,8 @@ class User < ApplicationRecord
   def add_training_and_flower
     ActiveRecord::Base.transaction do
       self_esteem_trainings.create(trained_at: Time.current)
-      flower_to_add = UnlockableFlower.find_flower(self_esteem_trainings.count)
-      planted_flowers.create(unlockable_flower: flower_to_add, added_at: Time.current) if flower_to_add
+      flower_to_add = Flower.find_flower(self_esteem_trainings.count)
+      planted_flowers.create(flower: flower_to_add, added_at: Time.current) if flower_to_add
     end
   rescue ActiveRecord::RecordInvalid
     false

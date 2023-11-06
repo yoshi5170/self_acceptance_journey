@@ -1,8 +1,8 @@
 <% content_for( :title, t('.title'))%>
 <div class="min-h-screen bg-customBeige">
   <div class="flex flex-col justify-center">
-    <h1 class="text-customGreen5 text-2xl lg:text-4xl font-bold text-center my-6">マイガーデン</h1>
-    <div class="text-white max-w-xl mx-auto my-6"> <!-- max-w-xl で最大幅を設定し、mx-auto で中央に配置 -->
+    <h1 class="text-customGreen5 text-2xl lg:text-4xl font-bold text-center my-6"><%= t('.title') %></h1>
+    <div class="text-white mx-auto my-6">
       <h3 class="text-center text-sm text-customGreen5 bg-customGreen7 border-2 rounded-xl px-4 py-2">総花数: <%= @total_flowers_count %>本 | 週花数: <%= @weekly_flowers_count %>本</h3>
     </div>
   </div>
@@ -16,7 +16,7 @@
               <% if @planted_flowers[counter] %>
                 <td class="w-8 h-8 sm:p-2.5 border-2 border-customBrown2 box-border text-center sm:w-20 sm:h-20 md:w-22 md:h-22 lg:w-24 lg:h-24">
                   <div class="flex justify-center items-center px-1">
-                    <%= image_tag(@planted_flowers[counter].unlockable_flower.flower_image, size: '50x50', alt: @planted_flowers[counter].unlockable_flower.name) %>
+                    <%= image_tag(@planted_flowers[counter].flower.flower_image, size: '50x50', alt: @planted_flowers[counter].flower.name) %>
                   </div>
                 </td>
               <% else %>
