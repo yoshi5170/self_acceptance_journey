@@ -1,0 +1,25 @@
+<% content_for(:title, t('.title')) %>
+<div class="text-customBrown container mx-auto py-10 px-40">
+  <div class="">
+    <h1 class="text-2xl mb-4 text-center">ユーザーを編集</h1>
+    <div class="bg-slate-300 border-2 border-inherit px-20 py-4 rounded-xl" >
+      <%= form_with model: @user, url: admin_user_path(@user), local: true, class: "" do |f| %>
+        <div class="my-2">
+          <%= f.label :name, class: "block text-sm font-medium text-gray-700" %>
+          <%= f.text_field :name, class: "w-full bg-white p-2 rounded-lg" %>
+        </div>
+        <div class="my-2">
+          <%= f.label :email, class: "block text-sm font-medium text-gray-700" %>
+          <%= f.text_field :email, class: "w-full bg-white p-2 rounded-lg" %>
+        </div>
+        <div class="my-2">
+          <%= f.label :role, class: "block text-sm font-medium text-gray-700" %>
+          <%= f.select :role, User.roles_i18n.invert, {}, class: "bg-white p-2 rounded-lg" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "更新", class: "inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
