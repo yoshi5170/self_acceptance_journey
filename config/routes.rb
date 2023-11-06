@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
     resources :dashboards, only: %i[index]
     root 'dashboards#index'
-
+    resources :users, only: %i[index show edit update destroy]
     resources :flowers
     resources :questions
   end

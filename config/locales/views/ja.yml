@@ -9,6 +9,9 @@ ja:
     delete: '削除'
     message:
       delete_confirm: '削除しますか?'
+      not_updated: "%{item}を更新できませんでした"
+      updated: "%{item}を更新しました"
+      delete: "%{item}を削除しました"
   static_pages:
     top:
       how_to: '使い方'
@@ -33,6 +36,7 @@ ja:
   diaries:
     index:
       title: '幸せ日記一覧'
+      no_result: '日記がありません'
     new:
       title: '幸せ日記作成'
     create:
@@ -79,3 +83,11 @@ ja:
         title: '診断質問作成'
       edit:
         title: '診断質問編集'
+    users:
+      index:
+        title: 'ユーザー一覧'
+        no_result: '見当のユーザがいません'
+      show:
+        title: 'ユーザー詳細'
+      edit:
+        title: 'ユーザー編集'

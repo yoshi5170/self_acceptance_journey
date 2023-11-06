@@ -15,6 +15,11 @@ ja:
     attributes:
       user:
         name: '名前'
+        id: 'ID'
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード確認'
+        role: '権限'
       diary:
         date: '日付'
       diary_entry:

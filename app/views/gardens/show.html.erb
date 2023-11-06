@@ -14,9 +14,9 @@
           <tr>
             <% 8.times do |column| %>
               <% if @planted_flowers[counter] %>
-                <td class="w-8 h-8 sm:p-2.5 border-2 border-customBrown2 box-border text-center sm:w-20 sm:h-20 md:w-22 md:h-22 lg:w-24 lg:h-24">
+                <td class="w-12 h-12 sm:p-2.5 border-2 border-customBrown2 box-border text-center sm:w-20 sm:h-20 md:w-22 md:h-22 lg:w-24 lg:h-24">
                   <div class="flex justify-center items-center px-1">
-                    <%= image_tag(@planted_flowers[counter].flower.flower_image, size: '50x50', alt: @planted_flowers[counter].flower.name) %>
+                    <%= image_tag @planted_flowers[counter].flower.flower_image.variant(resize: "50x50!", format: :webp), alt: @planted_flowers[counter].flower.name %>
                   </div>
                 </td>
               <% else %>

@@ -6,14 +6,14 @@
     <thead>
       <tr>
         <th>ID</th>
-        <th>TEXT</th>
-        <th>SCORE TYPE</th>
-        <th></th>
+        <th>NAME</th>
+        <th>ROLE</th>
+        <th>EMAIL</th>
       </tr>
     </thead>
     <tbody>
       <!-- row 1 -->
-      <%= render partial: 'question', collection: @questions %>
+      <%= render @users %>
     </tbody>
   </table>
 </div>

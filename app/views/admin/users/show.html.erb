@@ -1,0 +1,29 @@
+<% content_for(:title, t('.title')) %>
+<div class="container mx-auto py-10">
+  <h1 class="text-3xl my-10 text-center"><%= t('.title') %></h1>
+  <div class="mb-3">
+    <%= link_to t('defaults.edit'), edit_admin_user_path(@user), class: 'btn btn-success' %>
+    <%= link_to t('defaults.delete'), admin_user_path(@user), data: {
+                turbo_method: :delete,
+                turbo_confirm: t('defaults.message.delete_confirm')
+    } , class: 'btn btn-error' %>
+  </div>
+  <table class="table table-bordered bg-white">
+    <tr>
+      <th scope="row"><%= User.human_attribute_name(:id) %></th>
+      <td><%= @user.id %></td>
+    </tr>
+    <tr>
+      <th scope="row"><%= User.human_attribute_name(:role) %></th>
+      <td><%= @user.role_i18n %></td>
+    </tr>
+    <tr>
+      <th scope="row"><%= User.human_attribute_name(:name) %></th>
+      <td><%= @user.name%></td>
+    </tr>
+    <tr>
+      <th scope="row"><%= User.human_attribute_name(:email) %></th>
+      <td><%= @user.email %></td>
+    </tr>
+  </table>
+<div>
