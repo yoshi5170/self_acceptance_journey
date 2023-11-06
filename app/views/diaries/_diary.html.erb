@@ -1,0 +1,15 @@
+<div class="bg-customBeige3 border-dashed border-2 border-customGreen7 rounded-xl mt-6 lg:mt-0 lg:mb-6 lg:px-4 py-4 lg:py-0 lg:flex lg:items-center lg:justify-center">
+  <div class="border-customGreen7 border-b-2 text-center pb-2 lg:border-none lg:w-2/12 text-center">
+    <h2><%= diary.date %>（<%= I18n.l(diary.date, format: '%a') %>）</h2>
+  </div>
+  <div class="lg:w-9/12 px-6 lg:pb-2 lg:pt-6 lg:border-l-2 border-customGreen7">
+    <ul class="list-disc pl-5">
+      <% diary.diary_entries.each do |entry| %>
+        <li class="mb-2 mb-4 lg:px-6 py-2 truncate"><%= entry.content %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="lg:w-1/12 text-center mt-4">
+    <%= link_to "詳細", diary_path(diary.id), class: "text-sm md:text-base bg-customGreen7 rounded-full drop-shadow-lg px-6 py-1 lg:px-4 hover:bg-customGreen6 hover:drop-shadow-lg border-2 border-customGreen2"%>
+  </div>
+</div>
