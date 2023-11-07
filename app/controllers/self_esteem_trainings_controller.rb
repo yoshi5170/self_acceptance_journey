@@ -16,20 +16,20 @@ class SelfEsteemTrainingsController < ApplicationController
 
     if today_trainings_count < 2
       # OpenAIへのリクエストを行い、結果を取得
-      additional_prompt = "入力された自己否定的な文を自己受容できるような文に変換して"
-      Rails.logger.info "Preparing to send request to OpenAI..."
+      additional_prompt = '入力された自己否定的な文を自己受容できるような文に変換して'
+      Rails.logger.info 'Preparing to send request to OpenAI...'
       @client = OpenAI::Client.new(access_token: @api_key)
       response = @client.chat(
         parameters: {
-          model: "gpt-3.5-turbo",
+          model: 'gpt-3.5-turbo',
           messages: [
-            { role: "system", content: additional_prompt },
-            { role: "user", content: text_params }
-          ],
+            { role: 'system', content: additional_prompt },
+            { role: 'user', content: text_params }
+          ]
         }
       )
       Rails.logger.info "Received response from OpenAI: #{response.inspect}"
-      @chat = response.dig("choices", 0, "message", "content") if response.present?
+      @chat = response.dig('choices', 0, 'message', 'content') if response.present?
 
       # レスポンスが存在する場合、新しいトレーニングセッションを作成
       if @chat.present?

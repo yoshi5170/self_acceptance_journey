@@ -2,13 +2,12 @@ class Admin::FlowersController < Admin::BaseController
   before_action :set_flower, only: %i[edit update destroy]
 
   def index
-    @flowers= Flower.all
+    @flowers = Flower.all
   end
 
   def new
     @flower = Flower.new
   end
-
 
   def create
     @flower = Flower.new(flower_params)
@@ -19,7 +18,8 @@ class Admin::FlowersController < Admin::BaseController
     end
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
     if @flower.update(flower_params)

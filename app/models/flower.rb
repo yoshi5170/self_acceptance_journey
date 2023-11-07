@@ -6,12 +6,13 @@ class Flower < ApplicationRecord
   validates :threshold, presence: true, numericality: { only_integer: true }
 
   def self.find_flower(total_trainings)
-    return nil if total_trainings == 0
+    return nil if total_trainings.zero?
+
     # flowersをthresholdの昇順で取得
-		#例）[花A: threshold 10,　花B: threshold 35, 花C: threshold 65, 花D: threshold 100, 花E: threshold 145, 花F: threshold 195]
+    # 例）[花A: threshold 10,　花B: threshold 35, 花C: threshold 65, 花D: threshold 100, 花E: threshold 145, 花F: threshold 195]
     flowers = order(threshold: :asc)
-    #total_trainings（トータルのトレーニング回数）がflower.threshold（各花が解禁されるためのトレーニング完了回数の閾値）以下であるかどうかを判断
+
+    # total_trainings（トータルのトレーニング回数）がflower.threshold（各花が解禁されるためのトレーニング完了回数の閾値）以下であるかどうかを判断
     flowers.find { |flower| total_trainings <= flower.threshold }
   end
-
 end

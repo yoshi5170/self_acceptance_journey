@@ -10,23 +10,23 @@
       </div>
       <div class="container mx-auto text-center">
         <%= form_with url:calculate_questions_path, scope: :calculate, method: :post, data: { turbo: false } do |f| %>
-          <div class='error-message hidden px-10 py-2 mb-10 mx-10 text-sm text-red-800 bg-red-100 rounded-xl dark:bg-red-100 dark:text-red-800' id="error_message">選択してください</div>
+          <div class="error-message hidden px-10 py-2 mb-10 mx-10 text-sm text-red-800 bg-red-100 rounded-xl dark:bg-red-100 dark:text-red-800" id="error_message">選択してください</div>
           <% @questions.each_with_index do |question, index| %>
-            <div id='question_<%= index+1 %>', class='hidden'>
+            <div id="question_<%= index+1 %>", class="hidden">
               <h2 class="text-customGreen5 text-4xl text-center font-extrabold underline mt-4 mb-8 md:text-4xl">Q<%=index+1%></h2>
               <div class="container mx-auto sm:w-4/5 sm:bg-customBeige3 sm:border-2 sm:border-customGreen5 sm:rounded-xl lg:w-3/5 ">
                 <p class="text-customGreen5 text-xl font-bold tracking-wider mt-8 mb-10 mx-2 lg:text-2xl"><%= question.text %></p>
                 <div class="flex flex-col justify-center mt-6 mb-10 text-sm px-2 sm:px-10">
                   <% question.scores_for_role.each do |choice, score| %>
                     <%= f.radio_button "answer_#{question.id}", score, class:'hidden radio radio-accent ml-4', data: { question_id: index + 1 }%>
-                    <%= f.label nil, choice, value: score, class: 'text-customGreen5 bg-customGreen6 border-2 border-customGreen2 rounded-3xl drop-shadow-lg hover:bg-customGreen2 hover:drop-shadow-lg px-4 py-2 py-2 mb-4', for: "calculate_answer_#{question.id}_#{score}" %>
+                    <%= f.label nil, choice, value: score, class: 'text-customGreen5 bg-customGreen6 border-2 border-customGreen2 rounded-3xl drop-shadow-lg hover:bg-white hover:drop-shadow-lg px-4 py-2 py-2 mb-4', for: "calculate_answer_#{question.id}_#{score}" %>
                   <% end %>
                 </div>
               </div>
             </div>
           <% end %>
-          <button type="button" data-action="previous-question" id='previous_button' class='hidden text-customGreen5 bg-customGreen6 transition duration-150 ease-in-out border-2 border-customGreen2 rounded-xl drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg hover:-translate-y-1 mx-8 my-6 px-4 py-2'>戻る</button>
-          <button type="button" data-action="next-question" id='next_button' class='hidden text-customGreen5 bg-customGreen6  transition duration-150 ease-in-out border-2 border-customGreen2 rounded-xl drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg hover:-translate-y-1 mx-8 my-6 px-4 py-2'>次へ</button>
+          <button type="button" data-action="previous-question" id="previous_button" class="hidden text-customGreen5 bg-customGreen6 transition duration-150 ease-in-out border-2 border-customGreen2 rounded-xl drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg hover:-translate-y-1 mx-8 my-6 px-4 py-2">戻る</button>
+          <button type="button" data-action="next-question" id="next_button" class="hidden text-customGreen5 bg-customGreen6  transition duration-150 ease-in-out border-2 border-customGreen2 rounded-xl drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg hover:-translate-y-1 mx-8 my-6 px-4 py-2">次へ</button>
           <%= f.submit "結果", id: "submit-button", class: 'hidden text-customGreen5 bg-customGreen6  transition duration-150 ease-in-out border-2 border-customGreen2 rounded-xl drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg hover:-translate-y-1 mx-6 my-6 px-4 py-2' %>
         <% end %>
       </div>

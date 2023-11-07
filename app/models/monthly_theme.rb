@@ -2,13 +2,13 @@ class MonthlyTheme < ApplicationRecord
   has_many :theme_resources, dependent: :destroy
 
   def self.send_monthly_notification(month)
-    monthly_theme = find_by(month: month)
+    monthly_theme = find_by(month:)
     return unless monthly_theme
 
-		resources_text = monthly_theme.theme_resources.map do |resource|
-	    "・#{resource.content}: \n #{resource.url}"
-	  end
-		contents = resources_text.join("\n")
+    resources_text = monthly_theme.theme_resources.map do |resource|
+      "・#{resource.content}: \n #{resource.url}"
+    end
+    contents = resources_text.join("\n")
 
     message = {
       type: 'text',

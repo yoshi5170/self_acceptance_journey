@@ -12,10 +12,10 @@
           <i class="fa-solid fa-bars h-6 w-8"></i>
         </summary>
         <ul class="dropdown-content z-[1] menu px-6 py-4 shadow bg-customGreen5 rounded-box w-80 text-customGreen2 mt-3">
-          <li class="hover:bg-neutral-600 hover:rounded-xl"><%= link_to "マイページ", mypage_path %></li>
+          <li class="hover:bg-neutral-600 hover:rounded-xl"><%= link_to "マイページ", mypage_path, data: { turbo: false }%></li>
           <li class="hover:bg-neutral-600 hover:rounded-xl"><%= link_to "自己受容トレーニング", new_self_esteem_training_path, data: { turbo: false }%></li>
-          <li class="hover:bg-neutral-600 hover:rounded-xl"><%= link_to "幸せ日記一覧", diaries_path %></li>
-          <li class="hover:bg-neutral-600 hover:rounded-xl"><%= link_to "今日の幸せ日記を作成", new_diary_path %></li>
+          <li class="hover:bg-neutral-600 hover:rounded-xl"><%= link_to "幸せ日記一覧", diaries_path, data: { turbo: false }%></li>
+          <li class="hover:bg-neutral-600 hover:rounded-xl"><%= link_to "今日の幸せ日記を作成", new_diary_path, data: { turbo: false }%></li>
           <li class="md:hidden hover:bg-neutral-600 hover:rounded-xl"><%= link_to "自己否定度診断", questions_path, data: { turbo: false }%></li>
           <li class="hover:bg-neutral-600 hover:rounded-xl"><%= link_to t('defaults.sign_out'), destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "ログアウトしますか?" } %></li>
         </ul>
