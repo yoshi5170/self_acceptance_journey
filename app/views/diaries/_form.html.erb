@@ -1,4 +1,4 @@
-  <%= form_with model: diary_form, url: form_url, method: form_method, class: "lg:w-4/5" do |f| %>
+  <%= form_with model: diary_form, url: form_url, method: form_method, class: "lg:w-4/5", data: { turbo: false } do |f| %>
     <div class="border-dashed border-2 border-customGreen6 rounded-lg px-8 py-10 mx-auto">
       <div class="text-center">
         <p>今日のよかったことを入力してください</p>

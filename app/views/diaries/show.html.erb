@@ -17,7 +17,7 @@
       </div>
     </div>
     <div class="text-center my-8">
-      <%= link_to "編集", edit_diary_path(@diary), class: "bg-customGreen6 text-customGreen5 mx-6 my-2 px-5 py-2 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2" %>
+      <%= link_to "編集", edit_diary_path(@diary), data: { turbo: false }, class: "bg-customGreen6 text-customGreen5 mx-6 my-2 px-5 py-2 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2" %>
       <%= link_to "削除", diary_path(@diary), class:"bg-customGreen6 text-customGreen5 mx-6 my-2 px-5 py-2 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2", data: { turbo_method: :delete, turbo_confirm: "日記を削除しますか?" } %>
     </div>
   </div>

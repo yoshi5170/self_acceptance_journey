@@ -10,6 +10,6 @@
     </ul>
   </div>
   <div class="lg:w-1/12 text-center mt-4">
-    <%= link_to "詳細", diary_path(diary.id), class: "text-sm md:text-base bg-customGreen7 rounded-full drop-shadow-lg px-6 py-1 lg:px-4 hover:bg-customGreen6 hover:drop-shadow-lg border-2 border-customGreen2"%>
+    <%= link_to "詳細", diary_path(diary.id), data: { turbo: false }, class: "text-sm md:text-base bg-customGreen7 rounded-full drop-shadow-lg px-6 py-1 lg:px-4 hover:bg-customGreen6 hover:drop-shadow-lg border-2 border-customGreen2"%>
   </div>
 </div>
