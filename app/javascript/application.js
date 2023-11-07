@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function highlightSelectedOption(selectedRadio) {
     // すべてのラベルから背景色クラス（青色）を削除
     document.querySelectorAll(`label`).forEach(label => {
-      label.classList.remove('bg-customGreen2'); // 青色の背景色を削除
+      label.classList.remove('bg-white'); // 青色の背景色を削除
       label.classList.add('bg-customGreen6'); // 緑色の背景色を追加
     });
 
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const selectedLabel = document.querySelector(`label[for="${selectedRadio.id}"]`);
     if (selectedLabel) {
       selectedLabel.classList.remove('bg-customGreen6'); // 緑色の背景色を削除
-      selectedLabel.classList.add('bg-customGreen2'); // 'bg-highlight' は選択されたときの背景色を設定するクラス名
+      selectedLabel.classList.add('bg-white'); // 'bg-highlight' は選択されたときの背景色を設定するクラス名
     }
   }
 
