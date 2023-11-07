@@ -10,7 +10,6 @@ class DiariesController < ApplicationController
     @diary_form = DiaryForm.new
   end
 
-
   def create
     @date = Date.current
     @diary_form = DiaryForm.new(diary_form_params.merge(user_id: current_user.id))

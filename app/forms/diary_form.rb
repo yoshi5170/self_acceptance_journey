@@ -15,9 +15,10 @@ class DiaryForm
     return false unless valid?
 
     ActiveRecord::Base.transaction do
-      diary = Diary.create!(user_id: user_id, date: Time.current.to_date)
+      # (user_id: user_id, date: Time.current.to_date)
+      diary = Diary.create!(user_id:, date: Time.current.to_date)
       entries_contents.each do |content|
-        diary.diary_entries.create!(content: content)
+        diary.diary_entries.create!(content:)
       end
     end
   rescue ActiveRecord::RecordInvalid => e
@@ -55,8 +56,6 @@ class DiaryForm
   end
 
   def all_entries_must_be_present
-    if entries_contents.any?(&:blank?)
-      errors.add(:base, "すべてのフォームに入力してください")
-    end
+    errors.add(:base, 'すべてのフォームに入力してください') if entries_contents.any?(&:blank?)
   end
 end

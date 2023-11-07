@@ -18,9 +18,11 @@ class Admin::QuestionsController < Admin::BaseController
     end
   end
 
-  def edit; end
+  def edit
+  end
 
-  def show; end
+  def show
+  end
 
   def update
     if @question.update(question_params)
@@ -36,7 +38,7 @@ class Admin::QuestionsController < Admin::BaseController
     redirect_to admin_questions_path, success: '質問を削除しました'
   end
 
-private
+  private
 
   def set_question
     @question = Question.find(params[:id])
