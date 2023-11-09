@@ -27,7 +27,6 @@ class DiariesController < ApplicationController
   end
 
   def edit
-    @diary_entries = @diary.diary_entries.order(:id)
     @diary_form = DiaryForm.new(diary: @diary)
   end
 
