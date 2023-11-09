@@ -60,4 +60,8 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  # FactoryBotの省略
+  config.include FactoryBot::Syntax::Methods
+  # module読み込み
+  config.include LoginModule
 end
