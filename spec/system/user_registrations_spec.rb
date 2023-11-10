@@ -19,6 +19,30 @@ RSpec.describe User, type: :system do
             expect(current_path).to eq root_path
           end
         end
+        context '名前未入力' do
+          it 'ユーザーの新規作成が失敗' do
+            visit new_user_registration_path
+            fill_in 'user_name', with: ''
+            fill_in 'user_email', with: 'test@example.com'
+            fill_in 'user_password', with: 'password'
+            fill_in 'user_password_confirmation', with: 'password'
+            click_button 'アカウント登録'
+            expect(page).to have_content '名前を入力してください'
+            expect(current_path).to eq new_user_registration_path
+          end
+        end
+        context '名前が255文字以上' do
+          it 'ユーザーのアカウント作成が失敗' do
+            visit new_user_registration_path
+            fill_in 'user_name', with: 'u' * 256
+            fill_in 'user_email', with: 'test@example.com'
+            fill_in 'user_password', with: 'password'
+            fill_in 'user_password_confirmation', with: 'password'
+            click_button 'アカウント登録'
+            expect(page).to have_content '名前は255文字以内で入力してください'
+            expect(current_path).to eq new_user_registration_path
+          end
+        end
         context 'メールアドレス未入力' do
           it 'ユーザーの新規作成が失敗' do
             visit new_user_registration_path
