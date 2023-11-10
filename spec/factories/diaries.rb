@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :diary do
-    date { '2023-10-11 21:26:47' }
-    user { nil }
+    date { Date.current.prev_day(3) }
+    association :user
   end
 end
