@@ -5,7 +5,7 @@ class Diary < ApplicationRecord
             uniqueness: {
               scope: :user_id,
               message: lambda { |_object, data|
-                " #{data[:value].to_date}の日記はすでに作成済みです"
+                " #{data[:value]}の日記はすでに作成済みです"
               }
             }
 end
