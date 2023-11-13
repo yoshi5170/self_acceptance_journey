@@ -1,6 +1,7 @@
 class Diary < ApplicationRecord
   belongs_to :user
   has_many :diary_entries, dependent: :destroy
+  validates :date, presence: true
   validates :date,
             uniqueness: {
               scope: :user_id,
