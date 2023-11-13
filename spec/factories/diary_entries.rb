@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :diary_entry do
-    content { 'MyString' }
-    diary { nil }
+    sequence(:content) { |n| "diary_#{n}" }
+    association :diary
   end
 end
