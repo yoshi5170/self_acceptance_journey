@@ -83,7 +83,7 @@ RSpec.describe User, type: :model do
         expect(user.add_training_and_flower).to be false
       end
       it 'トランザクションがロールバックされる' do
-        expect { user.add_training_and_flower }.not_to change { SelfEsteemTraining.count }
+        expect { user.add_training_and_flower }.to change { SelfEsteemTraining.count }.by(0)
       end
     end
   end

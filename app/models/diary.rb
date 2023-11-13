@@ -1,11 +1,12 @@
 class Diary < ApplicationRecord
   belongs_to :user
   has_many :diary_entries, dependent: :destroy
+  validates :date, presence: true
   validates :date,
             uniqueness: {
               scope: :user_id,
               message: lambda { |_object, data|
-                " #{data[:value].to_date}の日記はすでに作成済みです"
+                " #{data[:value]}の日記はすでに作成済みです"
               }
             }
 end
