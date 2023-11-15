@@ -2,7 +2,7 @@ class Admin::FlowersController < Admin::BaseController
   before_action :set_flower, only: %i[edit update destroy]
 
   def index
-    @flowers = Flower.all
+    @flowers = Flower.all.order(threshold: :asc)
   end
 
   def new
@@ -32,7 +32,7 @@ class Admin::FlowersController < Admin::BaseController
 
   def destroy
     @flower.destroy!
-    redirect_to admin_flowers_path, success: '質問を削除しました'
+    redirect_to admin_flowers_path, success: '花を削除しました'
   end
 
   private
