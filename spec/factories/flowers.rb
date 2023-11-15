@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :flower do
     sequence(:name) { |n| "flower_#{n}" }
+    threshold { 5 }
 
     trait :threshold_five do
       threshold { 5 }
@@ -8,6 +9,14 @@ FactoryBot.define do
 
     trait :threshold_ten do
       threshold { 10 }
+    end
+
+    trait :threshold_twofive do
+      threshold { 25 }
+    end
+
+    trait :threshold_fifty do
+      threshold { 50 }
     end
 
     after(:build) do |flower|
