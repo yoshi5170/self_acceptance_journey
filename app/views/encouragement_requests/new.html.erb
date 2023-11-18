@@ -1,0 +1,19 @@
+<div class="bg-customBeige min-h-screen">
+  <div class="container mx-auto px-5 py-10">
+    <div class="flex flex-col items-center  w-full">
+      <%= image_tag "#{@image_id}.png", size: '400x300' %>
+    </div>
+    <div class="container mx-auto px-5 py-10">
+      <%= form_with model: @encouragement_request do |f| %>
+        <div class="my-2 w-2/3 mx-auto">
+          <%= f.label :text, class: "block text-gray-700 text-center" %>
+          <%= f.text_area :text, class: "w-full bg-white p-2 rounded-lg" %>
+        </div>
+        <%= f.hidden_field :image_id, value: @image_id%>
+        <div class="actions text-center">
+          <%= f.submit "作成", class: "px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
