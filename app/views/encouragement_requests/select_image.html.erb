@@ -1,0 +1,32 @@
+<div class="bg-customBeige min-h-screen">
+  <div class="container mx-auto px-5 py-10">
+    <figure class="flex justify-center px-6 mt-5">
+      <%= image_tag '1.png', size: '400x300' %>
+    </figure>
+    <div class="items-center text-center my-3">
+      <p class="text-xl">背景１</p>
+      <%= button_to "これにする", new_encouragement_request_path, { method: :get, params: {image_id: 1}, class: "my-3 mb-1 btn btn-outline btn-secondary" } %>
+    </div>
+    <figure class="flex justify-center px-6 mt-5">
+      <%= image_tag '2.png', size: '400x300' %>
+    </figure>
+    <div class="items-center text-center my-3">
+      <p class="text-xl">背景2</p>
+      <%= button_to "これにする", new_encouragement_request_path, { method: :get, params: {image_id: 2}, class: "my-3 mb-1 btn btn-outline btn-secondary" } %>
+    </div>
+    <figure class="flex justify-center px-6 mt-5">
+      <%= image_tag '3.png', size: '400x300' %>
+    </figure>
+    <div class="items-center text-center my-3">
+      <p class="text-xl">背景3</p>
+      <%= button_to "これにする", new_encouragement_request_path, { method: :get, params: {image_id: 3}, class: "my-3 mb-1 btn btn-outline btn-secondary" } %>
+    </div>
+    <figure class="flex justify-center px-6 mt-5">
+      <%= image_tag '4.png', size: '400x300' %>
+    </figure>
+    <div class="items-center text-center my-3">
+      <p class="text-xl">背景4</p>
+      <%= button_to "これにする", new_encouragement_request_path, { method: :get, params: {image_id: 4}, class: "my-3 mb-1 btn btn-outline btn-secondary" } %>
+    </div>
+  </div>
+</div>
