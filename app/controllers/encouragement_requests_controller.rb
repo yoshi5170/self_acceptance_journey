@@ -12,6 +12,15 @@ class EncouragementRequestsController < ApplicationController
     @image_id = params[:image_id].to_i
   end
 
+  def preview
+    @encouragement_request = EncouragementRequest.new(text: encouragement_request_params[:text])
+    @image_id = encouragement_request_params[:image_id]
+    image = ImageCreator.build(@encouragement_request.text, @image_id)
+    image_path = image.path
+    @encouragement_request.request_image.attach(io: File.open(image_path), filename: 'request_image.png', content_type: 'image/png')
+    render :preview, status: :unprocessable_entity
+  end
+
   def create
     @encouragement_request = current_user.encouragement_requests.build(text: params[:encouragement_request][:text])
     @image_id = params[:encouragement_request][:image_id]
