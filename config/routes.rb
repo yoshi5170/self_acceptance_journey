@@ -36,7 +36,6 @@ Rails.application.routes.draw do
   resources :encouragement_requests, only: %i[index new create show edit update destroy] do
     collection do
       get 'select_image'
-      get 'preview'
     end
   end
 end
