@@ -12,19 +12,9 @@ class EncouragementRequestsController < ApplicationController
     @image_id = params[:image_id].to_i
   end
 
-  def preview
-    @encouragement_request = EncouragementRequest.new(text: encouragement_request_params[:text])
-    @image_id = encouragement_request_params[:image_id]
-    image = ImageCreator.build(@encouragement_request.text, @image_id)
-    image_path = image.path
-    @encouragement_request.request_image.attach(io: File.open(image_path), filename: 'request_image.png', content_type: 'image/png')
-    render :preview, status: :unprocessable_entity
-  end
-
   def create
-    @encouragement_request = current_user.encouragement_requests.build(text: params[:encouragement_request][:text])
-    @image_id = params[:encouragement_request][:image_id]
-    image = ImageCreator.build(@encouragement_request.text, @image_id)
+    @encouragement_request = current_user.encouragement_requests.build(encouragement_request_params)
+    image = ImageCreator.build(@encouragement_request.text, @encouragement_request.background_id)
     image_path = image.path
     @encouragement_request.request_image.attach(io: File.open(image_path), filename: 'request_image.png', content_type: 'image/png')
 
@@ -36,9 +26,21 @@ class EncouragementRequestsController < ApplicationController
     end
   end
 
-  def show;end
+  def show; end
 
-  def edit
+  def edit; end
+
+  def update
+    @encouragement_request.update(encouragement_request_params)
+    image = ImageCreator.build(@encouragement_request.text, @encouragement_request.background_id)
+    image_path = image.path
+    @encouragement_request.request_image.attach(io: File.open(image_path), filename: 'request_image.png', content_type: 'image/png')
+    if @encouragement_request.save
+      redirect_to encouragement_request_path(@encouragement_request), success: '画像を作成しました'
+    else
+      flash.now[:danger] = '画像の作成に失敗しました'
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -47,11 +49,12 @@ class EncouragementRequestsController < ApplicationController
   end
 
   private
+
   def set_encouragement_request
     @encouragement_request = current_user.encouragement_requests.find_by(id: params[:id])
   end
 
   def encouragement_request_params
-    params.require(:encouragement_request).permit(:text, :request_image, :image_id)
+    params.require(:encouragement_request).permit(:text, :request_image, :background_id)
   end
 end
