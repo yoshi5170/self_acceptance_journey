@@ -9,9 +9,9 @@
           <%= f.label :text, class: "block text-gray-700 text-center" %>
           <%= f.text_area :text, class: "w-full bg-white p-2 rounded-lg" %>
         </div>
-        <%= f.hidden_field :image_id, value: @image_id%>
+        <%= f.hidden_field :background_id, value: @image_id%>
         <div class="actions text-center">
-          <%= f.submit "作成", class: "px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+          <%= f.submit "プレビュー", class: "px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
         </div>
       <% end %>
     </div>
