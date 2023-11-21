@@ -53,8 +53,8 @@ Metrics/ClassLength:
   Max: 300
 
 # 空メソッドの場合に、1行のスタイルにしない　NG例：def style1; end
-Style/EmptyMethod:
-  EnforcedStyle: expanded
+# Style/EmptyMethod:
+#   EnforcedStyle: expanded
 
 # クラス内にクラスが定義されていないかチェック（無効）
 Style/ClassAndModuleChildren:
