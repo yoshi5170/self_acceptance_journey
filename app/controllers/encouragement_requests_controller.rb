@@ -1,5 +1,6 @@
 class EncouragementRequestsController < ApplicationController
-  before_action :set_encouragement_request, only: %i[show edit update destroy]
+  skip_before_action :authenticate_user!, only: %i[show]
+  before_action :set_encouragement_request, only: %i[edit update destroy]
 
   def index
   end
@@ -26,7 +27,9 @@ class EncouragementRequestsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @encouragement_request = EncouragementRequest.find_by(id: params[:id])
+  end
 
   def edit; end
 
