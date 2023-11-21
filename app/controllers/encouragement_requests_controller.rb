@@ -1,5 +1,5 @@
 class EncouragementRequestsController < ApplicationController
-  before_action :set_encouragement_request, only: %i[edit update destroy]
+  before_action :set_encouragement_request, only: %i[show edit update destroy]
 
   def index
   end
