@@ -1,3 +1,11 @@
+<% set_meta_tags og: {
+      image: @encouragement_request.request_image.url,
+      url: new_encouragement_message_url(request_id: @encouragement_request.id)
+    },
+    twitter: {
+      card: "summary_large_image",
+      image: @encouragement_request.request_image.url
+    } %>
 <div class="bg-customBeige min-h-screen">
   <div class="container mx-auto px-5 py-10">
     <div class="flex flex-col items-center  w-full">
