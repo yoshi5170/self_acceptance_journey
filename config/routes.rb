@@ -38,5 +38,5 @@ Rails.application.routes.draw do
       get 'select_image'
     end
   end
-  resources :encouragement_messages, only: %i[ new create show edit update destroy] do
+  resources :encouragement_messages, only: %i[ new create show edit update destroy]
 end
