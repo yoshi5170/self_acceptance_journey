@@ -1,4 +1,5 @@
 class EncouragementMessagesController < ApplicationController
+  include ActiveStorage::SetCurrent
   before_action :set_encouragement_message, only: %i[show edit update destroy]
   skip_before_action :authenticate_user!
 
@@ -27,14 +28,14 @@ class EncouragementMessagesController < ApplicationController
   end
 
   def show
-    Rails.logger.info "Encouragement Request Image URL: #{url_for(@encouragement_message.encouragement_request.request_image)}"
+    Rails.logger.info "Encouragement Request Image URL: #{@encouragement_message.encouragement_request.request_image.url}"
     set_meta_tags og: {
-      image: url_for(@encouragement_message.encouragement_request.request_image.variant(resize_to_limit: [500, 500])),
+      image: @encouragement_message.encouragement_request.request_image.url,
       url: new_encouragement_request_url(request_id: @encouragement_message.encouragement_request.id)
     },
     twitter: {
       card: "summary_large_image",
-      image: url_for(@encouragement_message.encouragement_request.request_image.variant(resize_to_limit: [500, 500]))
+      image: @encouragement_message.encouragement_request.request_image.url
     }
   end
 

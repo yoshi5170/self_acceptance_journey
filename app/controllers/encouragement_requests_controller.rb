@@ -1,4 +1,5 @@
 class EncouragementRequestsController < ApplicationController
+  include ActiveStorage::SetCurrent
   before_action :set_encouragement_request, only: %i[show edit update destroy]
 
   def index
@@ -27,15 +28,7 @@ class EncouragementRequestsController < ApplicationController
   end
 
   def show
-    Rails.logger.info "Encouragement Request Image URL: #{rails_blob_url(@encouragement_request.request_image.variant(resize_to_limit: [500, 500]))}"
-    set_meta_tags og: {
-      image: rails_blob_url(@encouragement_request.request_image),
-      url: new_encouragement_message_url(request_id: @encouragement_request.id)
-    },
-    twitter: {
-      card: "summary_large_image",
-      image: rails_blob_url(@encouragement_request.request_image)
-    }
+    Rails.logger.info "Encouragement Request Image URL: #{@encouragement_request.request_image.url}"
   end
 
   def edit; end
