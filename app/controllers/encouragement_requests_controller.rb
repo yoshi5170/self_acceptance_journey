@@ -1,5 +1,4 @@
 class EncouragementRequestsController < ApplicationController
-  include ActiveStorage::SetCurrent
   before_action :set_encouragement_request, only: %i[show edit update destroy]
 
   def index
@@ -28,7 +27,7 @@ class EncouragementRequestsController < ApplicationController
   end
 
   def show
-    Rails.logger.info "Encouragement Request Image URL: #{@encouragement_request.request_image.url}"
+    Rails.logger.info "Encouragement Request Image URL: #{rails_blob_url(@encouragement_request.request_image)}"
   end
 
   def edit; end
