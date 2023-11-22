@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_16_125200) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_21_162213) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,6 +57,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_16_125200) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["diary_id"], name: "index_diary_entries_on_diary_id"
+  end
+
+  create_table "encouragement_messages", force: :cascade do |t|
+    t.bigint "encouragement_request_id", null: false
+    t.string "text", null: false
+    t.integer "background_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["encouragement_request_id"], name: "index_encouragement_messages_on_encouragement_request_id"
   end
 
   create_table "encouragement_requests", force: :cascade do |t|
@@ -153,6 +162,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_16_125200) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "diaries", "users"
   add_foreign_key "diary_entries", "diaries"
+  add_foreign_key "encouragement_messages", "encouragement_requests"
   add_foreign_key "encouragement_requests", "users"
   add_foreign_key "planted_flowers", "flowers"
   add_foreign_key "planted_flowers", "users"
