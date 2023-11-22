@@ -2,10 +2,10 @@ class ImageCreator
   require 'mini_magick'
 
   GRAVITY = 'center'.freeze
-  FONT_SIZE = 90
+  FONT_SIZE = 25
   TEXT_POSITION = '0,0'.freeze
   FONT = './app/assets/fonts/MPLUS1p-Medium.ttf'.freeze
-  INDENTION_COUNT = 15
+  INDENTION_COUNT = 20
   ROW_LIMIT = 10
 
   class << self
