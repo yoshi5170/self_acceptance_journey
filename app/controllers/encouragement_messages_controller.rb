@@ -27,7 +27,15 @@ class EncouragementMessagesController < ApplicationController
   end
 
   def show
-    Rails.logger.info url_for(@encouragement_message.encouragement_request.request_image)
+    Rails.logger.info "Encouragement Request Image URL: #{url_for(@encouragement_message.encouragement_request.request_image)}"
+    set_meta_tags og: {
+      image: url_for(@encouragement_message.encouragement_request.request_image.variant(resize_to_limit: [500, 500])),
+      url: new_encouragement_request_url(request_id: @encouragement_message.encouragement_request.id)
+    },
+    twitter: {
+      card: "summary_large_image",
+      image: url_for(@encouragement_message.encouragement_request.request_image.variant(resize_to_limit: [500, 500]))
+    }
   end
 
   def edit; end
