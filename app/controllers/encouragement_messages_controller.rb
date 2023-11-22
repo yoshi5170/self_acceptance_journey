@@ -26,7 +26,9 @@ class EncouragementMessagesController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    Rails.logger.info url_for(@encouragement_message.encouragement_request.request_image)
+  end
 
   def edit; end
 
