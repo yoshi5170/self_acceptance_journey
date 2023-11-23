@@ -31,7 +31,7 @@ module ApplicationHelper
         title: :title,
         description: :description,
         type: 'website',
-        url: request.original_url,
+        url: options[:url].presence || request.original_url,
         image: options[:image].presence || image_url('ogp.png'),
         local: 'ja-JP'
       },

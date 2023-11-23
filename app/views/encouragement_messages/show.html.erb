@@ -1,4 +1,4 @@
-<% assign_meta_tags url: new_encouragement_request_url(request_id: @encouragement_message.encouragement_request.id), image: url_for(@encouragement_message.encouragement_request.request_image) %>
+<% assign_meta_tags url: new_encouragement_request_url(request_id: @encouragement_message.encouragement_request.id), image: rails_blob_url(@encouragement_message.encouragement_request.request_image, only_path: false) %>
 
 <div class="bg-customBeige min-h-screen">
   <div class="container mx-auto px-5 py-10">

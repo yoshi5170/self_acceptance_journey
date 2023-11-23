@@ -2,7 +2,7 @@
   <div class="container mx-auto px-5 py-10">
     <h1 class="text-2xl font-bold text-center my-10">励ましメッセージ作成</h1>
     <div class="container mx-auto px-5 py-10">
-      <%= form_with model: @encouragement_message do |f| %>
+      <%= form_with model: @encouragement_message, data: { turbo: false } do |f| %>
         <%= render 'shared/error_messages', object: @encouragement_message %>
         <div class="my-2 w-2/3 mx-auto">
           <%= f.label :text, class: "block text-gray-700 text-center" %>
