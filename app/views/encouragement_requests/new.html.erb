@@ -4,7 +4,7 @@
       <%= image_tag "#{@image_id}.png", size: '400x300' %>
     </div>
     <div class="container mx-auto px-5 py-10">
-      <%= form_with model: @encouragement_request do |f| %>
+      <%= form_with model: @encouragement_request, data: { turbo: false } do |f| %>
         <%= render 'shared/error_messages', object: @encouragement_request %>
         <div class="my-2 w-2/3 mx-auto">
           <%= f.label :text, class: "block text-gray-700 text-center" %>
