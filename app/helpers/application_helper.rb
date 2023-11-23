@@ -8,8 +8,13 @@ module ApplicationHelper
     page_title.empty? ? base_title : "#{page_title}|#{base_title}"
   end
 
-  def default_meta_tags
-    {
+  def show_meta_tags
+    assign_meta_tags if display_meta_tags.blank?
+    display_meta_tags
+  end
+
+  def assign_meta_tags(options = {})
+    configs = {
       site: 'JustBe U',
       title: 'あなたの自己受容への旅をナビゲート',
       reverse: true,
@@ -27,14 +32,15 @@ module ApplicationHelper
         description: :description,
         type: 'website',
         url: request.original_url,
-        image: image_url('ogp.png'),
+        image: options[:image].presence || image_url('ogp.png'),
         local: 'ja-JP'
       },
       # Twitter用の設定を個別で設定する
       twitter: {
         card: 'summary_large_image',
-        image: image_url('ogp.png')
+        image: options[:image].presence || image_url('ogp.png')
       }
     }
+    set_meta_tags(configs)
   end
 end

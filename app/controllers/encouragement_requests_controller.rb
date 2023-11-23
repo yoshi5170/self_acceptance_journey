@@ -27,7 +27,7 @@ class EncouragementRequestsController < ApplicationController
   end
 
   def show
-    Rails.logger.info "Encouragement Request Image URL: #{rails_blob_url(@encouragement_request.request_image)}"
+    Rails.logger.info "Encouragement Request Image URL: #{url_for(@encouragement_request.request_image)}"
   end
 
   def edit; end
