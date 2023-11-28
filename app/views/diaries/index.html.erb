@@ -4,6 +4,14 @@
     <h1 class="text-2xl font-bold text-center"><%= t('.title') %></h1>
   </div>
   <div class="container mx-auto py-10 lg:px-16 lg:py-10">
+    <div class="flex justify-center md:justify-end text-center my-4">
+      <%= link_to new_diary_path, data: { turbo: false } do %>
+        <div class="text-sm md:text-base rounded-full drop-shadow-lg px-6 py-1 lg:px-4 hover:bg-customGreen6 hover:drop-shadow-lg border-2 border-customGreen7">
+          <i class="fa-solid fa-book inline-block"></i>
+          <p class="inline-block">幸せ日記を作成する</p>
+        </div>
+      <% end %>
+    </div>
     <% if @diaries.present? %>
       <%= render partial: 'diary', collection: @diaries %>
     <% else %>
