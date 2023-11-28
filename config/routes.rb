@@ -23,7 +23,6 @@ Rails.application.routes.draw do
   resources :diaries
   resource :mypage, only: %i[show]
   resource :garden, only: %i[show]
-  resource :diary_dashboard, %i[show]
   root 'static_pages#top'
   get 'top', to:'static_pages#top'
   get 'terms', to: 'static_pages#terms'
