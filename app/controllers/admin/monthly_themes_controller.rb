@@ -18,8 +18,7 @@ class Admin::MonthlyThemesController < Admin::BaseController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @monthly_theme.update(monthly_theme_params)
