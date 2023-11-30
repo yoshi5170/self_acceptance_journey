@@ -91,3 +91,17 @@ ja:
         title: 'ユーザー詳細'
       edit:
         title: 'ユーザー編集'
+    monthly_themes:
+      index:
+        title: '月のテーマ一覧'
+      new:
+        title: '月のテーマ作成'
+      edit:
+        title: '月のテーマ編集'
+    theme_resources:
+      index:
+        title: '月のテーマコンテンツ一覧'
+      new:
+        title: '月のテーマコンテンツ作成'
+      edit:
+        title: '月のテーマコンテンツ編集'
