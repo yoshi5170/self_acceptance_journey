@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     resources :users, only: %i[index show edit update destroy]
     resources :flowers
     resources :questions
+    resources :monthly_themes
+    resources :theme_resources
   end
 
   resources :self_esteem_trainings, only: %i[new] do
