@@ -1,0 +1,10 @@
+<tr>
+  <td><%= theme_resource.id %></td>
+  <td><%= theme_resource.monthly_theme_id %></td>
+  <td><%= theme_resource.content %></td>
+  <td><%= theme_resource.url %></td>
+  <td>
+    <%= link_to t('defaults.edit'), edit_admin_theme_resource_path(theme_resource), class: "hover:text-yellow-600 border border-gray-400 p-2 m-2 rounded-lg" %>
+    <%= link_to t('defaults.delete'), admin_theme_resource_path(theme_resource), data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete_confirm')}, class: "hover:text-red-600 border border-gray-400 p-2 m-2 rounded-lg" %>
+  </td>
+</tr>
