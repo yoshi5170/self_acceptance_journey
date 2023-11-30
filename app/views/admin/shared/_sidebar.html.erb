@@ -16,6 +16,10 @@
       <li><%= link_to "新規の花を作成", new_admin_flower_path %></li>
       <li><%= link_to "診断の質問一覧", admin_questions_path %></li>
       <li><%= link_to "診断の質問作成", new_admin_question_path %></li>
+      <li><%= link_to "月のテーマ一覧", admin_monthly_themes_path %></li>
+      <li><%= link_to "月のテーマ作成", new_admin_monthly_theme_path %></li>
+      <li><%= link_to "月のテーマコンテンツ", admin_theme_resources_path %></li>
+      <li><%= link_to "月のテーマのコンテン作成", new_admin_theme_resource_path %></li>
       <li><%= link_to t('defaults.sign_out'), admin_logout_path, data: { turbo_method: :delete, turbo_confirm: "ログアウトしますか?" } %></li>
     </ul>
   </div>

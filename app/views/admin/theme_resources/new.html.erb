@@ -1,0 +1,9 @@
+<% content_for(:title, t('.title')) %>
+<div class="text-customBrown h-screen flex flex-col items-center justify-center ">
+  <div class="space-y-4">
+    <h1 class="text-2xl mb-4 text-center">月のテーマコンテンツを作成する</h1>
+    <div class="bg-slate-300 border-2 border-inherit p-5 rounded-xl" >
+      <%= render 'form', theme_resource: @theme_resource %>
+    </div>
+  </div>
+</div>

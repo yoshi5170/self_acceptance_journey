@@ -1,5 +1,8 @@
 class MonthlyTheme < ApplicationRecord
   has_many :theme_resources, dependent: :destroy
+  validates :month, presence: true, numericality: { only_integer: true }
+  validates :title, presence: true, length: { maximum: 255 }
+  validates :message, presence: true, length: { maximum: 65_535 }
 
   def self.send_monthly_notification(month)
     monthly_theme = find_by(month:)

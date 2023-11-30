@@ -1,0 +1,18 @@
+<%= form_with model: [:admin, monthly_theme], local: true do |f|%>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="flex flex-col justify-center my-4">
+    <%= f.label :month%>
+    <%= f.number_field  :month, class: "bg-white border-2 border-gray-200"%>
+  </div>
+  <div class="flex flex-col justify-center my-4">
+    <%= f.label :title%>
+    <%= f.text_field :title, class: "bg-white border-2 border-gray-200"%>
+  </div>
+  <div class="flex flex-col justify-center my-4">
+    <%= f.label :message%>
+    <%= f.text_area :message, class: "bg-white border-2 border-gray-200"%>
+  </div>
+  <div class="mt-4 text-center">
+    <%= f.submit class: "bg-orange-100 border-2 border-gray-200 rounded-lg px-2 py-1 hover:bg-orange-200" %>
+  <div>
+<%end%>

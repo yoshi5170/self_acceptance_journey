@@ -1,0 +1,10 @@
+<tr>
+  <td><%= monthly_theme.id %></td>
+  <td><%= monthly_theme.month %></td>
+  <td><%= monthly_theme.title %></td>
+  <td><%= monthly_theme.message %></td>
+  <td>
+    <%= link_to t('defaults.edit'), edit_admin_monthly_theme_path(monthly_theme), class: "hover:text-yellow-600 border border-gray-400 p-2 m-2 rounded-lg" %>
+    <%= link_to t('defaults.delete'), admin_monthly_theme_path(monthly_theme), data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete_confirm')}, class: "hover:text-red-600 border border-gray-400 p-2 m-2 rounded-lg" %>
+  </td>
+</tr>
