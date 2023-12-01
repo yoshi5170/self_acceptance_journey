@@ -12,7 +12,7 @@ RSpec.describe 'SelfEsteemTrainingsSpec.rbs', type: :system do
       let(:mock_response) {
         {
           'choices' => [
-            { 'message' => { 'content' => '変換されたポジティブなメッセージ' }}
+            { 'message' => { 'content' => '変換されたポジティブなメッセージ' } }
           ]
         }
       }

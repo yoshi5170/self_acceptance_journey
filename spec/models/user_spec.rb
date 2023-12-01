@@ -48,18 +48,18 @@ RSpec.describe User, type: :model do
     let(:user) { create(:user) }
 
     it 'planted_flowersがuserと関連付いている' do
-      planted_flower = create(:planted_flower, user: user)
+      planted_flower = create(:planted_flower, user:)
       expect(user.planted_flowers).to include planted_flower
       expect(planted_flower.user_id).to eq(user.id)
     end
     it 'diariesがuserと関連付いている' do
-      diary = create(:diary, user: user)
+      diary = create(:diary, user:)
       expect(user.diaries).to include diary
       expect(diary.user_id).to eq(user.id)
 
     end
     it 'self_esteem_trainingsがuserと関連付いている' do
-      self_esteem_training = create(:self_esteem_training, user: user)
+      self_esteem_training = create(:self_esteem_training, user:)
       expect(user.self_esteem_trainings).to include self_esteem_training
       expect(self_esteem_training.user_id).to eq(user.id)
     end

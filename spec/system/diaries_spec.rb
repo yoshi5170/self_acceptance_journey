@@ -6,7 +6,7 @@ RSpec.describe 'Diaries', type: :system do
       let(:user_a) { create(:user) }
       let(:user_b) { create(:user) }
       let!(:diary_a) { create(:diary, user: user_a)}
-      let!(:diary_entries_a) { create_list(:diary_entry, 3, diary: diary_a)}
+      let!(:diary_entries_a) { create_list(:diary_entry, 3, diary: diary_a) }
 
       context 'ユーザーAがログインしている時' do
         before do

@@ -1,8 +1,7 @@
 class SelfEsteemTrainingsController < ApplicationController
   before_action :set_token, only: :result
 
-  def new
-  end
+  def new; end
 
   def result
     # 今日のトレーニング回数を取得

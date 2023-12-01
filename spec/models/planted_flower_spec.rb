@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe PlantedFlower, type: :model do
   let(:user) { create(:user) }
-  let(:flower) {create(:flower, :threshold_five) }
+  let(:flower) { create(:flower, :threshold_five) }
   describe 'バリデーション' do
     it 'added_atがある場合、有効である' do
       planted_flower = build(:planted_flower)

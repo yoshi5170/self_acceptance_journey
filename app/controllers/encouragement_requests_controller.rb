@@ -1,10 +1,9 @@
 class EncouragementRequestsController < ApplicationController
   before_action :set_encouragement_request, only: %i[show edit update destroy]
 
-  def index
-  end
+  def index; end
 
-  def select_image;end
+  def select_image; end
 
   def new
     @encouragement_request = EncouragementRequest.new
