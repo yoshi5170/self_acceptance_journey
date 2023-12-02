@@ -18,8 +18,7 @@ class Admin::FlowersController < Admin::BaseController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @flower.update(flower_params)

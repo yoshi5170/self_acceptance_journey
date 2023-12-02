@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.describe User, type: :system do
-  let(:user) { create(:user)}
-  let(:other_user) { craete(:user)}
+  let(:user) { create(:user) }
+  let(:other_user) { craete(:user) }
 
   describe 'User CRUD' do
     describe 'ログイン前' do

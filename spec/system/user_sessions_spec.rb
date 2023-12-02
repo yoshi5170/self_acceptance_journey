@@ -1,6 +1,6 @@
 require 'rails_helper'
 RSpec.describe User, type: :system do
-  let(:user) { create(:user)}
+  let(:user) { create(:user) }
 
   describe 'ログイン' do
     describe 'ログイン前' do
