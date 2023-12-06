@@ -3,4 +3,5 @@ class EncouragementMessage < ApplicationRecord
   belongs_to :encouragement_request
   validates :text, presence: true, length: { maximum: 150 }
   validates :background_id, presence: true, numericality: { only_integer: true }
+  validates :message_image, presence: true, blob: { content_type: ['image/png'] }
 end
