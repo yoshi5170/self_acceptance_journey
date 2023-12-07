@@ -4,6 +4,7 @@ class Flower < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 255 }
   validates :threshold, presence: true, numericality: { only_integer: true }
+  validates :flower_image, presence: true, blob: { content_type: ['image/png']}
 
   def self.find_flower(total_trainings)
     return nil if total_trainings.zero?
