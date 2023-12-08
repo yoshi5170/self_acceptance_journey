@@ -49,3 +49,7 @@ ja:
       flower:
         name: '名前'
         threshold: 'しきい値'
+      encouragement_request:
+        text: 'テキスト'
+      encouragement_message:
+        text: 'テキスト'
