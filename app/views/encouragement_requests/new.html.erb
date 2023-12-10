@@ -1,18 +1,24 @@
-<div class="bg-customBeige min-h-screen">
+<% content_for(:title, t('.title'))%>
+<div class="bg-customBeige min-h-screen text-customGreen5">
+  <div class="container mx-auto px-5 py-10">
+    <h1 class="text-2xl font-bold text-center pt-4"><%= t('.title') %></h1>
+  </div>
   <div class="container mx-auto px-5 py-10">
     <div class="flex flex-col items-center  w-full">
+      <p class="text-customGreen2">あなたが選択した画像</p>
       <%= image_tag "#{@image_id}.png", size: '400x300' %>
     </div>
-    <div class="container mx-auto px-5 py-10">
+    <div class="container mx-auto sm:px-5 py-10">
       <%= form_with model: @encouragement_request, data: { turbo: false } do |f| %>
         <%= render 'shared/error_messages', object: @encouragement_request %>
-        <div class="my-2 w-2/3 mx-auto">
-          <%= f.label :text, class: "block text-gray-700 text-center" %>
-          <%= f.text_area :text, class: "w-full bg-white p-2 rounded-lg" %>
+        <div class="my-2 sm:w-2/3 lg:w-2/5 sm:mx-auto">
+          <%= f.label :text, "画像に入れるテキストを入力", class: "block text-sm md:text-base text-left my-2 text-customGreen" %>
+          <%= f.text_area :text, size: "40x4", class: "w-full bg-customBeige3 border-2 border-customGreen7 sm:p-2 rounded-lg", placeholder:"例）励ましてください"%>
         </div>
         <%= f.hidden_field :background_id, value: @image_id%>
-        <div class="actions text-center">
-          <%= f.submit "プレビュー", class: "px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+        <div class="grid grid-rows-2 grid-flow-col gap-4">
+          <%= f.submit "作成する", class: "text-xs md:text-base sm:w-1/2 lg:w-1/3 sm:mx-auto bg-customGreen6 mx-2 my-2 px-10 py-2 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2" %>
+          <%= link_to "画像を選択し直す", select_image_encouragement_requests_path, class: "text-xs md:text-base sm:w-1/2 lg:w-1/3 sm:mx-auto text-center  bg-customGreen6 my-2 mx-2 px-10 py-2 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2"%>
         </div>
       <% end %>
     </div>
