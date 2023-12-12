@@ -1,17 +1,26 @@
 <% assign_meta_tags url: new_encouragement_message_url(request_id: @encouragement_request.id), image: rails_blob_url(@encouragement_request.request_image, only_path: false)%>
-<div class="bg-customBeige min-h-screen">
+<% content_for(:title, t('.title'))%>
+<div class="bg-customBeige min-h-screen text-customGreen5">
+  <div class="container mx-auto px-5 py-10">
+    <h1 class="text-2xl font-bold text-center pt-4"><%= t('.title') %></h1>
+  </div>
   <div class="container mx-auto px-5 py-10">
     <div class="flex flex-col items-center  w-full">
-      <%= image_tag @encouragement_request.request_image, size: '400x300' %>
+      <%= image_tag @encouragement_request.request_image, size: '600x500' %>
     </div>
   </div>
-  <div class="text-center my-8">
-    <%= link_to 'テキストを編集する', edit_encouragement_request_path(@encouragement_request),  class: "bg-customGreen6 text-customGreen5 mx-6 my-2 px-5 py-2 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2" %>
-    <%= link_to "削除", encouragement_request_path(@encouragement_request), class:"bg-customGreen6 text-customGreen5 mx-6 my-2 px-5 py-2 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2", data: { turbo_method: :delete, turbo_confirm: "画像を削除しますか?" } %>
-  </div>
-  <div class="twitter font-bold text-sm text-white my-6 py-1 px-4 border-2 border-gray-500 rounded-lg bg-gray-500 hover:bg-gray-700 text-center w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/7 mx-auto">
-    <%= link_to "https://x.com/share?url=https://www.justbe-u.com/encouragement_messages/new?request_id=#{@encouragement_request.id}&text= 励ましのメッセージを送る%0a%0a %23JustBeU %23自己受容", target: '_blank' do %>
-      <i class="fa-brands fa-x-twitter"></i>シェア
-    <% end %>
+  <p class="text-center text-xs sm:text-base my-6 mx-4">作成した励ましのリクエストカードをシェアーしてみんなから励ましのメッセージを受け取りましょう!</p>
+  <div class="grid grid-rows-3 grid-flow-col gap-2">
+    <div class="twitter ms:font-bold text-white text-center text-xs mt-2 mb-8">
+      <%= link_to "https://x.com/share?url=https://www.justbe-u.com/encouragement_messages/new?request_id=#{@encouragement_request.id}&text= 励ましのメッセージを送る%0a%0a %23JustBeU %23自己受容", target: '_blank', class: "text-xs md:text-base mx-6 my-2 py-1 px-16 md:px-20 border-2 border-gray-500 rounded-full bg-gray-500 hover:bg-gray-700" do %>
+        <i class="fa-brands fa-x-twitter"></i>シェア
+      <% end %>
+    </div>
+    <div class="text-center mt-2 mb-4">
+      <%= link_to 'テキストを編集する', edit_encouragement_request_path(@encouragement_request),  class: "text-xs md:text-base bg-customGreen6 text-customGreen5 mx-6 my-2 px-9 md:px-10 py-1 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2" %>
+    </div>
+    <div class="text-center mt-2 mb-4">
+      <%= link_to "保存を取り消す", encouragement_request_path(@encouragement_request), class:"text-xs md:text-base bg-customGreen6 text-customGreen5 mx-6 my-2 px-12 md:px-16 py-1 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2", data: { turbo_method: :delete, turbo_confirm: "画像を削除しますか?" } %>
+    </div>
   </div>
 </div>
