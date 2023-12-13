@@ -10,7 +10,7 @@
     <div class="my-8 sm:w-2/3 lg:w-3/5 mx-auto text-center">
       <p class="font-bold lg-font-extrabold text-xl lg:text-2xl mb-4 text-center">STEP２</p>
       <%= f.label :background_id, "画像選択", class: "block text-customGreen"%>
-      <%= f.select :background_id, options_for_select([["使用したい背景を以下から１つ選択", "", { disabled: true, selected: true }]] + (5..10).to_a), {}, {class: "select select-bordered w-full max-w-xs border-2 border-customGreen7 bg-customBeige3 text-slate-400"} %>
+      <%= f.select :background_id, options_for_select([["使用したい背景を以下から１つ選択", nil, { disabled: true, selected: true }]] + (5..10).to_a), {}, {class: "select select-bordered w-full max-w-xs border-2 border-customGreen7 bg-customBeige3 text-slate-400"} %>
     </div>
     <%= f.hidden_field :encouragement_request_id, value:encouragement_message.encouragement_request_id%>
     <div class="actions text-center sm:w-2/3 lg:w-3/5 mx-auto mt-10 mb-4">
