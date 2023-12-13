@@ -1,39 +1,7 @@
-<div class="bg-customBeige min-h-screen">
-  <div class="container mx-auto px-5 py-10">
-    <h1 class="text-2xl font-bold text-center my-10">励ましメッセージ作成</h1>
-    <div class="container mx-auto px-5 py-10">
-      <%= form_with model: @encouragement_message, data: { turbo: false } do |f| %>
-        <%= render 'shared/error_messages', object: @encouragement_message %>
-        <div class="my-2 w-2/3 mx-auto">
-          <%= f.label :text, class: "block text-gray-700 text-center" %>
-          <%= f.text_area :text, class: "w-full bg-white p-2 rounded-lg" %>
-        </div>
-        <div class="my-2 w-2/3 mx-auto">
-          <%= f.label :background_id, "以下の４つに背景から使用指定背景を選んで番号を入力ください", class: "block"%>
-          <%= f.select :background_id, options_for_select(1..4), {}, {class: "bg-white border-2 border-gray-200 block"} %>
-        </div>
-        <div class="actions text-center">
-          <%= f.submit "プレビュー", class: "px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
-        </div>
-      <% end %>
-    </div>
-    <div class="container mx-auto px-5 py-10">
-      <div class="flex flex-col items-center  w-full my-4">
-        <p>①</p>
-        <%= image_tag "1.png", size: '400x300' %>
-      </div>
-      <div class="flex flex-col items-center  w-full my-4">
-        <p>②</p>
-        <%= image_tag "2.png", size: '400x300' %>
-      </div>
-      <div class="flex flex-col items-center  w-full my-4">
-        <p>③</p>
-        <%= image_tag "3.png", size: '400x300' %>
-      </div>
-      <div class="flex flex-col items-center  w-full my-4">
-        <p>④</p>
-        <%= image_tag "4.png", size: '400x300' %>
-      </div>
-    </div>
+<% content_for(:title, t('.title'))%>
+<div class="bg-customBeige min-h-screen text-customGreen5">
+  <div class="container mx-auto px-2 sm:px-5 py-10">
+    <h1 class="text-2xl font-bold text-center my-10"><%= t('.title') %></h1>
+    <%= render 'form', encouragement_message: @encouragement_message, request_user: @request_user %>
   </div>
 </div>

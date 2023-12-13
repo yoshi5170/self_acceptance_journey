@@ -7,8 +7,9 @@ class EncouragementMessagesController < ApplicationController
   def select_image; end
 
   def new
-    encouragement_request = EncouragementRequest.find(params[:request_id])
-    @encouragement_message = EncouragementMessage.new(encouragement_request_id: encouragement_request.id)
+    @encouragement_request = EncouragementRequest.find(params[:request_id])
+    @request_user = @encouragement_request.user.name
+    @encouragement_message = EncouragementMessage.new(encouragement_request_id: @encouragement_request.id)
   end
 
   def create
@@ -20,6 +21,8 @@ class EncouragementMessagesController < ApplicationController
     if @encouragement_message.save
       redirect_to encouragement_message_path(@encouragement_message), success: '画像を作成しました'
     else
+      @encouragement_request = @encouragement_message.encouragement_request
+      @request_user = @encouragement_request.user.name
       flash.now[:danger] = '画像の作成に失敗しました'
       render :new, status: :unprocessable_entity
     end
@@ -29,9 +32,12 @@ class EncouragementMessagesController < ApplicationController
     Rails.logger.info "Encouragement Request Image URL: #{url_for(@encouragement_message.encouragement_request.request_image)}"
   end
 
-  def edit; end
+  def edit
+    @request_user = @encouragement_message.encouragement_request.user.name
+  end
 
   def update
+    @request_user = @encouragement_message.encouragement_request.user.name
     @encouragement_message.update(encouragement_message_params)
     image = ImageCreator.build(@encouragement_message.text, @encouragement_message.background_id)
     image_path = image.path

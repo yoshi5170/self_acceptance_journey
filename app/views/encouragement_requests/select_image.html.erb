@@ -1,32 +1,47 @@
+<% content_for(:title, t('.title'))%>
 <div class="bg-customBeige min-h-screen text-customGreen5">
   <div class="container mx-auto px-5 py-10">
-    <p class="text-xl text-center">背景１</p>
-    <figure class="flex justify-center px-6 mt-2">
-      <%= image_tag '1.png', size: '400x300' %>
-    </figure>
-    <div class="items-center text-center mt-3 mb-10">
-      <%= button_to "これにする", new_encouragement_request_path, { method: :get, params: {image_id: 1}, class: "bg-customGreen6 my-2 px-10 py-2 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2" } %>
-    </div>
-    <p class="text-xl text-center">背景2</p>
-    <figure class="flex justify-center px-6 mt-2">
-      <%= image_tag '2.png', size: '400x300' %>
-    </figure>
-    <div class="items-center text-center mt-3 mb-10">
-      <%= button_to "これにする", new_encouragement_request_path, { method: :get, params: {image_id: 2}, class: "bg-customGreen6 my-2 px-10 py-2 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2" } %>
-    </div>
-    <p class="text-xl text-center">背景3</p>
-    <figure class="flex justify-center px-6 mt-2">
-      <%= image_tag '3.png', size: '400x300' %>
-    </figure>
-    <div class="items-center text-center mt-3 mb-10">
-      <%= button_to "これにする", new_encouragement_request_path, { method: :get, params: {image_id: 3}, class: "bg-customGreen6 my-2 px-10 py-2 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2" } %>
-    </div>
-    <p class="text-xl text-center">背景4</p>
-    <figure class="flex justify-center px-6 mt-2">
-      <%= image_tag '4.png', size: '400x300' %>
-    </figure>
-    <div class="items-center text-center mt-3 mb-10">
-      <%= button_to "これにする", new_encouragement_request_path, { method: :get, params: {image_id: 4}, class: "bg-customGreen6 my-2 px-10 py-2 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2" } %>
+    <h1 class="text-2xl font-bold text-center pt-4"><%= t('.title') %></h1>
+    <p class="text-customGreen2 my-4 text-center text-sm md:text-base">使用したい背景を以下の中から一つ選択してください</p>
+  </div>
+  <div class="container mx-auto px-5 py-10">
+    <div class="sm:grid sm:grid-cols-2 sm:gap-2">
+      <div>
+        <p class="text-xl text-center font-bold mb-4">イメージ１</p>
+        <figure class="flex justify-center px-6 mt-2">
+          <%= image_tag '1.png', size: '400x300' %>
+        </figure>
+        <div class="items-center text-center mb-10">
+          <%= button_to "これにする", new_encouragement_request_path, { method: :get, params: {image_id: 1}, class: "text-sm my-2 px-8 py-2 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2" } %>
+        </div>
+      </div>
+      <div>
+        <p class="text-xl text-center font-bold mb-4">イメージ2</p>
+        <figure class="flex justify-center px-6 mt-2">
+          <%= image_tag '2.png', size: '400x300' %>
+        </figure>
+        <div class="items-center text-center mb-10">
+          <%= button_to "これにする", new_encouragement_request_path, { method: :get, params: {image_id: 2}, class: "text-sm my-2 px-10 py-2 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2" } %>
+        </div>
+      </div>
+      <div>
+        <p class="text-xl text-center font-bold mb-4">イメージ3</p>
+        <figure class="flex justify-center px-6 mt-2">
+          <%= image_tag '3.png', size: '400x300' %>
+        </figure>
+        <div class="items-center text-center mb-10">
+          <%= button_to "これにする", new_encouragement_request_path, { method: :get, params: {image_id: 3}, class: "text-sm my-2 px-10 py-2 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2" } %>
+        </div>
+      </div>
+      <div>
+        <p class="text-xl text-center font-bold mb-4">イメージ4</p>
+        <figure class="flex justify-center px-6 mt-2">
+          <%= image_tag '4.png', size: '400x300' %>
+        </figure>
+        <div class="items-center text-center mb-10">
+          <%= button_to "これにする", new_encouragement_request_path, { method: :get, params: {image_id: 4}, class: "text-sm my-2 px-10 py-2 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2" } %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
