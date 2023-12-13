@@ -1,6 +1,6 @@
 class EncouragementRequestsController < ApplicationController
   before_action :set_encouragement_request, only: %i[show edit update destroy]
-
+  skip_before_action :authenticate_user!, only: %i[index]
   def index
     if params[:message_id].present?
       @encouragement_message = EncouragementMessage.find(params[:message_id])
