@@ -1,7 +1,12 @@
 class EncouragementRequestsController < ApplicationController
   before_action :set_encouragement_request, only: %i[show edit update destroy]
 
-  def index; end
+  def index
+    if params[:message_id].present?
+      @encouragement_message = EncouragementMessage.find(params[:message_id])
+    end
+    @encouragement_requests = EncouragementRequest.all.includes(:user).order(created_at: :desc)
+  end
 
   def select_image; end
 
@@ -46,7 +51,7 @@ class EncouragementRequestsController < ApplicationController
 
   def destroy
     @encouragement_request.destroy
-    redirect_to select_image_encouragement_requests_path, success: '画像を削除しました'
+    redirect_to encouragement_requests_path, success: '画像を削除しました'
   end
 
   private
