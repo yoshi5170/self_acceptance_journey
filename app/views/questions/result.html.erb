@@ -22,11 +22,11 @@
       </div>
       <div class="my-10 text-center">
         <% if @result.id == 1 %>
-          <li class="inline-block text-sm md:text-base rounded-lg drop-shadow-lg px-6 py-1 mx-4 lg:px-4 hover:bg-customGreen6 hover:drop-shadow-lg border-2 border-customGreen7"><%= link_to "自己受容トレーニング", new_self_esteem_training_path, data: { turbo: false }%></li>
-          <li class="inline-block text-sm md:text-base rounded-lg drop-shadow-lg px-6 py-1 mx-4 lg:px-4 hover:bg-customGreen6 hover:drop-shadow-lg border-2 border-customGreen7"><%= link_to "今日の幸せ日記を作成", new_diary_path, data: { turbo: false }%></li>
+          <li class="inline-block text-sm md:text-base rounded-lg drop-shadow-lg px-6 py-1 mx-4 mb-4 lg:px-4 hover:bg-customGreen6 hover:drop-shadow-lg border-2 border-customGreen7"><%= link_to "自己受容トレーニング", new_self_esteem_training_path, data: { turbo: false }%></li>
+          <li class="inline-block text-sm md:text-base rounded-lg drop-shadow-lg px-6 py-1 mx-4 mb-4 lg:px-4 hover:bg-customGreen6 hover:drop-shadow-lg border-2 border-customGreen7"><%= link_to "今日の幸せ日記を作成", new_diary_path, data: { turbo: false }%></li>
         <% elsif @result.id == 2 %>
-          <li class="inline-block text-sm md:text-base rounded-lg drop-shadow-lg px-6 py-1 mx-4 lg:px-4 hover:bg-customGreen6 hover:drop-shadow-lg border-2 border-customGreen7"><%= link_to "自己受容トレーニング", new_self_esteem_training_path, data: { turbo: false }%></li>
-          <li class="inline-block text-sm md:text-base rounded-lg drop-shadow-lg px-6 py-1 mx-4 lg:px-4 hover:bg-customGreen6 hover:drop-shadow-lg border-2 border-customGreen7"><%= link_to "今日の幸せ日記を作成", new_diary_path, data: { turbo: false }%></li>
+          <li class="inline-block text-sm md:text-base rounded-lg drop-shadow-lg px-6 py-1 mx-4 mb-4 lg:px-4 hover:bg-customGreen6 hover:drop-shadow-lg border-2 border-customGreen7"><%= link_to "自己受容トレーニング", new_self_esteem_training_path, data: { turbo: false }%></li>
+          <li class="inline-block text-sm md:text-base rounded-lg drop-shadow-lg px-6 py-1 mx-4 mb-4 lg:px-4 hover:bg-customGreen6 hover:drop-shadow-lg border-2 border-customGreen7"><%= link_to "今日の幸せ日記を作成", new_diary_path, data: { turbo: false }%></li>
         <% elsif @result.id == 3 %>
           <p class="text-xs lg:text-sm text-gray-400 mt-4 mb-2 text-center">LINE友だち追加して月刊セルフケアの通知を受け取る↓</p>
           <div class="flex justify-center items-center my-4">
