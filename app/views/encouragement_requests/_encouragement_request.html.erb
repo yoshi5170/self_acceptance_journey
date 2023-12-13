@@ -2,7 +2,7 @@
   <%= image_tag encouragement_request.request_image, size: '400x300', class:"mx-auto"%>
   <i class="fa-regular fa-user text-customGreen"></i>
   <%=  encouragement_request.user.name %>
-  <% if current_user.own?(encouragement_request) %>
+  <% if current_user&.own?(encouragement_request) %>
     <%= link_to encouragement_request_path(encouragement_request),  data: { turbo_method: :delete, turbo_confirm: "励ましリクエストを削除すると、送られた励ましメッセージも一緒に削除されます。本当に削除しますか？" } do %>
       <i class="fa-regular fa-trash-can text-customGreen"></i>
     <% end %>
