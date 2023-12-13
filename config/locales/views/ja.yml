@@ -60,6 +60,9 @@ ja:
   encouragement_requests:
     select_image:
       title: '背景画像の選択'
+    index:
+      title: 'みんなの励ましリクエスト一覧'
+      no_result: '励ましリクエストがありません'
     new:
       title: '励ましクエスト作成'
     edit:
@@ -67,6 +70,9 @@ ja:
     show:
       title: '励ましリクエスト詳細'
   encouragement_messages:
+    index:
+      title: '励ましメッセージ一覧'
+      no_result: 'メッセージがありません'
     new:
       title: '励ましメッセージ作成'
     edit:

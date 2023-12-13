@@ -1,10 +1,11 @@
 class EncouragementMessagesController < ApplicationController
   before_action :set_encouragement_message, only: %i[show edit update destroy]
   skip_before_action :authenticate_user!
+  before_action :set_encouragement_request, only: [:index]
 
-  def index; end
-
-  def select_image; end
+  def index
+    @encouragement_messages = @encouragement_request.encouragement_messages
+  end
 
   def new
     @encouragement_request = EncouragementRequest.find(params[:request_id])
@@ -63,5 +64,9 @@ class EncouragementMessagesController < ApplicationController
 
   def encouragement_message_params
     params.require(:encouragement_message).permit(:text, :background_id, :encouragement_request_id)
+  end
+
+  def set_encouragement_request
+    @encouragement_request = EncouragementRequest.find(params[:encouragement_request_id])
   end
 end

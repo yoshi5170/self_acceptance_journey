@@ -1,4 +1,4 @@
-<% assign_meta_tags url: encouragement_message_url(request_id: @encouragement_message.id), image: rails_blob_url(@encouragement_message.message_image, only_path: false) %>
+<% assign_meta_tags url: encouragement_requests_url, image: rails_blob_url(@encouragement_message.message_image, only_path: false) %>
 <% content_for(:title, t('.title'))%>
 <div class="bg-customBeige min-h-screen text-customGreen5">
   <div class="container mx-auto px-5 py-10">
@@ -11,7 +11,7 @@
     <p class="text-center text-xs sm:text-base my-6">メッセージカードをシェアーして相手を元気付けましょう!</p>
     <div class="grid grid-rows-3 grid-flow-col gap-4">
       <div class="twitter ms:font-bold text-white text-center text-xs mt-2 mb-8">
-        <%= link_to "https://x.com/share?url=https://www.justbe-u.com/encouragement_messages/#{@encouragement_message.id}&text= #{@encouragement_message.encouragement_request.user.name}さんへの励ましのメッセージです%0a%0a %23JustBeU %23自己受容", target: '_blank', class:'text-xs md:text-base mx-6 my-2 py-1 px-16 border-2 border-gray-500 rounded-full bg-gray-500 hover:bg-gray-700' do %>
+        <%= link_to "https://x.com/share?url=https://www.justbe-u.com/encouragement_requests?message_id=#{@encouragement_message.id}&text= #{@encouragement_message.encouragement_request.user.name}さんへの励ましのメッセージです%0a%0a %23JustBeU %23自己受容", target: '_blank', class:'text-xs md:text-base mx-6 my-2 py-1 px-16 border-2 border-gray-500 rounded-full bg-gray-500 hover:bg-gray-700' do %>
           <i class="fa-brands fa-x-twitter"></i>シェア
         <% end %>
       </div>

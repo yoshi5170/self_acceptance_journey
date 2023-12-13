@@ -12,7 +12,7 @@
   <p class="text-center text-xs sm:text-base my-6 mx-4">作成した励ましのリクエストカードをシェアーしてみんなから励ましのメッセージを受け取りましょう!</p>
   <div class="grid grid-rows-3 grid-flow-col gap-2">
     <div class="twitter ms:font-bold text-white text-center text-xs mt-2 mb-8">
-      <%= link_to "https://x.com/share?url=https://www.justbe-u.com/encouragement_messages/new?request_id=#{@encouragement_request.id}&text= 励ましのメッセージを送る%0a%0a %23JustBeU %23自己受容", target: '_blank', class: "text-xs md:text-base mx-6 my-2 py-1 px-16 md:px-20 border-2 border-gray-500 rounded-full bg-gray-500 hover:bg-gray-700" do %>
+      <%= link_to "https://x.com/share?url=https://www.justbe-u.com/encouragement_messages/new?request_id=#{@encouragement_request.id}&text=リンクから#{@encouragement_request.user.name}さんに励ましのメッセージカードを送って元気づけましょう！%0a%0a %23JustBeU %23自己受容", target: '_blank', class: "text-xs md:text-base mx-6 my-2 py-1 px-16 md:px-20 border-2 border-gray-500 rounded-full bg-gray-500 hover:bg-gray-700" do %>
         <i class="fa-brands fa-x-twitter"></i>シェア
       <% end %>
     </div>

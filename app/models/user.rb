@@ -19,4 +19,8 @@ class User < ApplicationRecord
   rescue ActiveRecord::RecordInvalid
     false
   end
+
+  def own?(object)
+    object.user_id == id
+  end
 end

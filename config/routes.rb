@@ -36,6 +36,7 @@ Rails.application.routes.draw do
     end
   end
   resources :encouragement_requests, only: %i[index new create show edit update destroy] do
+    resources :encouragement_messages, only: [:index]
     collection do
       get 'select_image'
     end
