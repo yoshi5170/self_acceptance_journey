@@ -21,7 +21,11 @@ Rails.application.routes.draw do
       get 'result'
     end
   end
-
+  resources :self_discovery_trainings, only: %i[new] do
+    collection do
+      get 'result'
+    end
+  end
   resources :diaries
   resource :mypage, only: %i[show]
   resource :garden, only: %i[show]
