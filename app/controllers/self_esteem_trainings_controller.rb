@@ -34,10 +34,11 @@ class SelfEsteemTrainingsController < ApplicationController
       if @chat.present?
         current_user.add_training_and_flower
       else
+        flash.now[:danger] = t('.fail')
         render :new
       end
     else
-      redirect_to root_path, danger: t('.fail')
+      redirect_to root_path, danger: t('.over_the_limit')
     end
   end
 
