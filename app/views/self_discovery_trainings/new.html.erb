@@ -1,0 +1,28 @@
+<% content_for( :title, t('.title'))%>
+<div class="bg-customBeige text-customGreen5 min-h-screen">
+  <div class="input-area container mx-auto px-5 py-10">
+      <div class="text-center mt-5">
+          <h1 class="font-bold text-xl sm:text-3xl py-4 my-4">自己発見トレーニング</h1>
+          <p class="text-sm md:text-base pt-4 pb-8 mx-2 md:mx-0">自身がマイナスだと感じる特性（性格）をポジティブな視点から見るトレーニングになります</p>
+      </div>
+      <div class="flex justify-center">
+        <%= form_with(url: result_self_discovery_trainings_path, method: :get, class: "grid gap-4", data: { turbo: false })do |f| %>
+          <div class="sm:px-8 sm:py-10 sm:mx-auto">
+            <div class="lg:w-2/3 lg:mx-auto">
+              <%= f.label '自身がマイナスだと感じる特性（性格)を一つ入力してください' %>
+              <%= f.text_area :text, size: "80x3", class: "w-full bg-customBeige3 border-2 border-customGreen3 p-2 rounded-lg text-sm md:text-base", placeholder:"例）優柔不断な部分がある、意志が弱い部分がある、心配性だ、計画性がない...etc" %>
+              <p class="text-xs text-rose-900">*1日にトレーニングできる回数は2回までです。</p>
+              <p class="text-xs text-rose-900">*AIからの返答が10~20秒ほどかかります。</p>
+              <p class="text-xs text-rose-900">*50文字以内で入力してください</p>
+            </div>
+          </div>
+          <div class="my-2 text-center">
+            <%= f.submit '変換', class: "bg-customGreen5 text-customBeige px-6 py-2 rounded-full drop-shadow-lg hover:bg-customGreen hover:drop-shadow-lg border-2 border-customGreen2", id: "convertButton2"%>
+          </div>
+        <% end %>
+      </div>
+  </div>
+  <div class="animation-area hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 drop-shadow-2xl" id="animationArea2">
+    <%= image_tag 'flower1.gif', size: "300x300", id: 'animationGif', class: 'border-2 border-customBeige2 rounded-full drop-shadow-lg'%>
+  </div>
+</div>

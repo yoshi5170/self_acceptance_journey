@@ -29,7 +29,16 @@ ja:
     result:
       title: '結果'
       text_limit: '50文字以内で入力してください'
-      fail: '1日のトレーニング回数を超えています。'
+      over_the_limit: 1日のトレーニング回数を超えています。
+      fail: '変換に失敗しました再度やり直してください'
+  self_discovery_trainings:
+    new:
+      title: '自己発見トレーニング'
+    result:
+      title: '結果'
+      text_limit: '50文字以内で入力してください'
+      over_the_limit: 1日のトレーニング回数を超えています。
+      fail: '変換に失敗しました再度やり直してください'
   gardens:
     show:
       title: 'マイガーデン'
