@@ -78,6 +78,8 @@ ja:
       title: '励ましリクエスト編集'
     show:
       title: '励ましリクエスト詳細'
+    draft:
+      title: '励ましリクエスト下書き'
   encouragement_messages:
     index:
       title: '励ましメッセージ一覧'
