@@ -23,6 +23,8 @@
                 </ul>
             </details>
           </li>
+          <li class="hover:bg-neutral-600 hover:rounded-xl"><%= link_to "みんなの励ましクエスト", encouragement_requests_path, data: { turbo: false }%></li>
+          <li class="hover:bg-neutral-600 hover:rounded-xl"><%= link_to "励ましリクエスト作成", select_image_encouragement_requests_path, data: { turbo: false }%></li>
           <li class="md:hidden hover:bg-neutral-600 hover:rounded-xl"><%= link_to "自己否定度診断", questions_path, data: { turbo: false }%></li>
           <li class="hover:bg-neutral-600 hover:rounded-xl"><%= link_to t('defaults.sign_out'), destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "ログアウトしますか?" } %></li>
         </ul>
