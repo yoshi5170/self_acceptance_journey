@@ -10,15 +10,15 @@
     </div>
     <p class="text-center text-xs sm:text-base my-6">メッセージカードをシェアーして相手を元気付けましょう!</p>
     <div class="grid grid-rows-3 grid-flow-col gap-4">
-      <div class="twitter ms:font-bold text-white text-center text-xs mt-2 mb-8">
+      <div class="twitter ms:font-bold text-white text-center text-xs mt-2 mb-2">
         <%= link_to "https://x.com/share?url=https://www.justbe-u.com/encouragement_requests?message_id=#{@encouragement_message.id}&text= #{@encouragement_message.encouragement_request.user.name}さんへの励ましのメッセージです%0a%0a %23JustBeU %23自己受容", target: '_blank', class:'text-xs md:text-base mx-6 my-2 py-1 px-16 border-2 border-gray-500 rounded-full bg-gray-500 hover:bg-gray-700' do %>
           <i class="fa-brands fa-x-twitter"></i>シェア
         <% end %>
       </div>
-      <div class="text-center text-sm md:text-base my-4">
+      <div class="text-center text-sm md:text-base my-2">
         <%= link_to 'テキストを編集する', edit_encouragement_message_path(@encouragement_message),  class: "bg-customGreen6 text-customGreen5 mx-6 my-2 px-6 py-1 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2" %>
       </div>
-      <div class="text-center text-sm md:text-base my-4">
+      <div class="text-center text-sm md:text-base my-2">
         <%= link_to "送信を取り消す", encouragement_message_path(@encouragement_message), class:"bg-customGreen6 text-customGreen5 mx-6 my-2 px-10 py-1 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2", data: { turbo_method: :delete, turbo_confirm: "画像を削除しますか?" } %>
       </div>
     </div>
