@@ -5,7 +5,11 @@ class EncouragementRequestsController < ApplicationController
     if params[:message_id].present?
       @encouragement_message = EncouragementMessage.find(params[:message_id])
     end
-    @encouragement_requests = EncouragementRequest.all.includes(:user).order(created_at: :desc)
+    @encouragement_requests = EncouragementRequest.where(status: 'public_status').includes(:user).order(created_at: :desc).page(params[:page]).per(18)
+  end
+
+  def draft
+    @encouragement_requests = current_user.encouragement_requests.where(status: 'draft').includes(:user).order(created_at: :desc).page(params[:page]).per(18)
   end
 
   def select_image; end
@@ -75,7 +79,7 @@ class EncouragementRequestsController < ApplicationController
   end
 
   def status_params
-    if params[:commit] == '公開'
+    if params[:commit] == '公開する'
       'public_status'
     else
       'draft'
