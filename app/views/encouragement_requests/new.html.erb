@@ -15,10 +15,13 @@
           <%= f.label :text, "画像に入れるテキストを入力", class: "block text-sm md:text-base text-left my-2 text-customGreen" %>
           <%= f.text_area :text, size: "40x4", class: "w-full bg-customBeige3 border-2 border-customGreen7 sm:p-2 rounded-lg", placeholder:"例）励ましてください"%>
         </div>
+        <div class="my-2 text-center">
+          <%= f.select :status, options_for_select([["ステータスを選択", nil, { disabled: true, selected: true }]] + EncouragementRequest.statuses_i18n.invert.to_a), {}, class: "select select-bordered w-full max-w-xs border-2 border-customGreen7 bg-customBeige3 text-slate-400" %>
+        </div>
         <%= f.hidden_field :background_id, value: @image_id%>
-        <div class="grid grid-rows-2 grid-flow-col gap-4">
-          <%= f.submit "作成する", class: "text-xs md:text-base sm:w-1/2 lg:w-1/3 sm:mx-auto bg-customGreen6 mx-2 my-2 px-10 py-2 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2" %>
-          <%= link_to "画像を選択し直す", select_image_encouragement_requests_path, class: "text-xs md:text-base sm:w-1/2 lg:w-1/3 sm:mx-auto text-center  bg-customGreen6 my-2 mx-2 px-10 py-2 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2"%>
+        <div class="grid grid-rows-2 grid-flow-col gap-4 my-6">
+          <%= f.submit "作成する", class: "mx-auto btn btn-wide btn-sm text-customGreen border-1 border-customGreen2 bg-customGreen6" %>
+          <%= link_to "画像を選択し直す", select_image_encouragement_requests_path, class: "mx-auto text-center btn btn-wide btn-sm text-customGreen border-1 border-customGreen2 bg-customGreen6"%>
         </div>
       <% end %>
     </div>
