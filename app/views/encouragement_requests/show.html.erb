@@ -19,11 +19,11 @@
       </div>
       <% if @encouragement_request.public_status? %>
         <div class="text-center mb-2">
-          <%= f.submit t('defaults.darft'), class: "btn btn-wide btn-sm text-customGreen border-1 border-customGreen2 bg-customGreen6" %>
+          <%= f.submit '下書き', class: "btn btn-wide btn-sm text-customGreen border-1 border-customGreen2 bg-customGreen6" %>
         </div>
       <%else%>
         <div class="text-center mb-2">
-          <%= f.submit t('defaults.public_status'), class: "btn btn-wide btn-sm text-customGreen border-1 border-customGreen2 bg-customGreen6" %>
+          <%= f.submit '公開する', class: "btn btn-wide btn-sm text-customGreen border-1 border-customGreen2 bg-customGreen6" %>
         </div>
       <% end%>
       <div class="text-center mb-2">
