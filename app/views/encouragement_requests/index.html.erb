@@ -11,6 +11,9 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         <%= render partial: 'encouragement_request', collection: @encouragement_requests %>
       </div>
+      <div class="flex items-center justify-center mt-4 mb-10">
+        <%= paginate @encouragement_requests, window: 2 %>
+      </div>
     <% else %>
       <p class="text-center"><%= t('.no_result') %></p>
     <% end %>
