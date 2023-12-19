@@ -1,7 +1,8 @@
 <% content_for(:title, t('.title'))%>
 <div class="bg-customBeige min-h-screen text-customGreen5">
-  <div class="container mx-auto px-5 py-10">
+  <div class="container mx-auto px-5 py-6">
     <h1 class="text-2xl font-bold text-center pt-4"><%= t('.title') %></h1>
+    <h1 class="text-customGreen text-lg font-bold text-center pt-4 my-6">STEP②-メッセージの入力</h1>
   </div>
   <div class="container mx-auto px-5 py-10">
     <div class="flex flex-col items-center  w-full">
@@ -20,8 +21,8 @@
         </div>
         <%= f.hidden_field :background_id, value: @image_id%>
         <div class="grid grid-rows-2 grid-flow-col gap-4 my-6">
-          <%= f.submit "作成する", class: "mx-auto btn btn-wide btn-sm text-customGreen border-1 border-customGreen2 bg-customGreen6" %>
-          <%= link_to "画像を選択し直す", select_image_encouragement_requests_path, class: "mx-auto text-center btn btn-wide btn-sm text-customGreen border-1 border-customGreen2 bg-customGreen6"%>
+          <%= f.submit "作成する", class: "mx-auto btn btn-wide btn-sm text-customGreen border-1 border-customGreen2 bg-customGreen6 hover:bg-customGreen7 hover:border-customGreen2" %>
+          <%= link_to "画像を選択し直す", select_image_encouragement_requests_path, class: "mx-auto text-center btn btn-wide btn-sm text-customGreen border-1 border-customGreen2 bg-customGreen6 hover:bg-customGreen7 hover:border-customGreen2"%>
         </div>
       <% end %>
     </div>
