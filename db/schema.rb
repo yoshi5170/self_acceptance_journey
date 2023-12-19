@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_16_135728) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_19_151849) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -128,6 +128,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_16_135728) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "self_discovery_trainings", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "trained_at", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_self_discovery_trainings_on_user_id"
+  end
+
   create_table "self_esteem_trainings", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.datetime "trained_at", null: false
@@ -168,6 +176,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_16_135728) do
   add_foreign_key "planted_flowers", "flowers"
   add_foreign_key "planted_flowers", "users"
   add_foreign_key "recommendations", "results"
+  add_foreign_key "self_discovery_trainings", "users"
   add_foreign_key "self_esteem_trainings", "users"
   add_foreign_key "theme_resources", "monthly_themes"
 end
