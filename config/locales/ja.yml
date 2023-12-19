@@ -5,3 +5,7 @@ ja:
         general: 一般
         admin: 管理者
         guest: ゲスト
+    encouragement_request:
+      status:
+        draft: 下書き
+        public_status: 公開

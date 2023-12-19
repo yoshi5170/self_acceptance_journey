@@ -1,0 +1,11 @@
+<div class="border-2 border-customGreen2 rounded-lg p-4">
+  <%= image_tag encouragement_request.request_image, size: '400x300', class:"mx-auto"%>
+  <%= form_with model: encouragement_request, url: status_update_encouragement_request_path(encouragement_request) do |f| %>
+    <div class="text-center my-2">
+      <%= f.submit '公開する', class: "btn btn-wide btn-sm text-customGreen border-1 border-customGreen2 bg-customGreen6" %>
+    </div>
+    <div class="text-center mb-2">
+    <%= link_to t('defaults.edit'), edit_encouragement_request_path(encouragement_request), class: "btn btn-wide btn-sm text-customGreen border-1 border-customGreen2 bg-customGreen6"%>
+    </div>
+  <% end%>
+</div>

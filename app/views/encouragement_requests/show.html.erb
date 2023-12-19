@@ -9,18 +9,29 @@
       <%= image_tag @encouragement_request.request_image, size: '600x500' %>
     </div>
   </div>
-  <p class="text-center text-xs sm:text-base my-6 mx-4">作成した励ましのリクエストカードをシェアーしてみんなから励ましのメッセージを受け取りましょう!</p>
-  <div class="grid grid-rows-3 grid-flow-col gap-2">
-    <div class="twitter ms:font-bold text-white text-center text-xs mt-2 mb-8">
-      <%= link_to "https://x.com/share?url=https://www.justbe-u.com/encouragement_messages/new?request_id=#{@encouragement_request.id}&text=リンクから#{@encouragement_request.user.name}さんに励ましのメッセージカードを送って元気づけましょう！%0a%0a %23JustBeU %23自己受容", target: '_blank', class: "text-xs md:text-base mx-6 my-2 py-1 px-16 md:px-20 border-2 border-gray-500 rounded-full bg-gray-500 hover:bg-gray-700" do %>
-        <i class="fa-brands fa-x-twitter"></i>シェア
-      <% end %>
-    </div>
-    <div class="text-center mt-2 mb-4">
-      <%= link_to 'テキストを編集する', edit_encouragement_request_path(@encouragement_request),  class: "text-xs md:text-base bg-customGreen6 text-customGreen5 mx-6 my-2 px-9 md:px-10 py-1 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2" %>
-    </div>
-    <div class="text-center mt-2 mb-4">
-      <%= link_to "保存を取り消す", encouragement_request_path(@encouragement_request), class:"text-xs md:text-base bg-customGreen6 text-customGreen5 mx-6 my-2 px-12 md:px-16 py-1 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2", data: { turbo_method: :delete, turbo_confirm: "画像を削除しますか?" } %>
-    </div>
+  <div class="container mx-auto px-2 pb-10">
+    <p class="text-center text-xs sm:text-base my-6 mx-4">作成した励ましリクエストカードをシェアーしてみんなから励ましのメッセージを受け取りましょう!</p>
+    <%= form_with model: @encouragement_request, url: status_update_encouragement_request_path(@encouragement_request) do |f| %>
+      <div class="twitter ms:font-bold text-white text-center text-xs mb-2">
+        <%= link_to "https://x.com/share?url=https://www.justbe-u.com/encouragement_messages/new?request_id=#{@encouragement_request.id}&text=リンクから#{@encouragement_request.user.name}さんに励ましのメッセージカードを送って元気づけましょう！%0a%0a %23JustBeU %23自己受容", target: '_blank', class: "btn btn-wide btn-sm rounded-full bg-gray-500 hover:bg-gray-600" do %>
+          <i class="fa-brands fa-x-twitter"></i>シェア
+        <% end %>
+      </div>
+      <% if @encouragement_request.public_status? %>
+        <div class="text-center mb-2">
+          <%= f.submit '下書き', class: "btn btn-wide btn-sm text-customGreen border-1 border-customGreen2 bg-customGreen6 hover:bg-customGreen7 hover:border-customGreen2" %>
+        </div>
+      <%else%>
+        <div class="text-center mb-2">
+          <%= f.submit '公開する', class: "btn btn-wide btn-sm text-customGreen border-1 border-customGreen2 bg-customGreen6 hover:bg-customGreen7 hover:border-customGreen2" %>
+        </div>
+      <% end%>
+      <div class="text-center mb-2">
+        <%= link_to 'テキストを編集する', edit_encouragement_request_path(@encouragement_request),  class: "btn btn-wide  btn-sm text-customGreen border-1 border-customGreen2 bg-customGreen6 hover:bg-customGreen7 hover:border-customGreen2" %>
+      </div>
+      <div class="text-center mb-2">
+        <%= link_to "保存を取り消す", encouragement_request_path(@encouragement_request), class:"btn btn-wide btn-sm text-customGreen border-1 border-customGreen2 bg-customGreen6 hover:bg-customGreen7 hover:border-customGreen2", data: { turbo_method: :delete, turbo_confirm: "画像を削除しますか?" } %>
+      </div>
+    <% end %>
   </div>
 </div>

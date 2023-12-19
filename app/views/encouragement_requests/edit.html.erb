@@ -14,9 +14,12 @@
           <%= f.label :text, "画像に入れるテキストを入力", class: "block text-sm md:text-base text-left my-2 text-customGreen" %>
           <%= f.text_area :text, size: "40x4", class: "w-full bg-customBeige3 border-2 border-customGreen7 sm:p-2 rounded-lg", placeholder:"例）励ましてください"%>
         </div>
+        <div class="my-2 text-center">
+          <%= f.select :status, EncouragementRequest.statuses_i18n.invert, {}, class: "select select-bordered w-full max-w-xs border-2 border-customGreen7 bg-customBeige3 text-slate-400" %>
+        </div>
         <%= f.hidden_field :background_id, value: @encouragement_request.background_id%>
         <div class="actions text-center">
-          <%= f.submit "編集する", class: "bg-customGreen6 my-2 px-10 py-2 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2"%>
+          <%= f.submit t('defaults.edit'), class: "bg-customGreen6 my-2 px-10 py-2 rounded-full drop-shadow-lg hover:bg-customGreen7 hover:drop-shadow-lg border-2 border-customGreen2"%>
         </div>
       <% end %>
     </div>

@@ -1,7 +1,4 @@
 <% content_for(:title, t('.title'))%>
-<% if @encouragement_message.present? %>
-  <% assign_meta_tags image: rails_blob_url(@encouragement_message.message_image, only_path: false)%>
-<% end %>
 <div class="bg-customBeige min-h-screen text-customGreen5">
   <div class="container mx-auto px-2 sm:px-5 py-10">
     <h1 class="text-2xl font-bold text-center my-10"><%= t('.title') %></h1>
@@ -9,13 +6,13 @@
   <div class="container mx-auto px-4 py-10">
     <% if @encouragement_requests.present? %>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-        <%= render partial: 'encouragement_request', collection: @encouragement_requests %>
+        <%= render partial: 'darft', collection: @encouragement_requests, as: :encouragement_request %>
       </div>
       <div class="flex items-center justify-center mt-4 mb-10">
         <%= paginate @encouragement_requests, window: 2 %>
       </div>
     <% else %>
-      <p class="text-center"><%= t('.no_result') %></p>
+      <p class="text-center">下書きがありません</p>
     <% end %>
   </div>
 </div>

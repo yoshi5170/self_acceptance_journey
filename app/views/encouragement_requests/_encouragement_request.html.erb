@@ -1,12 +1,12 @@
-<div class="border-2 border-customGreen2 rounded-lg p-4">
+<div class="border-2 border-customGreen2 bg-customBeige3 rounded-lg p-4">
   <%= image_tag encouragement_request.request_image, size: '400x300', class:"mx-auto"%>
-  <i class="fa-regular fa-user text-customGreen"></i>
+  <i class="fa-regular fa-user text-customGreen text-left"></i>
   <%=  encouragement_request.user.name %>
   <% if current_user&.own?(encouragement_request) %>
-    <%= link_to encouragement_request_path(encouragement_request),  data: { turbo_method: :delete, turbo_confirm: "励ましリクエストを削除すると、送られた励ましメッセージも一緒に削除されます。本当に削除しますか？" } do %>
-      <i class="fa-regular fa-trash-can text-customGreen"></i>
+    <%= link_to encouragement_request_path(encouragement_request), class:"mx-1", data: { turbo_method: :delete, turbo_confirm: "励ましリクエストを削除すると、送られた励ましメッセージも一緒に削除されます。本当に削除しますか？" } do %>
+      <i class="fa-regular fa-trash-can text-customGreen text-right"></i>
     <% end %>
-    <%= link_to edit_encouragement_request_path(encouragement_request) do %>
+    <%= link_to edit_encouragement_request_path(encouragement_request), class:"mx-1" do %>
       <i class="fa-solid fa-pencil text-customGreen"></i>
     <% end %>
   <% end %>

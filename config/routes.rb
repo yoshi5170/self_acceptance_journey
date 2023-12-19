@@ -43,6 +43,10 @@ Rails.application.routes.draw do
     resources :encouragement_messages, only: [:index]
     collection do
       get 'select_image'
+      get 'draft'
+    end
+    member do
+      patch 'status_update'
     end
   end
   resources :encouragement_messages, only: %i[ new create show edit update destroy]

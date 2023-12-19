@@ -51,5 +51,6 @@ ja:
         threshold: 'しきい値'
       encouragement_request:
         text: 'テキスト'
+        status: 'ステータス'
       encouragement_message:
         text: 'テキスト'
