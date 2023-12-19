@@ -13,13 +13,21 @@
         </summary>
         <ul class="dropdown-content z-[1] menu px-6 py-4 shadow bg-customGreen5 rounded-box w-80 text-customGreen2 mt-3">
           <li class="hover:bg-neutral-600 hover:rounded-xl"><%= link_to "マイページ", mypage_path, data: { turbo: false }%></li>
-          <li class="hover:bg-neutral-600 hover:rounded-xl"><%= link_to "自己受容トレーニング", new_self_esteem_training_path, data: { turbo: false }%></li>
+          <li>
+            <details>
+              <summary class="hover:bg-neutral-600 hover:rounded-xl">トレーニング</summary>
+                <ul>
+                  <li class="hover:bg-neutral-600 hover:rounded-xl"><%= link_to "- 自己受容トレーニング", new_self_esteem_training_path, data: { turbo: false }%></li>
+                  <li class="hover:bg-neutral-600 hover:rounded-xl"><%= link_to "- 自己発見トレーニング", new_self_discovery_training_path, data: { turbo: false }%></li>
+                </ul>
+            </details>
+          </li>
           <li>
             <details>
               <summary class="hover:bg-neutral-600 hover:rounded-xl">幸せ日記</summary>
                 <ul>
-                  <li class="hover:bg-neutral-600 hover:rounded-xl"><%= link_to "幸せ日記一覧", diaries_path, data: { turbo: false }%></li>
-                  <li class="hover:bg-neutral-600 hover:rounded-xl"><%= link_to "今日の幸せ日記を作成", new_diary_path, data: { turbo: false }%></li>
+                  <li class="hover:bg-neutral-600 hover:rounded-xl"><%= link_to "- 幸せ日記一覧", diaries_path, data: { turbo: false }%></li>
+                  <li class="hover:bg-neutral-600 hover:rounded-xl"><%= link_to "- 今日の幸せ日記を作成", new_diary_path, data: { turbo: false }%></li>
                 </ul>
             </details>
           </li>
