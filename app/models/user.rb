@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :planted_flowers, dependent: :destroy
   has_many :diaries, dependent: :destroy
   has_many :self_esteem_trainings, dependent: :destroy
+  has_many :self_discovery_trainings, dependent: :destroy
   has_many :encouragement_requests, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 255 }
