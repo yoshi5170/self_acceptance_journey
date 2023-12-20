@@ -14,7 +14,7 @@
         <%= render 'shared/error_messages', object: @encouragement_request %>
         <div class="my-2 sm:w-2/3 lg:w-2/5 sm:mx-auto">
           <%= f.label :text, "画像に入れるテキストを入力", class: "block text-sm md:text-base text-left my-2 text-customGreen" %>
-          <%= f.text_area :text, size: "40x4", class: "w-full bg-customBeige3 border-2 border-customGreen7 sm:p-2 rounded-lg", placeholder:"例）励ましてください"%>
+          <%= f.text_area :text, size: "40x4", class: "w-full bg-customBeige3 border-2 border-customGreen7 sm:p-2 rounded-lg", placeholder:"例）ちょっと落ち込んでいます。元気づけてくれる言葉を待っています。"%>
         </div>
         <div class="my-2 text-center">
           <%= f.select :status, options_for_select([["ステータスを選択", nil, { disabled: true, selected: true }]] + EncouragementRequest.statuses_i18n.invert.to_a), {}, class: "select select-bordered w-full max-w-xs border-2 border-customGreen7 bg-customBeige3 text-slate-400" %>
