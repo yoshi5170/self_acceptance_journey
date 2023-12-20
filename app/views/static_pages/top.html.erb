@@ -21,7 +21,58 @@
     <div class="px-4 py-4 sm:mx-10 md:mx-24 lg:mx-46 sm:px-0">
       <h2 class="font-bold text-lg mt-2 mb-4 md:text-xl">JustBe U でできること</h2>
       <div class="collapse collapse-plus bg-customBeige3 mb-4 border border-customGreen5">
-        <input type="radio" name="my-accordion-3" checked="checked" />
+        <input type="radio" name="my-accordion-3" />
+        <div class="collapse-title text-base font-medium">
+          励ましリクエスト＆励ましメッセージ(新機能✨)
+        </div>
+        <div class="collapse-content">
+          <div class="py-2 mb-4 md:mx-16 lg:mx-24 xl:mx-48">
+            <p>
+              落ち込んだり、勇気づけてほしい時に励ましリクエストを投稿しましょう。「xシェアー」または「みんなの励ましリクエスト一覧」に励ましリクエストを投稿するとみんなから励ましのメッセージを受け取ることができます。
+            </p>
+          </div>
+          <p class="font-semibold underline mb-2">励ましリクエストを送る方法</p>
+          <%= image_tag 'encouragement_request.gif', size: '220x463', class: 'rounded-lg mx-auto border border-customGreen2 mb-4' %>
+          <p class="font-semibold underline mb-2">励ましメッセージを送る方法</p>
+          <p class="py-2 mb-4 md:mx-16 lg:mx-24 xl:mx-48 xl:text-center">xに投稿された励ましリクエストのリンクまたはみんなの励ましリクエスト一覧からメッセージを送ることができます</p>
+          <%= image_tag 'encouragement_message.gif', size: '220x463', class: 'rounded-lg mx-auto border border-customGreen2 mb-4' %>
+        </div>
+      </div>
+            <div class="collapse collapse-plus bg-customBeige3 mb-4 border border-customGreen5">
+        <input type="radio" name="my-accordion-3" />
+        <div class="collapse-title text-base font-medium">
+          自己発見トレーニング（新機能✨)
+        </div>
+        <div class="collapse-content">
+          <div class="py-2 mb-4 md:mx-16 lg:mx-24 xl:mx-48">
+            <p>
+              自身がマイナスだと感じる特性（性格）をポジティブな視点から見るトレーニングになります。
+              あなたの考える「短所」が、実は他の状況や視点で見ると「長所」に変わるかもしれません。
+              あなたの新たな長所を発見してみませんか？
+            </p>
+          </div>
+          <%= image_tag 'self_discovery_training.gif', size: '220x463', class: 'rounded-lg mx-auto border border-customGreen2 mb-4' %>
+        </div>
+      </div>
+      <div class="collapse collapse-plus bg-customBeige3 mb-4 border border-customGreen5">
+        <input type="radio" name="my-accordion-3" />
+        <div class="collapse-title text-base font-medium">
+          自己受容トレーニング
+        </div>
+        <div class="collapse-content">
+          <%= image_tag 'screen01.png', size: '320x563', class: 'rounded-lg mx-auto border border-customGreen2 mb-4' %>
+          <div class="py-2 mb-4 md:mx-16 lg:mx-24 xl:mx-48">
+            <p>
+            自分を厳しく責めてしまうこと、ありますよね？でも、その考えを少し変えてみるだけで、自分自身をもっと受け入れられるようになります。
+            自己受容トレーニングではあなたが入力した自己否定的な思考や感情を自己受容に向けた視点でAIが変換してくれます。
+            自分を責める代わりに、自分の弱点や失敗を含めて全ての自分を受け入れる手助けをしてくれます。
+            </p>
+          </div>
+          <%= image_tag 'screen02.png', size: '320x563', class: 'rounded-lg mx-auto border border-customGreen2 mb-4' %>
+        </div>
+      </div>
+      <div class="collapse collapse-plus bg-customBeige3 mb-4 border border-customGreen5">
+        <input type="radio" name="my-accordion-3"/>
         <div class="collapse-title text-base font-medium">
           月刊セルフケア
         </div>
@@ -43,23 +94,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="collapse collapse-plus bg-customBeige3 mb-4 border border-customGreen5">
-        <input type="radio" name="my-accordion-3" />
-        <div class="collapse-title text-base font-medium">
-          自己受容トレーニング
-        </div>
-        <div class="collapse-content">
-          <%= image_tag 'screen01.png', size: '320x563', class: 'rounded-lg mx-auto border border-customGreen2 mb-4' %>
-          <div class="py-2 mb-4 md:mx-16 lg:mx-24 xl:mx-48">
-            <p>
-            自分を厳しく責めてしまうこと、ありますよね？でも、その考えを少し変えてみるだけで、自分自身をもっと受け入れられるようになります。
-            自己受容トレーニングではあなたが入力した自己否定的な思考や感情を自己受容に向けた視点でAIが変換してくれます。
-            自分を責める代わりに、自分の弱点や失敗を含めて全ての自分を受け入れる手助けをしてくれます。
-            </p>
-          </div>
-          <%= image_tag 'screen02.png', size: '320x563', class: 'rounded-lg mx-auto border border-customGreen2 mb-4' %>
         </div>
       </div>
       <div class="collapse collapse-plus bg-customBeige3 mb-4 border border-customGreen5">
