@@ -1,9 +1,9 @@
 class DiariesController < ApplicationController
   before_action :set_diary, only: [:show, :edit, :update, :destroy]
-  before_action :set_q, only: [:index, :search]
+  before_action :set_q, only: [:index]
 
   def index
-    @diaries = current_user.diaries.includes(:diary_entries).order(created_at: :desc)
+    @diaries = @q.result(distinct: true).includes(:diary_entries).order(created_at: :desc)
   end
 
   def new
@@ -46,10 +46,6 @@ class DiariesController < ApplicationController
     redirect_to diaries_path, success: t('.success')
   end
 
-  def search
-    @results = @q.result
-  end
-
   private
 
   def set_diary
@@ -61,6 +57,6 @@ class DiariesController < ApplicationController
   end
 
   def set_q
-    @q = Dairy.ransack(params[:q])
+    @q = current_user.diaries.ransack(params[:q])
   end
 end
