@@ -9,4 +9,7 @@ class Diary < ApplicationRecord
                 " #{data[:value]}の日記はすでに作成済みです"
               }
             }
+  def self.ransackable_attributes(_auth_object = nil)
+    ['created_at']
+  end
 end
