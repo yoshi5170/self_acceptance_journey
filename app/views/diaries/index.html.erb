@@ -5,9 +5,9 @@
   </div>
   <div class="text-center">
     <%= search_form_for @q, url: diaries_path do |f| %>
-      <%= f.date_field :created_at_gteq, include_blank: true, class: 'bg-customBeige3 py-1'%>
+      <%= f.date_field :created_at_gteq, include_blank: true, class: 'bg-customBeige3 py-1 rounded-lg text-center'%>
       <span>~</span>
-      <%= f.date_field :created_at_lteq_end_of_day, include_blank: true, class:'bg-customBeige3 py-1'%>
+      <%= f.date_field :created_at_lteq_end_of_day, include_blank: true, class:'bg-customBeige3 py-1 rounded-lg text-center'%>
       <%= f.submit '検索', class: 'text-sm mx-2 md:text-base bg-customGreen7 rounded-lg drop-shadow-lg px-6 py-1 lg:px-4 hover:bg-customGreen6 hover:drop-shadow-lg border-2 border-customGreen2' %>
     <% end %>
   </div>
