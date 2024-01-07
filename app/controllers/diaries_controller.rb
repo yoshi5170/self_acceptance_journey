@@ -1,8 +1,9 @@
 class DiariesController < ApplicationController
   before_action :set_diary, only: [:show, :edit, :update, :destroy]
+  before_action :set_q, only: [:index]
 
   def index
-    @diaries = current_user.diaries.includes(:diary_entries).order(created_at: :desc)
+    @diaries = @q.result(distinct: true).includes(:diary_entries).order(created_at: :desc)
   end
 
   def new
@@ -53,5 +54,9 @@ class DiariesController < ApplicationController
 
   def diary_form_params
     params.require(:diary_form).permit(entries_contents: [], entries_ids: [])
+  end
+
+  def set_q
+    @q = current_user.diaries.ransack(params[:q])
   end
 end
