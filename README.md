@@ -126,7 +126,7 @@ JustBe Uは、内向的性格を否定的に捉えてしまう人々に対し、
 
 
 ## 画面遷移図
-https://www.figma.com/file/Ys9dxJvhS68LH9TiSjmHnx/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3%EF%BC%88%E5%A4%89%E6%9B%B4%E5%BE%8C%EF%BC%92%EF%BC%89?type=design&node-id=0%3A1&mode=design&t=5ifU6LBIxKpbOPMM-1
+https://www.figma.com/file/Ys9dxJvhS68LH9TiSjmHnx/JustBe-U%E3%80%80%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?type=design&node-id=0%3A1&mode=design&t=GuTUtJ987I5xmuQx-1
 
 ## ER図
 [![Image from Gyazo](https://i.gyazo.com/a8ec5e91b97fd365ac32c3cebfe4160e.png)](https://gyazo.com/a8ec5e91b97fd365ac32c3cebfe4160e)
