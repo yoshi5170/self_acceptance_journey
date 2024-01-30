@@ -101,7 +101,7 @@ JustBe Uは、内向的性格を否定的に捉えてしまう人々に対し、
 |  |  |
 | ---- | ---- |
 | ログイン機能 | 自己否定診断|
-|   <img width="270" alt="スクリーンショット 2023-09-17 7 21 38" src="#"> |<img width="280" alt="スクリーンショット 2023-09-27 19 45 31" src="#">|
+|   [![Image from Gyazo](https://i.gyazo.com/e40c492aa6d6b1c663f15981e8f93c45.png)](https://gyazo.com/e40c492aa6d6b1c663f15981e8f93c45) |[![Image from Gyazo](https://i.gyazo.com/6ccaab576ed803156a3393f6038df2af.gif)](https://gyazo.com/6ccaab576ed803156a3393f6038df2af)|
 | 自己受容トレーニング | 自己発見トレーニング |
 | <img width="270" alt="スクリーンショット 2023-09-17 7 21 38" src="#">|<img width="280" alt="スクリーンショット 2023-09-27 20 12 59" src="#">|
 | マイガーデン（スタンプ機能） | 幸せ日記 |
