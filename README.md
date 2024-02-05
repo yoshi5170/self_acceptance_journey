@@ -5,10 +5,12 @@
 ### [JustBe U](https://www.justbe-u.com/)
 
 ## サービス概要
-JustBe Uは、内向的性格を否定的に捉えてしまう人々に対し、長所も短所も受け入れる自己受容へと導くサポートをするサービスです。このサービスを通じて、自己受容する方法を学びユーザーは自身の内向性を新たな視点から見つめ直し自分らしく生きるための道筋を見つけることができます。
+JustBe Uは自分の性格をコンプレックスに感じたり否定してしまう人々に対し、自身の良い部分も悪い部分も全て受け入れるという自己受容の考え方に導くサポートをするサービスです。ユーザーはこのサービスを通して自己受容ができるようになり自分らしく生きるための道筋を見つけることができます。
+
 
 ## 想定されるユーザー層
-内向的な性格がコンプレックスだったりマイナスに感じ自信を無くしてしまったり、自分を否定してしまう人
+自分の性格にコンプレックスに感じたり否定してしてしまっている人
+
 
 ## サービスコンセプト
 
@@ -99,19 +101,19 @@ JustBe Uは、内向的性格を否定的に捉えてしまう人々に対し、
 
 ## 機能
 |  |  |
-| ---- | ---- |
+| --- | --- |
 | ログイン機能 | 自己否定診断|
 |   [![Image from Gyazo](https://i.gyazo.com/e40c492aa6d6b1c663f15981e8f93c45.png)](https://gyazo.com/e40c492aa6d6b1c663f15981e8f93c45) |[![Image from Gyazo](https://i.gyazo.com/6ccaab576ed803156a3393f6038df2af.gif)](https://gyazo.com/6ccaab576ed803156a3393f6038df2af)|
 | 自己受容トレーニング | 自己発見トレーニング |
-| <img width="270" alt="スクリーンショット 2023-09-17 7 21 38" src="#">|<img width="280" alt="スクリーンショット 2023-09-27 20 12 59" src="#">|
+| <img width="190" alt="スクリーンショット" src="app/assets/images/self_esteem_training.gif">|<img width="190" alt="スクリーンショット 2023-09-27 20 12 59" src="app/assets/images/self_discovery_training2.gif">|
 | マイガーデン（スタンプ機能） | 幸せ日記 |
-| <img width="280" alt="スクリーンショット 2023-09-27 20 15 37" src="#"><br/>説明|<img width="270" alt="スクリーンショット 2023-09-27 20 17 20" src="#"> <br/>説明|
+| [![Image from Gyazo](https://i.gyazo.com/c0c732ed3a4832c4ef3b93a45a7f4207.png)](https://gyazo.com/c0c732ed3a4832c4ef3b93a45a7f4207)<br/>説明|<img width="190" alt="スクリーンショット" src="app/assets/images/diary.gif"> <br/>説明|
 | 励ましリクエスト | 励ましメッセージ |
-| <img width="280" alt="スクリーンショット 2023-09-27 20 27 55" src="#"><br/>説明<br/>説明|<img width="280" alt="スクリーンショット 2023-09-27 20 16 55" src="#"><br/>説明<br/>説明|
-| LINE通知機能 |　Xシェアー機能　|
-|<img width="280" alt="スクリーンショット 2023-09-27 20 17 08" src="#">|　<img width="200" alt="スクリーンショット 2023-09-27 20 17 08" src="#"><br/>説明|
-| みんなの励ましリクエスト |
-|   <img width="270" alt="スクリーンショット 2023-09-17 7 21 38" src="#"> ||
+| <img width="190" alt="スクリーンショット" src="app/assets/images/encouragement_request.gif"><br/>説明<br/>説明| <img width="190" alt="スクリーンショット" src="app/assets/images/encouragement_message.gif"><br/>説明<br/>説明|
+| みんなの励ましリクエスト |　LINE通知機能　|
+| [![Image from Gyazo](https://i.gyazo.com/d5628189104aa851b839652b587a1498.png)](https://gyazo.com/d5628189104aa851b839652b587a1498)| <img width="190" alt="スクリーンショット" src="app/assets/images/monthly_theme.png"> |
+|  |
+|    ||
 
 
 ## 主な使用技術
