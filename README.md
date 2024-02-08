@@ -39,11 +39,11 @@ JustBe Uは自分の性格をコンプレックスに感じたり否定してし
 ## 機能
 | **ログイン機能** | **自己否定診断**|
 |:----:|:----:|
-|   [![Image from Gyazo](https://i.gyazo.com/e40c492aa6d6b1c663f15981e8f93c45.png)](https://gyazo.com/e40c492aa6d6b1c663f15981e8f93c45) |[![Image from Gyazo](https://i.gyazo.com/6ccaab576ed803156a3393f6038df2af.gif)](https://gyazo.com/6ccaab576ed803156a3393f6038df2af)<br/>診断結果によってユーザーに<br/>おすすめの機能を提案します|
+| <img width="190" alt="スクリーンショット" src="https://i.gyazo.com/8a87acdd1122a2b0888850830727a717.png">|<img width="190" alt="スクリーンショット" src="https://i.gyazo.com/6ccaab576ed803156a3393f6038df2af.gif"><br/>診断結果によってユーザーに<br/>おすすめの機能を提案します|
 | **自己受容トレーニング** | **自己発見トレーニング** |
 | <img width="190" alt="スクリーンショット" src="app/assets/images/self_esteem_training.gif"><br/>自己否定的な思考や感情を自己受容に<br/>向けた視点でAIが変換し自己受容する<br/>感覚を養うことができる|<img width="190" alt="スクリーンショット 2023-09-27 20 12 59" src="app/assets/images/self_discovery_training2.gif"><br/>自身がマイナスだと感じる特性を<br/>ポジティブな視点から見る<br/>トレーニングです|
 | **マイガーデン（スタンプ機能）** | **幸せ日記** |
-| [![Image from Gyazo](https://i.gyazo.com/c0c732ed3a4832c4ef3b93a45a7f4207.png)](https://gyazo.com/c0c732ed3a4832c4ef3b93a45a7f4207)<br/>自己受容トレーニングした<br/>回数を確認するこができ、<br/>達成感を視覚的に楽しめます|<img width="190" alt="スクリーンショット" src="app/assets/images/diary.gif"> <br/>1日のよかったことを３つ記録する機能|
+| <img width="190" alt="スクリーンショット" src="https://i.gyazo.com/c0c732ed3a4832c4ef3b93a45a7f4207.png"><br/>自己受容トレーニングした<br/>回数を確認するこができ、<br/>達成感を視覚的に楽しめます|<img width="190" alt="スクリーンショット" src="app/assets/images/diary.gif"> <br/>1日のよかったことを３つ記録する機能|
 | **励ましリクエスト** | **励ましメッセージ** |
 | <img width="190" alt="スクリーンショット" src="app/assets/images/encouragement_request.gif"><br/>励ましリクエストカードを作成し投稿すると<br/>励ましメッセージを受け取ることができます| <img width="190" alt="スクリーンショット" src="app/assets/images/encouragement_message.gif"><br/>励ましたい相手に励ましメッセージカードを<br/>作成し送ることができます|
 | **みんなの励ましリクエスト一覧** | **LINE通知機能**|
